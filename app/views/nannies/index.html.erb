@@ -12,10 +12,10 @@
         <% @nannies.each do |nanny| %>
           <div>
             <div class="card-trip">
-              <%= image_tag nanny.image, alt: "Picture of the nanny" %>
+              <%= image_tag nanny.nanny_picture, alt: "Picture of the nanny" %>
               <div class="card-trip-infos">
                 <div>
-                  <h2><%= link_to nanny.nanny_name, nanny_path(nanny), :class => "link"%> </h2>
+                  <h2><%= link_to nanny.name, nanny_path(nanny), :class => "link"%> </h2>
                    <p> <strong> £<%= nanny.price_per_hour%> per hour </strong></p>
                 </div>
               </div>

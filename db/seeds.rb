@@ -12,6 +12,7 @@ require 'open-uri'
 puts 'Cleaning database...'
 puts 'destroying groups...'
 Group.destroy_all
+
 puts 'Creating groups...'
 groups = [
   {
@@ -57,7 +58,7 @@ groups = [
     file_name: 'Bubba-Monkeys.png'
   },
   {
-    ame: "The Pandas",
+    name: "The Pandas",
     address: "119 Shoreditch High St, Hackney, London E1 6JN",
     location: "Olympic Pandas House",
     description: "Socialize with friendly Millenials Parents",
@@ -101,6 +102,7 @@ end
 
 puts 'Finished!'
 
+puts 'Creating users...'
 User.create(
   email: "alexia@test.com",
   full_name: "Alexia Tanguy",
@@ -158,8 +160,6 @@ User.create(
 puts "User created"
 
 
-
-
 Nanny.create(
     user_id: 1,
     name: Faker::Name.name,
@@ -168,7 +168,6 @@ Nanny.create(
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
   )
-
 puts "Nanny created"
 
 Nanny.create(
@@ -190,7 +189,6 @@ Nanny.create(
     bio: Faker::Quote.most_interesting_man_in_the_world,
   )
 puts "Nanny created"
-
 
 Nanny.create!(
     user_id: 4,

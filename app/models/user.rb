@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one_attached :photo
-  has_many :events, through: :groups
+  has_many :events, through: :event_bookings
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 end

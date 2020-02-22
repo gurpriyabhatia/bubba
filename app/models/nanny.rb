@@ -1,7 +1,6 @@
 class Nanny < ApplicationRecord
   belongs_to :user
   has_many :groups
-  has_one :nanny_picture
   validates :name, presence: true
   validates :address, presence: true
   validates :mobile_number, presence: true

@@ -1,5 +1,5 @@
 class Group < ApplicationRecord
-  has_one :group_picture
+  has_one_attached :group_picture
   has_many :users
   has_many :events
   validates :description, presence: true

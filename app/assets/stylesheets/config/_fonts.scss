@@ -2,8 +2,8 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
 
 // Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
+// $body-font: "Open Sans", "Helvetica", "sans-serif";
+// $headers-font: "Raleway", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -21,3 +21,16 @@ $headers-font: "Raleway", "Helvetica", "sans-serif";
 //   src: font-url('../fonts/FontFile.eot');
 // }
 // $circular: Font Name
+
+
+// To use a font file (.woff) uncomment following lines
+@font-face {
+  font-family: "CircularPro";
+  src: font-url('/assets/CircularPro-Black.otf');
+  src: font-url('/assets/CircularPro-Book.otf');
+  src: font-url('/assets/CircularPro-Medium.otf');
+}
+$my-font: "CircularPro";
+
+$body-font: $my-font;
+$headers-font: $my-font;

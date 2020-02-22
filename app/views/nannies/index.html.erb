@@ -1,0 +1,45 @@
+<div class="nannies-container">
+  <h1>Available Nannies</h1>
+
+  <div class= "row" >
+  <!-- Search form -->
+  <input class="form-control search-bar" type="text" placeholder="Search" aria-label="Search" id="search">
+  </div>
+
+  <div class="content">
+    <div class="cards" data-imgs="<%= @imgs.to_json %>">
+      <!-- <div class = "row"> -->
+        <% @nannies.each do |nanny| %>
+          <div>
+            <div class="card-trip">
+              <%= image_tag nanny.image, alt: "Picture of the nanny" %>
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= link_to nanny.nanny_name, nanny_path(nanny), :class => "link"%> </h2>
+                   <p> <strong> £<%= nanny.price_per_hour%> per hour </strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <!-- </div> -->
+    </div>
+    <div id="map-wrapper">
+        <div
+          id="map"
+          style="
+          width: 33vw;
+          height: 100vh;
+          margin: 32px 0;
+          border-radius: 8px;
+    position: sticky;
+    top: 0;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        ></div>
+      </div>
+      <!-- </div> -->
+
+    </div>
+  </div>
+</div>

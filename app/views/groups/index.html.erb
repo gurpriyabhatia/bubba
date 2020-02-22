@@ -1,0 +1,21 @@
+
+<h1>Groups#index</h1>
+
+<div class = "container">
+  <div class="row">
+    <a class="btn btn-flat" href="#">Book now</a>
+  </div>
+
+  <div class="row">
+    <% @groups.each do |group| %>
+      <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <h2><%= group.name %></h2>
+          <p><%= group.address %> <strong>group.location</strong></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+

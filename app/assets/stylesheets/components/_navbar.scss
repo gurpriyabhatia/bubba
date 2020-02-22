@@ -3,10 +3,77 @@
   background: white;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+   width: 40px;
 }
+
+.side-nav-header {
+  background-color: $bubba5;
+}
+
+.side-nav-profile-pic {
+  border-radius: 50%;
+}
+// .navbar a {
+//   display: block;
+//   margin: 0;
+//   padding: 1.3rem 1.3rem 1.3rem 1.8rem;
+//   color: #49485c;
+//   font-size: 1.3rem;
+//   font-weight: 200;
+//   text-decoration: none
+// }
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  justify-content: space-between
+}
+
+.sidenav a {
+  padding: 1.3rem 1.3rem 1.3rem 1.8rem;
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: #49485c;
+  display: block;
+  transition: 0.3s;
+  margin: 0;
+  font-weight: 200;
+  font: $my-font
+}
+
+.nav-item {
+    list-style-type: none;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+

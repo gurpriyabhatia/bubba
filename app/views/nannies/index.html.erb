@@ -1,18 +1,26 @@
 <div class="nannies-container">
-  <h1>Available Nannies</h1>
+  <h2>Available Nannies</h2>
 
   <div class= "row" >
   <!-- Search form -->
-  <input class="form-control search-bar" type="text" placeholder="Search" aria-label="Search" id="search">
+  <input class="form-control search-bar" type="text" placeholder="" aria-label="Search" id="search">
+  <br>
+  <a class="btn btn-flat" href="#">Search</a>
   </div>
+
+  <br>
+
 
   <div class="content">
     <div class="cards" data-imgs="<%= @imgs.to_json %>">
       <!-- <div class = "row"> -->
+
         <% @nannies.each do |nanny| %>
           <div>
             <div class="card-trip">
-              <%= image_tag nanny.nanny_picture, alt: "Picture of the nanny" %>
+              <% if nanny.user.photo.attached? %>
+                <%= image_tag nanny.user.photo, alt: "Picture of the nanny" %>
+              <% end %>
               <div class="card-trip-infos">
                 <div>
                   <h2><%= link_to nanny.name, nanny_path(nanny), :class => "link"%> </h2>

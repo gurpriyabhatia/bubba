@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window",
         locals: { group: group }) }
     end
-    @imgs = @groups.map { |group| [group.id] }
+    @imgs = @groups.map { |group| [group.id, group.group_picture] }
   end
 
   def show

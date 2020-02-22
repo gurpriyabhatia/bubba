@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'event_reviews/new'
+  get 'event_reviews/create'
   devise_for :users
   root to: 'pages#home'
   resources :groups do

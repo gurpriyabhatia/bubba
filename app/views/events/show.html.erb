@@ -1,0 +1,20 @@
+<h1><%= @event.name %></h1>
+<h5>Brought to you by the <%= @event.group.name %> group</h5>
+<p><%= @event.description %></p>
+
+<ul>
+  <li>Date: <%= @event.date.strftime("%d/%m/%y") %></li>
+  <li>Time: <%= @event.time.strftime("%I:%M%P") %></li>
+    <% if @event.price == 0 %>
+      <li>Price: Free</li>
+    <% else %>
+      <li>Price: £<%= @event.price %></li>
+    <% end %>
+    <% if @event.availability == nil %>
+      <li>Availability: There is no limit on this event!</li>
+    <% else %>
+      <li>Availability: <%= @event.availability %> spaces left</li>
+    <% end %>
+    <li>Address: <%= @event.address %></li>
+</ul>
+

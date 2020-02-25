@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_22_164845) do
+ActiveRecord::Schema.define(version: 2020_02_25_191501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,11 +60,12 @@ ActiveRecord::Schema.define(version: 2020_02_22_164845) do
     t.datetime "date"
     t.datetime "time"
     t.integer "price", default: 0
-    t.integer "availability"
+    t.integer "total_spaces"
     t.string "address"
     t.bigint "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "spaces_booked"
     t.index ["group_id"], name: "index_events_on_group_id"
   end
 

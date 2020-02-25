@@ -4,7 +4,8 @@ class GroupsController < ApplicationController
     @markers = @groups.map do |group|
       { lat: group.latitude, lng: group.longitude,
         infoWindow: render_to_string(partial: "info_window",
-        locals: { group: group }) }
+        locals: { group: group }),
+        image_url: group.group_picture.service_url }
     end
     @imgs = @groups.map { |group| [group.id, group.group_picture] }
   end

@@ -5,7 +5,8 @@ class Event < ApplicationRecord
   has_many :users, through: :event_bookings
   validates :name, :description, :date, :time, :address, presence: true
   validates :price, numericality: true
-  validates :availability, numericality: true, allow_nil: true
+  validates :total_spaces, numericality: true, allow_nil: true
+  validates :spaces_booked, numericality: true, allow_nil: true
 
   # TODO: Method for when a user books an event??
   # def add_attendee

@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2020_02_25_191501) do
     t.bigint "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "spaces_booked"
+    t.integer "spaces_booked", default: 0
     t.index ["group_id"], name: "index_events_on_group_id"
   end
 

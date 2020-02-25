@@ -230,20 +230,20 @@ puts "Nanny created"
 
 puts 'Destroying events...'
 
-Event.destroy_all
+# Event.destroy_all
 
-puts 'Creating events...'
+# puts 'Creating events...'
 
-Event.create!(
-  name: "",
-  description: "",
-  date: "",
-  time: "",
-  price: ,
-  address: "",
-  group_id: ,
-  total_spaces: ,
-  spaces_booked: ,
-  )
+# Event.create!(
+#   name: "",
+#   description: "",
+#   date: "",
+#   time: "",
+#   price: ,
+#   address: "",
+#   group_id: ,
+#   total_spaces: ,
+#   spaces_booked: ,
+#   )
 
 

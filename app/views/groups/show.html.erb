@@ -1,2 +1,30 @@
-<h1>Groups#show</h1>
-<p>Find me in app/views/groups/show.html.erb</p>
+<h1>Discover your Group</h1>
+
+<div class="container">
+  <div class="col">
+    <div class="row">
+      <%= @group.name %>
+      <%= @group.description %>
+    </div>
+    <div class="row">
+      <%= @group.address %>
+      <%= @group.location %>
+    </div>
+  </div>
+
+<div class="col">
+      <% @users.first(5).each do |user| %>
+          <h2><%= user.full_name %></h2>
+          <p><%= user.bio %></p>
+          <a class="btn btn-flat" href="#">Contact details</a>
+      <% end %>
+  </div>
+
+</div>
+  <div class="col">
+    <% @events.each do |event| %>
+      <%= event.name %>
+      <%= event.description %>
+    <% end %>
+  </div>
+</div>

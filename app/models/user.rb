@@ -6,6 +6,6 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :event_bookings, dependent: :destroy
   has_many :events, through: :event_bookings
-  has_one :nanny
+  has_one :nanny, dependent: :destroy
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 end

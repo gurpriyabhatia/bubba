@@ -102,6 +102,10 @@ end
 
 puts 'Finished!'
 
+puts 'Destroying users...'
+
+User.destroy_all
+
 puts 'Creating users...'
 User.create(
   email: "alexia@test.com",
@@ -112,8 +116,16 @@ User.create(
   password: "hellohello")
 puts "Alexia created"
 
-
 User.create(
+  email: "rachel@test.com",
+  full_name: "Rachel Clarke",
+  bio: "I'm great",
+  mobile_number: Faker::PhoneNumber.cell_phone,
+  address: 'SW1A 1AA',
+  password: "hellohello")
+puts "Rachel created"
+
+user_1 = User.create(
   email: Faker::Internet.email,
   full_name: Faker::Name.name,
   bio: Faker::Quote.most_interesting_man_in_the_world,
@@ -123,7 +135,7 @@ User.create(
 puts "User created"
 
 
-User.create(
+user_2 = User.create(
   email: Faker::Internet.email,
   full_name: Faker::Name.name,
   bio: Faker::Quote.most_interesting_man_in_the_world,
@@ -132,7 +144,7 @@ User.create(
   password: "123456")
 puts "User created"
 
-User.create(
+user_3 = User.create(
   email: Faker::Internet.email,
   full_name: Faker::Name.name,
   bio: Faker::Quote.most_interesting_man_in_the_world,
@@ -141,7 +153,7 @@ User.create(
   password: "123456")
 puts "User created"
 
-User.create(
+user_4 = User.create(
   email: Faker::Internet.email,
   full_name: Faker::Name.name,
   bio: Faker::Quote.most_interesting_man_in_the_world,
@@ -150,7 +162,7 @@ User.create(
   password: "123456")
 puts "User created"
 
-User.create(
+user_5 = User.create(
   email: Faker::Internet.email,
   full_name: Faker::Name.name,
   bio: Faker::Quote.most_interesting_man_in_the_world,
@@ -159,9 +171,15 @@ User.create(
   password: "123456")
 puts "User created"
 
+puts 'Destroying nannies...'
+
+Nanny.destroy_all
+
+puts 'Creating nannies...'
+
 
 Nanny.create(
-    user_id: 1,
+    user_id: user_1.id,
     name: Faker::Name.name,
     mobile_number: Faker::PhoneNumber.cell_phone,
     address: 'E2 8DY',
@@ -171,7 +189,7 @@ Nanny.create(
 puts "Nanny created"
 
 Nanny.create(
-    user_id: 2,
+    user_id: user_2.id,
     name: Faker::Name.name,
     mobile_number: Faker::PhoneNumber.cell_phone,
     address: 'E2 8DY',
@@ -181,7 +199,7 @@ Nanny.create(
 puts "Nanny created"
 
 Nanny.create(
-    user_id: 3,
+    user_id: user_3.id,
     name: Faker::Name.name,
     mobile_number: Faker::PhoneNumber.cell_phone,
     address: 'E2 8DY',
@@ -191,7 +209,7 @@ Nanny.create(
 puts "Nanny created"
 
 Nanny.create!(
-    user_id: 4,
+    user_id: user_4.id,
     name: Faker::Name.name,
     mobile_number: Faker::PhoneNumber.cell_phone,
     address: 'E2 8DY',
@@ -201,7 +219,7 @@ Nanny.create!(
 puts "Nanny created"
 
 Nanny.create!(
-    user_id: 5,
+    user_id: user_5.id,
     name: Faker::Name.name,
     mobile_number: Faker::PhoneNumber.cell_phone,
     address: 'E2 8DY',
@@ -209,5 +227,9 @@ Nanny.create!(
     bio: Faker::Quote.most_interesting_man_in_the_world,
   )
 puts "Nanny created"
+
+puts 'Destroying events...'
+
+Event.destroy_all
 
 

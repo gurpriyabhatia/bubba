@@ -10,6 +10,10 @@
 require 'open-uri'
 
 puts 'Cleaning database...'
+
+puts 'Destroying events...'
+Event.destroy_all
+
 puts 'destroying groups...'
 Group.destroy_all
 
@@ -125,6 +129,24 @@ User.create(
   password: "hellohello")
 puts "Rachel created"
 
+User.create(
+  email: "gurpriyal@test.com",
+  full_name: "Gurpriya Bhatia",
+  bio: "I'm great",
+  mobile_number: Faker::PhoneNumber.cell_phone,
+  address: 'SW1A 1AA',
+  password: "hellohello")
+puts "Gurpriya created"
+
+User.create(
+  email: "fix@test.com",
+  full_name: "Fix Baud",
+  bio: "I'm great",
+  mobile_number: Faker::PhoneNumber.cell_phone,
+  address: 'SW1A 1AA',
+  password: "hellohello")
+puts "Fix created"
+
 user_1 = User.create(
   email: Faker::Internet.email,
   full_name: Faker::Name.name,
@@ -228,22 +250,113 @@ Nanny.create!(
   )
 puts "Nanny created"
 
-puts 'Destroying events...'
+puts 'Creating events...'
 
-# Event.destroy_all
+Event.create!(
+  name: "Family Picnic",
+  description: "A picnic for all the family, bring food!",
+  date: "28/03/2020",
+  time: "28/03/2020, 12:00",
+  address: "Haggerston Park, Yorkton St, London E2 8NH",
+  group_id: Group.first.id,
+  )
 
-# puts 'Creating events...'
+Event.create!(
+  name: "Playgroup",
+  description: "Bring your little ones along to the weekly playgroup.",
+  date: "04/04/2020",
+  time: "04/04/2020, 10:00",
+  address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
+  price: 5,
+  total_spaces: 30,
+  group_id: Group.first.id,
+  )
 
-# Event.create!(
-#   name: "",
-#   description: "",
-#   date: "",
-#   time: "",
-#   price: ,
-#   address: "",
-#   group_id: ,
-#   total_spaces: ,
-#   spaces_booked: ,
-#   )
+Event.create!(
+  name: "Toddler Ballet",
+  description: "A one off dance class for your little ones.",
+  date: "05/04/2020",
+  time: "05/04/2020, 10:00",
+  address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
+  price: 12,
+  total_spaces: 20,
+  group_id: Group.first.id,
+  )
+
+Event.create!(
+  name: "Beers for Dads",
+  description: "Our monthly meet-up for the local dads out there who need some family-free time 😅",
+  date: "10/04/2020",
+  time: "10/04/2020, 20:00",
+  address: "Hoxton Brewhouse, 397-400 Geffrye St, London E2 8HZ",
+  group_id: Group.first.id,
+  )
+
+Event.create!(
+  name: "Beers for Mums",
+  description: "Our monthly meet-up for the local mums out there who need some family-free time 😅",
+  date: "11/04/2020",
+  time: "11/04/2020, 20:00",
+  address: "Hoxton Brewhouse, 397-400 Geffrye St, London E2 8HZ",
+  group_id: Group.first.id,
+  )
+
+Event.create!(
+  name: "Playgroup",
+  description: "Bring your little ones along to the weekly playgroup.",
+  date: "11/04/2020",
+  time: "11/04/2020, 10:00",
+  address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
+  price: 5,
+  total_spaces: 30,
+  group_id: Group.first.id,
+  )
+
+Event.create!(
+  name: "Playgroup",
+  description: "Bring your little ones along to the weekly playgroup.",
+  date: "18/04/2020",
+  time: "18/04/2020, 10:00",
+  address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
+  price: 5,
+  total_spaces: 30,
+  group_id: Group.first.id,
+  )
+
+Event.create!(
+  name: "Treasure Hunt",
+  description: "Take part in our treasure hunt event! All proceeds go to charity 😇",
+  date: "19/04/2020",
+  time: "19/04/2020, 10:00",
+  address: "Haggerston Park, Yorkton St, London E2 8NH",
+  price: 5,
+  total_spaces: 20,
+  group_id: Group.first.id,
+  )
+
+Event.create!(
+  name: "Parent Toddler Yoga",
+  description: "Unwind in this one off yoga session. Limited spaces!",
+  date: "21/04/2020",
+  time: "21/04/2020, 10:00",
+  address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
+  price: 10,
+  total_spaces: 10,
+  group_id: Group.first.id,
+  )
+
+Event.create!(
+  name: "Bank Holiday Picnic",
+  description: "Join us for a picnic this bank holiday. Open to everyone!",
+  date: "08/05/2020",
+  time: "08/05/2020, 10:00",
+  address: "Haggerston Park, Yorkton St, London E2 8NH",
+  group_id: Group.first.id,
+  )
+
+
+
+
+
 
 

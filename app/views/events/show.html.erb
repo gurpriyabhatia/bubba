@@ -10,11 +10,7 @@
     <% else %>
       <li>Price: £<%= @event.price %></li>
     <% end %>
-    <% if @event.availability == nil %>
-      <li>Availability: There is no limit on this event!</li>
-    <% else %>
-      <li>Availability: <%= @event.availability %> spaces left</li>
-    <% end %>
+
     <li>Address: <%= @event.address %></li>
 </ul>
 

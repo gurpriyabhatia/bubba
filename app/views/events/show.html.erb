@@ -10,10 +10,10 @@
     <% else %>
       <li>Price: £<%= @event.price %></li>
     <% end %>
-    <% if @event.availability == nil %>
+    <% if @event.total_spaces == nil %>
       <li>Availability: There is no limit on this event!</li>
     <% else %>
-      <li>Availability: <%= @event.availability %> spaces left</li>
+      <li>Availability: <%= (@event.total_spaces - @event.spaces_booked) %> spaces left</li>
     <% end %>
     <li>Address: <%= @event.address %></li>
 </ul>

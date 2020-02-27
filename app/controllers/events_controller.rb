@@ -7,6 +7,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @event_booking = EventBooking.new
   end
 
   def new

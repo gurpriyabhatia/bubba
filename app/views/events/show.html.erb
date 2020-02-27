@@ -21,3 +21,13 @@
     <li>Address: <%= @event.address %></li>
 </ul>
 
+<div> "Number of Attendees" </div>
+<!-- @event.event_bookings.count
+form_for EventBooking.new -->
+
+<%= simple_form_for [@event, @event_booking] do |f| %>
+  <%= f.input :event_id, as: :hidden, input_html: { value: @event.id } %>
+  <%= f.input :user_id, as: :hidden, input_html: { value: current_user } %>
+  <%= f.submit "Book now!", class: "btn-flat" %>
+<% end %>
+

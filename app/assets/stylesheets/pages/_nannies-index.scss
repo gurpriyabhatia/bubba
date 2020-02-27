@@ -1,3 +1,9 @@
+.cards{
+  height: 60vh;
+  overflow-y: scroll;
+}
+
+
 .nannies-container {
   padding: 16px 32px;
 }
@@ -6,6 +12,10 @@ h1 {
   margin: 32px 0;
 }
 
+
+.cards{
+  height: 70vh;
+}
 
 .card-trip {
   overflow: hidden;

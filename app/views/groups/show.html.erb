@@ -16,7 +16,7 @@
 <h2>Find the participants of the <strong><%= @group.name %></strong></h2>
 <div class="col-4 d-flex align-items-center justify-content-between">
   <div class="row">
-      <% @users.first(5).each do |user| %>
+      <% @users.first(6).each do |user| %>
         <div class="card-product">
             <div class="d-flex align-content-start flex-wrap">
             <%= cl_image_tag user.photo %>

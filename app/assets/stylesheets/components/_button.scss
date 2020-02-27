@@ -10,3 +10,16 @@
   background: $bubba2;
   color: $bubba1;
 }
+
+.btn-flat-small-fix {
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: $bubba5;
+  transition: background 0.3s ease;
+}
+
+.btn-flat-small-fix:hover {
+  background: $bubba2;
+  color: $bubba1;
+}

@@ -10,9 +10,8 @@ class Event < ApplicationRecord
 
   # TODO: Method for when a user books an event??
   # def add_attendee
-  #   return if availability.zero?
-
-  #   new_availability = self.availability -= 1
-  #   update(availability: new_availability)
+  #   return if (total_spaces - spaces_booked).zero?
+  #   puts spaces_booked.class
+  #   spaces_booked = spaces_booked + 1
   # end
 end

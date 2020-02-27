@@ -6,7 +6,7 @@ class EventsController < ApplicationController
     if (params[:group_id])
       @group = Group.find(params[:group_id])
     end
-    @events = Event.all
+    @events = Event.order(:date)
   end
 
   def show

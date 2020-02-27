@@ -1,28 +1,38 @@
-<h1>Events!</h1>
+<div class="container">
 
-<% if @group %>
 
-  <% @group.events.each do |event| %>
-  <div class="card-trip">
-    <div class="card-trip-infos">
-     <h6><%= link_to event.name, event_path(event) %></h3>
-     <p><%= event.description %></p>
+
+  <% if @group %>
+
+  <h2><%= @group.name %> Events!</h2>
+
+    <% @group.events.order(:date).each do |event| %>
+    <div class="card-product">
+      <div class="card-product-infos">
+        <h6><%= event.name %></h6>
+        <p>Date: <%= event.date.strftime("%d/%m/%y") %></p>
+        <p><%= event.description %></p>
+        <%= link_to "View event", event_path(event), :class => "btn-flat-small" %>
+      </div>
     </div>
-  </div>
+    <% end %>
+
+  <% else %>
+
+  <h1>Events!</h1>
+
+    <% @events.each do |event| %>
+      <div class="card-product">
+        <div class="card-product-infos">
+          <h6><%= event.name %></h6>
+          <p>Date: <%= event.date.strftime("%d/%m/%y") %></p>
+          <p><%= event.description %></p>
+          <%= link_to "View event", event_path(event), :class => "btn-flat-small" %>
+        </div>
+      </div>
+    <% end %>
+
   <% end %>
 
-<% else %>
 
-  <% @events.each do |event| %>
-  <div class="card-trip">
-    <div class="card-trip-infos">
-     <h6><%= link_to event.name, event_path(event) %></h3>
-     <p><%= event.description %></p>
-    </div>
-  </div>
-
-<% end %>
-
-
-
-<% end %>
+</div>

@@ -10,3 +10,20 @@
   background: $bubba2;
   color: $bubba1;
 }
+
+.btn-flat-small {
+  text-decoration: none;
+  font-size: 12px;
+  color: white;
+  padding: 4px 24px;
+  border-radius: 6px;
+  background: $bubba5;
+  // transition: background 0.3s ease;
+}
+
+.btn-flat-small:hover {
+  text-decoration: none;
+  background: $bubba2;
+  color: white;
+  transition-duration: 0s;
+}

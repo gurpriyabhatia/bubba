@@ -1,11 +1,28 @@
 <h1>Events!</h1>
 
-<% @events.each do |event| %>
-<div class="card-trip">
-  <div class="card-trip-infos">
-   <h6><%= link_to event.name, event_path(event) %></h3>
-   <p><%= event.description %></p>
+<% if @group %>
+
+  <% @group.events.each do |event| %>
+  <div class="card-trip">
+    <div class="card-trip-infos">
+     <h6><%= link_to event.name, event_path(event) %></h3>
+     <p><%= event.description %></p>
+    </div>
   </div>
-</div>
+  <% end %>
+
+<% else %>
+
+  <% @events.each do |event| %>
+  <div class="card-trip">
+    <div class="card-trip-infos">
+     <h6><%= link_to event.name, event_path(event) %></h3>
+     <p><%= event.description %></p>
+    </div>
+  </div>
+
+<% end %>
+
+
 
 <% end %>

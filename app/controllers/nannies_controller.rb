@@ -1,7 +1,10 @@
 class NanniesController < ApplicationController
   def index
     @nannies = Nanny.all
-
+    @markers = @nannies.map do |nanny|
+    { lat: nanny.latitude, lng: nanny.longitude }
+   end
+   @imgs = @nannies.map { |nanny| [nanny.id, nanny.user.photo] }
   end
 
   def show

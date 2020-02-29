@@ -1,2 +1,37 @@
-<h1>Groups#show</h1>
-<p>Find me in app/views/groups/show.html.erb</p>
+<h1>Discover our Group</h1>
+
+<div class="container">
+        <div class="row">
+          <div class="col-8 d-flex align-items-center">
+            <%= @group.name %>
+            <%= @group.description %>
+            <%= @group.address %>
+            <%= @group.location %>
+          </div>
+          <div class="col-4 ">
+            <a class="btn btn-flat" href=<%= groups_path %>>Join this Group</a>
+          </div>
+        </div>
+
+    <h2>Find the participants of the <strong><%= @group.name %></strong>:</h2>
+      <div class="col-12">
+          <div class="cards">
+            <% @users.first(6).each do |user| %>
+              <div class="card-product-small ">
+                  <div class="d-flex flex-column justify-content-center align-items-center">
+                    <%= cl_image_tag @group.group_picture.key %>
+                    <a class="btn btn-flat-small-fix" href="#"><%= user.full_name %></a>
+                    </div>
+                  <div class="card-product-infos-small">
+                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, ...</p>
+                  </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+  </div>
+</div>
+
+
+
+

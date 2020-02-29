@@ -20,15 +20,17 @@
             ></div>
         </div>
 
-      <% @groups.each do |group| %>
-        <div class="card-product">
-            <%= cl_image_tag group.group_picture.key %>
-            <div class="card-product-infos">
-              <h2><%= group.name %></h2>
-              <p><%= group.description %></p>
-              <p><%= group.address %></p>
-            </div>
-        </div>
-      <% end %>
+      <div class="cards">
+        <% @groups.each do |group| %>
+          <div class="card-product">
+              <%= cl_image_tag group.group_picture.key %>
+              <div class="card-product-infos">
+                <h2><%= link_to group.name, group_path(group)  %></h2>
+                <p><%= group.description %></p>
+                <p><%= group.address %></p>
+              </div>
+          </div>
+        <% end %>
+      </div>
     </div>
 </div>

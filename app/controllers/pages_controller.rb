@@ -3,4 +3,13 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def dashboard
+    @event_bookings = current_user.event_bookings
+
+    if params["event_booking"].present?
+      @current_booking_id = params["event_booking"]
+      @current_booking = EventBooking.find(@current_booking_id)
+    end
+  end
 end

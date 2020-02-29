@@ -1,0 +1,14 @@
+</br>
+<div class="event-show-container">
+<h2><i class="fad fa-badge-check"></i>Confirmed!</h2>
+  <h4><%= @event_booking.event.name %></h4>
+  </br>
+
+  <h5>Description</h5>
+  <p><%= @event_booking.event.description %></p>
+
+  <h5>Details</h5>
+  <p><i class="far fa-calendar"></i> <%= @event_booking.event.date.strftime("%d/%m/%y") %></p>
+  <p><i class="far fa-clock"></i> <%= @event_booking.event.time.strftime("%I:%M%P") %></p>
+  <p><i class="fas fa-map-marker-alt"></i> <%= @event_booking.event.address %></p>
+</div>

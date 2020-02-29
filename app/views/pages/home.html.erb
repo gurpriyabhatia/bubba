@@ -1,2 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+  <div class="container mt-3">
+    <h3>Enter your adress...</h3>
+    <div class="search-box-home mb-3">
+    <input class="mapboxgl-ctrl-geocoder--input mb-3 mt-3" type="text" placeholder="Search" aria-label="Search" id="group_address">
+    </div>
+    <a class="btn btn-flat align-self-end" href="#">Use my current location </a>
+  </div>
+
+
+<div class="container mt-5">
+  <h3>What are you looking for?</h3>
+    <div class="text-center d-flex flex-column align-items-center">
+        <%= link_to "Groups", groups_path, :class => "btn btn-flat mb-3", :style => "width:250px;" %>
+        <%= link_to "Events", events_path, :class => "btn btn-flat mb-3", :style => "width:250px;" %>
+        <%= link_to "BabySitter", nannies_path, :class => "btn btn-flat mb-3", :style => "width:250px;" %>
+        <%= link_to "Advice", groups_path, :class => "btn btn-flat mb-3", :style => "width:250px;" %>
+    </div>
+</div>
+

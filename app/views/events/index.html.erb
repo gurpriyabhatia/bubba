@@ -4,7 +4,7 @@
 
   <% if @group %>
 
-  <h2><%= @group.name %> Events!</h2>
+  <h2 class="events-h2"><%= @group.name %> Events!</h2>
 
     <% @group.events.order(:date).each do |event| %>
     <div class="card-product">
@@ -19,7 +19,7 @@
 
   <% else %>
 
-  <h1>Events!</h1>
+  <h1 class="events-h2">Events!</h1>
 
     <% @events.each do |event| %>
       <div class="card-product">

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :nannies do
+    resources :nanny_bookings
   end
   # Note(arthur): these are wrong but let's change when we do the page (better to learn)
   resources :event_bookings, only: [:destroy, :index, :show]

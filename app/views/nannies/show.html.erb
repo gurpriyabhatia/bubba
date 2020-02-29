@@ -1,2 +1,45 @@
-<h1>Nannies#show</h1>
-<p>Find me in app/views/nannies/show.html.erb</p>
+<div class = "container">
+
+    <div class="col-sm-4 nanny-profile-card">
+      <div class="shadow-sm p-3 mb-5 mt-5 bg-white ">
+
+            <% if @nanny.user.photo.attached? %>
+              <%=  cl_image_tag("#{@nanny.user.photo.key}", :width=>279, :height=>279, :crop => :thumb, :gravity => :face)%>
+            <% else %>
+              <!-- <img src="https://source.unsplash.com/random" alt=""> -->
+            <% end %>
+
+        <div class="card p-3 mt-3 mb-3 border border-white">
+          <p class="text-center"><strong>Price per hour: </strong>£<%= @nanny.price_per_hour %></p>
+           <p class="text-center" class = "font-italic" ><%= @nanny.bio %>.</p>
+          <div class="col text-center">
+            <!-- <p><strong>< / %= link_to "Book Now", new_nanny_booking_path(@nanny), :class => "btn btn-flat" %></strong></p> -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8 mt-3">
+        <h4> Hi, I'm <%= @nanny.name %></h4>
+
+
+        <i class="fas fa-highlighter" style="color:#EBEBEB"></i>
+
+        <br>
+        <p><i class="fas fa-home" style="color:#484848">&nbsp;</i><%= @nanny.address %></p>
+        <p><i class="fas fa-envelope-open-text" style="color:#484848">&nbsp;</i><%= @nanny.user.email %></p>
+        <p><i class="fas fa-mobile-alt"style="color:#484848">&nbsp;&nbsp;</i><%= @nanny.mobile_number %></p>
+        <br>
+       <!--  <h3>Reviews</h3>
+        < / % if @nanny.reviews.empty? %>
+          <p>< / %= @nanny.name %> has no reviews yet</p>
+        < / % else %>
+          <ul>
+            < / % @nanny.reviews.each do |review| %>
+            <li>< / %= review.content %> | < / %= '*' * review.stars %></li>
+            < / % end %>
+          </ul>
+        < / % end %> -->
+    </div>
+
+</div>

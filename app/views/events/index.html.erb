@@ -4,7 +4,9 @@
 
   <% if @group %>
 
-  <h2 class="events-h2"><%= @group.name %> Events!</h2>
+  <h2 class="events-h2"><%= @group.name %> Events</h2>
+
+  <%= link_to "Back to #{@group.name}", group_path(@group), class: "events-nav-link"%>
 
     <% @group.events.order(:date).each do |event| %>
     <div class="card-product">
@@ -12,14 +14,14 @@
         <h6><%= event.name %></h6>
         <p>Date: <%= event.date.strftime("%d/%m/%y") %></p>
         <p><%= event.description %></p>
-        <%= link_to "View event", event_path(event), :class => "btn-flat-small" %>
+        <%= link_to "View event", event_path(event), class: "btn-flat-small" %>
       </div>
     </div>
     <% end %>
 
   <% else %>
 
-  <h1 class="events-h2">Events!</h1>
+  <h1 class="events-h2">Events</h1>
 
     <% @events.each do |event| %>
       <div class="card-product">

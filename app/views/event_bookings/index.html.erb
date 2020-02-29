@@ -1,1 +1,5 @@
-index.html.erb
+<h1> All bookings </h1>
+
+<% @event_bookings.each do |e| %>
+  <%= e.event.name %>
+<% end %>

@@ -1,7 +1,7 @@
 class EventBookingsController < ApplicationController
 
   def index
-    @event_booking = EventBooking.all
+    @event_bookings = EventBooking.all
   end
 
   def show

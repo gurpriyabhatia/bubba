@@ -1,12 +1,12 @@
 import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
-const mapElement = document.getElementById('map');
+const mapElement = document.getElementById('mapnannies');
 
 const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
-    container: 'map',
+    container: 'mapnannies',
     style: 'mapbox://styles/mapbox/streets-v11'
   });
 };
@@ -17,10 +17,10 @@ const addMarkersToMap = (map, markers) => {
 
     const element = document.createElement('div');
     element.className = 'marker';
-    element.style.backgroundImage = `url('${marker.image_url}')`;
+    element.style.backgroundImage = `url('${marker.nannyimage_url}')`;
     element.style.backgroundSize = 'contain';
-    element.style.width = '45px';
-    element.style.height = '45px';
+    element.style.width = '30px';
+    element.style.height = '30px';
 
     new mapboxgl.Marker(element)
       .setLngLat([ marker.lng, marker.lat ])
@@ -32,10 +32,10 @@ const addMarkersToMap = (map, markers) => {
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  map.fitBounds(bounds, { padding: 15, maxZoom: 15 });
+  map.fitBounds(bounds, { padding: 25, maxZoom: 15 });
 };
 
-const initMapbox = () => {
+const initMapboxNannies = () => {
   if (mapElement) {
     const map = buildMap();
     const markers = JSON.parse(mapElement.dataset.markers);
@@ -47,5 +47,9 @@ const initMapbox = () => {
   }
 };
 
+setTimeout(function(){ document.querySelector(".mapboxgl-ctrl-geocoder--input").remove();
+ document.querySelector(".mapboxgl-ctrl-geocoder--icon-search").remove();    }, 50);
 
-export { initMapbox };
+
+
+export { initMapboxNannies };

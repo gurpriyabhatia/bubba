@@ -248,7 +248,7 @@ Nanny.create(
     user_id: user_1.id,
     name: Faker::Name.name,
     mobile_number: Faker::PhoneNumber.cell_phone,
-    address: 'E2 8DY',
+    address: 'Sturt St Hoxton, London N1 7QD',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
   )
@@ -258,7 +258,7 @@ Nanny.create(
     user_id: user_2.id,
     name: Faker::Name.name,
     mobile_number: Faker::PhoneNumber.cell_phone,
-    address: 'E2 8DY',
+    address: '7 Regan Way, Hoxton, London N1 6PH',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
   )
@@ -268,7 +268,7 @@ Nanny.create(
     user_id: user_3.id,
     name: Faker::Name.name,
     mobile_number: Faker::PhoneNumber.cell_phone,
-    address: 'E2 8DY',
+    address: 'Yorkton St, London E2 8N',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
   )
@@ -278,7 +278,7 @@ Nanny.create!(
     user_id: user_4.id,
     name: Faker::Name.name,
     mobile_number: Faker::PhoneNumber.cell_phone,
-    address: 'E2 8DY',
+    address: 'Graham Street Garden Islington, London',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
   )
@@ -288,7 +288,7 @@ Nanny.create!(
     user_id: user_5.id,
     name: Faker::Name.name,
     mobile_number: Faker::PhoneNumber.cell_phone,
-    address: 'E2 8DY',
+    address: 'Kingsland Street, London E2 8DY',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
   )
@@ -298,7 +298,7 @@ Nanny.create!(
     user_id: user_6.id,
     name: Faker::Name.name,
     mobile_number: Faker::PhoneNumber.cell_phone,
-    address: 'E2 8DY',
+    address: 'King Square, London EC1V 8DD',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
   )
@@ -308,7 +308,7 @@ Nanny.create!(
     user_id: user_7.id,
     name: Faker::Name.name,
     mobile_number: Faker::PhoneNumber.cell_phone,
-    address: 'E2 8DY',
+    address: '188 New N Rd, Hoxton, London N1 5EP',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
   )
@@ -318,7 +318,7 @@ Nanny.create!(
     user_id: user_8.id,
     name: Faker::Name.name,
     mobile_number: Faker::PhoneNumber.cell_phone,
-    address: 'E2 8DY',
+    address: '50 Pearson St, London E2 8EL',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
   )

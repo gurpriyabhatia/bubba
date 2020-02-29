@@ -15,5 +15,6 @@ Rails.application.routes.draw do
 
   resources :events, only: [:index, :show] do
     resources :event_bookings, only: [:new, :create]
+    # get '/confirmation' to: "pages#dashboard", as: :dashboard
   end
 end

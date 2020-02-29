@@ -1,0 +1,25 @@
+
+
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="current_booking-tab" data-toggle="tab" href="#current_booking" role="tab" aria-controls="current_booking" aria-selected="true">Current</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="All_bookings-tab" data-toggle="tab" href="#All_bookings" role="tab" aria-controls="All_bookings" aria-selected="false">All_bookings</a>
+  </li>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="current_booking" role="tabpanel" aria-labelledby="current_booking-tab">
+     <% if @current_booking.present?%>
+    <p> YAY! </br>
+     Your booking for <%= @current_booking.event.name %> is now confirmed!</p>
+<% end %>
+  </div>
+  <div class="tab-pane fade" id="All_bookings" role="tabpanel" aria-labelledby="All_bookings-tab">
+    <%= @event_bookings %>
+  </div>
+</div>
+
+

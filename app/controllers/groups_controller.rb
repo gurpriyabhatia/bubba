@@ -12,6 +12,8 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @events = Event.all
+    @users = User.all
   end
 
   def new

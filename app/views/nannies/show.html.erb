@@ -13,7 +13,7 @@
           <p class="text-center"><strong>Price per hour: </strong>£<%= @nanny.price_per_hour %></p>
            <p class="text-center" class = "font-italic" ><%= @nanny.bio %>.</p>
           <div class="col text-center">
-            <!-- <p><strong>< / %= link_to "Book Now", new_nanny_booking_path(@nanny), :class => "btn btn-flat" %></strong></p> -->
+            <p><strong><%= link_to "Book Now", new_nanny_nanny_booking_path(@nanny, @nanny_booking), :class => "btn btn-flat" %></strong></p>
           </div>
 
         </div>

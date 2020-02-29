@@ -1,20 +1,40 @@
-</br>
-<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="pills-current_booking-tab" data-toggle="pill" href="#pills-current_booking" role="tab" aria-controls="pills-current_booking" aria-selected="true">current_booking</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="pills-all_bookings-tab" data-toggle="pill" href="#pills-all_bookings" role="tab" aria-controls="pills-all_bookings" aria-selected="false">all_bookings</a>
-  </li>
-</ul>
+<div class="container">
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <!-- <li class="nav-item">
+        <a class="nav-link" id="pills-conversations-tab" data-toggle="pill" href="#pills-conversations" role="tab" aria-controls="pills-conversations" aria-selected="false">Conversations</a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link active" id="pills-bookings-tab" data-toggle="pill" href="#pills-bookings" role="tab" aria-controls="pills-bookings" aria-selected="true">Bookings</a>
+      </li>
+    <li class="nav-item">
+      <a class="nav-link" id="pills-past_bookings-tab" data-toggle="pill" href="#pills-past_bookings" role="tab" aria-controls="pills-past_bookings" aria-selected="false">Past booking</a>
+    </li>
+  </ul>
+</div>
 
-<div class="tab-content" id="pills-tabContent">
-  <div class="tab-pane fade show active" id="pills-current_booking" role="tabpanel" aria-labelledby="pills-current_booking-tab">
-    <% if @current_booking.present?%>
-      <p> YAY! </br> Your booking for <%= @current_booking.event.name %> is now confirmed!</p>
-    <% end %>
+<div class="container">
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-bookings" role="tabpanel" aria-labelledby="pills-bookings-tab">
+      <ul>
+        <% @events.first(3).each do |event| %>
+          <div class="card-product">
+            <div class="card-product-infos">
+            <p class="event"><%= event.date.strftime("%d/%m/%y") %></p>
+            <p><%= event.description %></p>
+          </div>
+              <div class="btn btn-flat-small d-flex justify-content-end mr-2 ml-2 mt-2 mb-2" href="">Cancel this booking</div>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+
+
+  <div class="tab-pane fade" id="pills-past_bookings" role="tabpanel" aria-labelledby="pills-past_bookings-tab">
+      <% @nannies.first(4).each do |nanny| %>
+      <p><%= nanny.name %></p>
+      <a class="btn btn-flat" href="">Make a review</a>
+      <% end %>
   </div>
-  <div class="tab-pane fade" id="pills-all_bookings" role="tabpanel" aria-labelledby="pills-all_bookings-tab">
-    <%= @event_bookings %>
-  </div>
+</div>
+</div>
 </div>

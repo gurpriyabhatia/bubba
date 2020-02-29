@@ -12,7 +12,7 @@
     <div class="card-product">
       <div class="card-product-infos">
         <h6><%= event.name %></h6>
-        <p>Date: <%= event.date.strftime("%d/%m/%y") %></p>
+        <p><i class="far fa-calendar"></i> <%= event.date.strftime("%d/%m/%y") %></p>
         <p><%= event.description %></p>
         <%= link_to "View event", event_path(event), class: "btn-flat-small" %>
       </div>
@@ -27,7 +27,7 @@
       <div class="card-product">
         <div class="card-product-infos">
           <h6><%= event.name %></h6>
-          <p>Date: <%= event.date.strftime("%d/%m/%y") %></p>
+          <p><i class="far fa-calendar"></i> <%= event.date.strftime("%d/%m/%y") %></p>
           <p><%= event.description %></p>
           <%= link_to "View event", event_path(event), :class => "btn-flat-small" %>
         </div>

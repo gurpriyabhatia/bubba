@@ -1,4 +1,13 @@
 class EventBookingsController < ApplicationController
+
+  def index
+    @event_booking = EventBooking.all
+  end
+
+  def show
+    @event_booking = EventBooking.find(params[:id])
+  end
+
   def new
     @event_booking = EventBooking.new
     @event = Event.find(params[:event_id])
@@ -8,7 +17,8 @@ class EventBookingsController < ApplicationController
     @event_booking = EventBooking.new(event_booking_params)
     @event_booking.user = current_user
     if @event_booking.save!
-      redirect_to dashboard_path(event_booking:@event_booking.id)
+      redirect_to event_booking_path(@event_booking)
+      # (event_booking:@event_booking.id)
     else
     render :new
     end

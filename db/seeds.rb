@@ -147,50 +147,94 @@ User.create(
   password: "hellohello")
 puts "Fix created"
 
-user_1 = User.create(
+user_1 = User.new(
   email: Faker::Internet.email,
   full_name: Faker::Name.name,
   bio: Faker::Quote.most_interesting_man_in_the_world,
   mobile_number: Faker::PhoneNumber.cell_phone,
   address: 'E2 8DY',
   password: "123456")
+user_1.photo.attach(io: URI.open('https://source.unsplash.com/random'), filename: 'nes.png', content_type: 'image/png')
+user_1.save!
 puts "User created"
 
 
-user_2 = User.create(
+user_2 = User.new(
   email: Faker::Internet.email,
   full_name: Faker::Name.name,
   bio: Faker::Quote.most_interesting_man_in_the_world,
   mobile_number: Faker::PhoneNumber.cell_phone,
   address: 'SW6 4JA',
   password: "123456")
+user_2.photo.attach(io: URI.open('https://source.unsplash.com/random'), filename: 'nes.png', content_type: 'image/png')
+user_2.save!
 puts "User created"
 
-user_3 = User.create(
+user_3 = User.new(
   email: Faker::Internet.email,
   full_name: Faker::Name.name,
   bio: Faker::Quote.most_interesting_man_in_the_world,
   mobile_number: Faker::PhoneNumber.cell_phone,
   address: 'W6 8AZ',
   password: "123456")
+user_3.photo.attach(io: URI.open('https://source.unsplash.com/random'), filename: 'nes.png', content_type: 'image/png')
+user_3.save!
 puts "User created"
 
-user_4 = User.create(
+user_4 = User.new(
   email: Faker::Internet.email,
   full_name: Faker::Name.name,
   bio: Faker::Quote.most_interesting_man_in_the_world,
   mobile_number: Faker::PhoneNumber.cell_phone,
   address: 'N1C 4QL',
   password: "123456")
+user_4.photo.attach(io: URI.open('https://source.unsplash.com/random'), filename: 'nes.png', content_type: 'image/png')
+user_4.save!
 puts "User created"
 
-user_5 = User.create(
+user_5 = User.new(
   email: Faker::Internet.email,
   full_name: Faker::Name.name,
   bio: Faker::Quote.most_interesting_man_in_the_world,
   mobile_number: Faker::PhoneNumber.cell_phone,
   address: 'W12 8QE',
   password: "123456")
+user_5.photo.attach(io: URI.open('https://source.unsplash.com/random'), filename: 'nes.png', content_type: 'image/png')
+user_5.save!
+puts "User created"
+
+user_6 = User.new(
+  email: Faker::Internet.email,
+  full_name: Faker::Name.name,
+  bio: Faker::Quote.most_interesting_man_in_the_world,
+  mobile_number: Faker::PhoneNumber.cell_phone,
+  address: 'W12 8QE',
+  password: "123456")
+user_6.photo.attach(io: URI.open('https://source.unsplash.com/random'), filename: 'nes.png', content_type: 'image/png')
+user_6.save!
+puts "User created"
+
+user_7 = User.new(
+  email: Faker::Internet.email,
+  full_name: Faker::Name.name,
+  bio: Faker::Quote.most_interesting_man_in_the_world,
+  mobile_number: Faker::PhoneNumber.cell_phone,
+  address: 'W12 8QE',
+  password: "123456")
+user_7.photo.attach(io: URI.open('https://source.unsplash.com/random'), filename: 'nes.png', content_type: 'image/png')
+user_7.save!
+puts "User created"
+
+
+user_8 = User.new(
+  email: Faker::Internet.email,
+  full_name: Faker::Name.name,
+  bio: Faker::Quote.most_interesting_man_in_the_world,
+  mobile_number: Faker::PhoneNumber.cell_phone,
+  address: 'W12 8QE',
+  password: "123456")
+user_8.photo.attach(io: URI.open('https://source.unsplash.com/random'), filename: 'nes.png', content_type: 'image/png')
+user_8.save!
 puts "User created"
 
 puts 'Destroying nannies...'
@@ -242,6 +286,36 @@ puts "Nanny created"
 
 Nanny.create!(
     user_id: user_5.id,
+    name: Faker::Name.name,
+    mobile_number: Faker::PhoneNumber.cell_phone,
+    address: 'E2 8DY',
+    price_per_hour: Faker::Number.within(range: 5..50),
+    bio: Faker::Quote.most_interesting_man_in_the_world,
+  )
+puts "Nanny created"
+
+Nanny.create!(
+    user_id: user_6.id,
+    name: Faker::Name.name,
+    mobile_number: Faker::PhoneNumber.cell_phone,
+    address: 'E2 8DY',
+    price_per_hour: Faker::Number.within(range: 5..50),
+    bio: Faker::Quote.most_interesting_man_in_the_world,
+  )
+puts "Nanny created"
+
+Nanny.create!(
+    user_id: user_7.id,
+    name: Faker::Name.name,
+    mobile_number: Faker::PhoneNumber.cell_phone,
+    address: 'E2 8DY',
+    price_per_hour: Faker::Number.within(range: 5..50),
+    bio: Faker::Quote.most_interesting_man_in_the_world,
+  )
+puts "Nanny created"
+
+Nanny.create!(
+    user_id: user_8.id,
     name: Faker::Name.name,
     mobile_number: Faker::PhoneNumber.cell_phone,
     address: 'E2 8DY',

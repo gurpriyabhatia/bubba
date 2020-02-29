@@ -27,19 +27,16 @@
       <!-- <div class = "row"> -->
 
         <% @nannies.each do |nanny| %>
-          <div>
-            <div class="card-trip">
+            <div class="card-product">
               <% if nanny.user.photo.attached? %>
-                <%= image_tag nanny.user.photo, alt: "Picture of the nanny" %>
+
+                <%= cl_image_tag(nanny.user.photo.key, :width=>300, :height=>300, :crop=>"scale") %>
               <% end %>
-              <div class="card-trip-infos">
-                <div>
+              <div class="card-product-infos">
                   <h2><%= link_to nanny.name, nanny_path(nanny), :class => "link"%> </h2>
                    <p> <strong> £<%= nanny.price_per_hour%> per hour </strong></p>
-                </div>
               </div>
             </div>
-          </div>
         <% end %>
       <!-- </div> -->
     </div>

@@ -3,7 +3,10 @@ class EventsController < ApplicationController
   before_action :set_group, only: [:create, :update]
 
   def index
-    @events = Event.all
+    if (params[:group_id])
+      @group = Group.find(params[:group_id])
+    end
+    @events = Event.order(:date)
   end
 
   def show

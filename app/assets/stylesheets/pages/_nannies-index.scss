@@ -1,9 +1,22 @@
-.nannies-container {
-  padding: 16px 32px;
+.cards{
+  height: 60vh;
+  overflow-y: scroll;
 }
+
+
+// .nannies-container {
+//   padding: 16px 32px;
+// }
 
 h1 {
   margin: 32px 0;
+}
+
+
+.nanny-avatar-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -75,7 +88,11 @@ h1 {
 }
 
 .nanny-profile-card {
-  border-radius: 8px !important;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-product {

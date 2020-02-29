@@ -1,33 +1,39 @@
-<h1><%= @event.name %></h1>
-<h5>Brought to you by the <%= @event.group.name %> group</h5>
-<p><%= @event.description %></p>
+<div class="container">
 
-<ul>
-  <li>Date: <%= @event.date.strftime("%d/%m/%y") %></li>
-  <li>Time: <%= @event.time.strftime("%I:%M%P") %></li>
-    <% if @event.price == 0 %>
-      <li>Price: Free</li>
-    <% else %>
-      <li>Price: £<%= @event.price %></li>
-    <% end %>
+  <div class="event-show-container">
+
+    <%= link_to "Back to events", group_events_path(@event.group), class: "events-show-nav-link" %>
+
+    <h1><%= @event.name %></h1>
+
+    <p style="font-style: italic;">Brought to you by the <%= @event.group.name %> group</p>
 
 
-    <% if @event.total_spaces == nil %>
-      <li>Availability: There is no limit on this event!</li>
-    <% else %>
-      <li>Availability: <%= (@event.total_spaces - @event.spaces_booked) %> spaces left</li>
-    <% end %>
 
-    <li>Address: <%= @event.address %></li>
-</ul>
+    <h5>Description</h5>
+    <p><%= @event.description %></p>
 
-<div> "Number of Attendees" </div>
-<!-- @event.event_bookings.count
-form_for EventBooking.new -->
+    <h5>Details</h5>
+    <p><i class="far fa-calendar"></i> <%= @event.date.strftime("%d/%m/%y") %></p>
+    <p><i class="far fa-clock"></i> <%= @event.time.strftime("%I:%M%P") %></p>
+      <% if @event.price == 0 %>
+        <p><i class="fas fa-coins"></i></i> Free</p>
+      <% else %>
+        <p><i class="fas fa-coins"></i></i> £<%= @event.price %></p>
+      <% end %>
+      <% if @event.total_spaces == nil %>
+        <p><i class="fas fa-users"></i> There is no limit on this event!</p>
+      <% else %>
+        <p><i class="fas fa-users"></i> <%= (@event.total_spaces - @event.spaces_booked) %> spaces left</p>
+      <% end %>
+      <p><i class="fas fa-map-marker-alt"></i> <%= @event.address %></p>
 
 <%= simple_form_for [@event, @event_booking] do |f| %>
   <%= f.input :event_id, as: :hidden, input_html: { value: @event.id } %>
   <%= f.input :user_id, as: :hidden, input_html: { value: current_user } %>
   <%= f.submit "Book now!", class: "btn-flat" %>
 <% end %>
+  </div>
 
+
+</div>

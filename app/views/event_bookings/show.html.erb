@@ -1,6 +1,11 @@
+
 </br>
 <div class="event-show-container">
-<h2><i class="fad fa-badge-check"></i>Confirmed!</h2>
+<%= link_to "Back to events", group_events_path(@event_booking.event.group), class: "events-show-nav-link" %>
+</br>
+</br>
+<h3><i class="far fa-check-circle" style="color:green;"></i>&nbsp; Booking Confirmed!</h3>
+  </br>
   <h4><%= @event_booking.event.name %></h4>
   </br>
 
@@ -8,6 +13,7 @@
   <p><%= @event_booking.event.description %></p>
 
   <h5>Details</h5>
+  <p><i class="fas fa-baby"></i> <%= @event_booking.spaces_booked %></p>
   <p><i class="far fa-calendar"></i> <%= @event_booking.event.date.strftime("%d/%m/%y") %></p>
   <p><i class="far fa-clock"></i> <%= @event_booking.event.time.strftime("%I:%M%P") %></p>
   <p><i class="fas fa-map-marker-alt"></i> <%= @event_booking.event.address %></p>

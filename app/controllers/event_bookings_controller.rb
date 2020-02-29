@@ -6,6 +6,7 @@ class EventBookingsController < ApplicationController
 
   def show
     @event_booking = EventBooking.find(params[:id])
+
   end
 
   def new
@@ -27,6 +28,6 @@ class EventBookingsController < ApplicationController
   private
 
   def event_booking_params
-    params.require(:event_booking).permit(:event_id, :user_id)
+    params.require(:event_booking).permit(:event_id, :user_id, :spaces_booked)
   end
 end

@@ -1,1 +1,9 @@
-<h1>Nanny Booking Form</h1>
+<div class="background-booking">
+  <div class="container">
+    <br>
+    <h4>Create a new booking with <strong><%= @nanny.name %></strong></h4>
+    <br>
+
+    <%= render 'form', nanny_booking: @nanny_booking %>
+  </div>
+</div>

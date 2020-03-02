@@ -1,8 +1,14 @@
 
 </br>
 <div class="event-show-container">
-<%= link_to "Back to events", group_events_path(@event_booking.event.group), class: "events-show-nav-link" %>
-</br>
+  <div class="d-flex flex-row justify-content-between my-flex-container">
+     <div class="p-2 my-flex-item">
+        <%= link_to "Back to events", group_events_path(@event_booking.event.group), class: "events-show-nav-link" %>
+     </div>
+     <div class="p-2 my-flex-item">
+        <%= link_to "All bookings", event_bookings_path, class: "events-show-nav-link" %>
+     </div>
+  </div>
 </br>
 <h3><i class="far fa-check-circle" style="color:green;"></i>&nbsp; Booking Confirmed!</h3>
   </br>

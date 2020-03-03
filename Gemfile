@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 ruby '2.6.3'
 
 gem 'faker'
+gem 'simple_form'
+
 
 gem 'bootsnap', require: false
 gem 'devise'
@@ -32,5 +34,5 @@ group :development, :test do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'dotenv-rails'
+  # gem 'dotenv-rails'
 end

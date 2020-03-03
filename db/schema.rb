@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_29_153111) do
+ActiveRecord::Schema.define(version: 2020_03_03_182043) 
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_02_29_153111) do
     t.bigint "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "spaces_booked"
     t.index ["event_id"], name: "index_event_bookings_on_event_id"
     t.index ["user_id"], name: "index_event_bookings_on_user_id"
   end
@@ -66,6 +67,8 @@ ActiveRecord::Schema.define(version: 2020_02_29_153111) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "spaces_booked", default: 0
+    t.float "latitude"
+    t.float "longitude"
     t.index ["group_id"], name: "index_events_on_group_id"
   end
 
@@ -95,6 +98,23 @@ ActiveRecord::Schema.define(version: 2020_02_29_153111) do
     t.index ["user_id"], name: "index_nannies_on_user_id"
   end
 
+  create_table "nanny_bookings", force: :cascade do |t|
+    t.datetime "date"
+    t.integer "duration"
+    t.integer "total_price"
+    t.string "address"
+    t.string "special_instructions"
+    t.integer "number_of_children"
+    t.float "latitude"
+    t.float "longitude"
+    t.bigint "user_id"
+    t.bigint "nanny_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["nanny_id"], name: "index_nanny_bookings_on_nanny_id"
+    t.index ["user_id"], name: "index_nanny_bookings_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -120,4 +140,6 @@ ActiveRecord::Schema.define(version: 2020_02_29_153111) do
   add_foreign_key "events", "groups"
   add_foreign_key "nannies", "users"
   add_foreign_key "users", "groups"
+  add_foreign_key "nanny_bookings", "nannies"
+  add_foreign_key "nanny_bookings", "users"
 end

@@ -28,6 +28,14 @@
       <% end %>
       <p><i class="fas fa-map-marker-alt"></i> <%= @event.address %></p>
 
+<%= simple_form_for [@event, @event_booking] do |f| %>
+  <%= f.input :event_id, as: :hidden, input_html: { value: @event.id } %>
+  <%= f.input :user_id, as: :hidden, input_html: { value: current_user } %>
+  <%= f.label :spaces_booked, 'No. of Attendees' %>
+  <%= f.input :spaces_booked, :collection => 1..12, label: false%>
+
+  <%= f.submit "Book now!", class: "btn-flat" %>
+<% end %>
   </div>
 
 

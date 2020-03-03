@@ -1,7 +1,7 @@
 <div class="container">
   <div class="group-show-container">
 
-    <% unless current_user.group.nil? || current_user.group.id != @group.id %>
+    <% unless current_user.group_id.nil? || current_user.group_id != @group.id %>
 
       <%= render 'member_show.html.erb' %>
 

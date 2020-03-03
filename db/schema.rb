@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2020_03_03_182043) 
 
   # These are extensions that must be enabled in order to support this database
@@ -128,7 +127,9 @@ ActiveRecord::Schema.define(version: 2020_03_03_182043)
     t.text "bio"
     t.string "mobile_number"
     t.string "address"
+    t.bigint "group_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["group_id"], name: "index_users_on_group_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -138,6 +139,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_182043)
   add_foreign_key "event_reviews", "events"
   add_foreign_key "events", "groups"
   add_foreign_key "nannies", "users"
+  add_foreign_key "users", "groups"
   add_foreign_key "nanny_bookings", "nannies"
   add_foreign_key "nanny_bookings", "users"
 end

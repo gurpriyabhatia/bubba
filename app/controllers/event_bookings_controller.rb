@@ -1,11 +1,17 @@
 class EventBookingsController < ApplicationController
 
   def index
-    @event_booking = EventBooking.all
+    @event_bookings = EventBooking.all
   end
 
   def show
     @event_booking = EventBooking.find(params[:id])
+   #  @nanniesmarkers = @nannies.map do |nanny|
+   #  { lat: nanny.latitude,
+   #    lng: nanny.longitude,
+   #    nannyimage_url: helpers.asset_url('bubba-pushchair.png') }
+   # end
+   # @imgs = @nannies.map { |nanny| [nanny.id, nanny.user.photo] }
   end
 
   def new
@@ -27,6 +33,6 @@ class EventBookingsController < ApplicationController
   private
 
   def event_booking_params
-    params.require(:event_booking).permit(:event_id, :user_id)
+    params.require(:event_booking).permit(:event_id, :user_id, :spaces_booked)
   end
 end

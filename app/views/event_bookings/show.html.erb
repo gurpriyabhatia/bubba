@@ -1,0 +1,26 @@
+
+</br>
+<div class="event-show-container">
+  <div class="d-flex flex-row justify-content-between my-flex-container">
+     <div class="p-2 my-flex-item">
+        <%= link_to "Back to events", group_events_path(@event_booking.event.group), class: "events-show-nav-link" %>
+     </div>
+     <div class="p-2 my-flex-item">
+        <%= link_to "All bookings", event_bookings_path, class: "events-show-nav-link" %>
+     </div>
+  </div>
+</br>
+<h3><i class="far fa-check-circle" style="color:green;"></i>&nbsp; Booking Confirmed!</h3>
+  </br>
+  <h4><%= @event_booking.event.name %></h4>
+  </br>
+
+  <h5>Description</h5>
+  <p><%= @event_booking.event.description %></p>
+
+  <h5>Details</h5>
+  <p><i class="fas fa-baby"></i> <%= @event_booking.spaces_booked %></p>
+  <p><i class="far fa-calendar"></i> <%= @event_booking.event.date.strftime("%d/%m/%y") %></p>
+  <p><i class="far fa-clock"></i> <%= @event_booking.event.time.strftime("%I:%M%P") %></p>
+  <p><i class="fas fa-map-marker-alt"></i> <%= @event_booking.event.address %></p>
+</div>

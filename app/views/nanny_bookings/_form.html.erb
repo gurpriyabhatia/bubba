@@ -1,0 +1,25 @@
+
+  <div class= "row align-items-center justify-content-center">
+
+
+
+    <div class= "col-sm-4">
+      <%= simple_form_for [@nanny, @nanny_booking] do |f| %>
+        <%= f.input :user_id, as: :hidden, input_html: { value: @nanny.id } %>
+        <%= f.input :date, as: :date%>
+        <%= f.input :duration %>
+        <%= f.input :address %>
+        <%= f.input :number_of_children %>
+        <%= f.input :special_instructions %>
+<br>
+
+    <div class= "text-center">
+      <%= f.submit "Confirm your booking", class: "btn-flat"  %>
+      <% end %>
+    </div>
+    </div>
+
+
+
+    </div>
+  </div>

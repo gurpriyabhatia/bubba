@@ -1,10 +1,10 @@
 class NannyBookingsController < ApplicationController
-   def index
-    @event_booking = EventBooking.all
+  def index
+    @nanny_bookings = NannyBooking.all
   end
 
   def show
-    @event_booking = EventBooking.find(params[:id])
+    @nanny_booking = NannyBooking.find(params[:id])
   end
 
   def new
@@ -13,19 +13,22 @@ class NannyBookingsController < ApplicationController
   end
 
   def create
-    @event_booking = EventBooking.new(event_booking_params)
-    @event_booking.user = current_user
-    if @event_booking.save!
-      redirect_to event_booking_path(@event_booking)
+    @nanny_booking = NannyBooking.new(nanny_booking_params)
+    @nanny_booking.nanny = Nanny.find(params[:nanny_id])
+    @nanny_booking.user = current_user
+    if @nanny_booking.save!
+      redirect_to nanny_nanny_bookings_path
       # (event_booking:@event_booking.id)
     else
-    render :new
+      render :new
     end
   end
 
   private
 
-  def event_booking_params
-    params.require(:event_booking).permit(:event_id, :user_id)
+  def nanny_booking_params
+    params.require(:nanny_booking).permit(:nanny_id, :user_id, :date, :address, :number_of_children)
   end
 end
+
+

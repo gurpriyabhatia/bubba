@@ -11,8 +11,10 @@ class GroupsController < ApplicationController
   end
 
   def show
+    # raise
     @group = Group.find(params[:id])
     @events = Event.all
+    @nannies = Nanny.all
     @users = User.all
   end
 

@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_29_170428) do
+
+ActiveRecord::Schema.define(version: 2020_03_03_182043) 
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(version: 2020_02_29_170428) do
     t.bigint "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "spaces_booked"
     t.index ["event_id"], name: "index_event_bookings_on_event_id"
     t.index ["user_id"], name: "index_event_bookings_on_user_id"
   end
@@ -66,6 +68,8 @@ ActiveRecord::Schema.define(version: 2020_02_29_170428) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "spaces_booked", default: 0
+    t.float "latitude"
+    t.float "longitude"
     t.index ["group_id"], name: "index_events_on_group_id"
   end
 

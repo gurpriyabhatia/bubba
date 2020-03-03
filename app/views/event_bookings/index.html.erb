@@ -1,1 +1,23 @@
-index.html.erb
+<div class="event-show-container">
+  <h1> All bookings </h1>
+   <%= link_to "Back to events", "#", class: "events-show-nav-link" %>
+  <!-- problems with the path  -->
+  <!-- doesnt allow sorting by date - cannot find the event even though there is a event id attached -->
+  <% @event_bookings.each do |e| %>
+  <!-- doesnt allow sorting by date - cannot find the event even though there is a date attached -->
+    <div class="card-product">
+      <div class="card-product-infos">
+        <h6><%= e.event.name %></h6>
+        <p>Date: <%= e.event.date.strftime("%d/%m/%y") %></p>
+        <p><%= e.event.description %></p>
+        <p><%= e.event.spaces_booked %></p>
+        <!-- spaces_booked are not persisting -->
+        <p><%= e.event.address %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<!-- add map on show page, edit and cancel booking -->
+<!-- dummy buttons for add to calendar -->
+<!-- payments functionality -->

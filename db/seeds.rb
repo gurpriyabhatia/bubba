@@ -17,6 +17,10 @@ Event.destroy_all
 puts 'destroying groups...'
 Group.destroy_all
 
+puts 'Destroying users...'
+
+User.destroy_all
+
 puts 'Creating groups...'
 groups = [
   {
@@ -106,9 +110,7 @@ end
 
 puts 'Finished!'
 
-puts 'Destroying users...'
 
-User.destroy_all
 
 puts 'Creating users...'
 User.create(

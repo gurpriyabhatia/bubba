@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_182043) do
+ActiveRecord::Schema.define(version: 2020_03_03_204035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,6 +95,8 @@ ActiveRecord::Schema.define(version: 2020_03_03_182043) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.bigint "group_id"
+    t.index ["group_id"], name: "index_nannies_on_group_id"
     t.index ["user_id"], name: "index_nannies_on_user_id"
   end
 
@@ -138,6 +140,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_182043) do
   add_foreign_key "event_bookings", "users"
   add_foreign_key "event_reviews", "events"
   add_foreign_key "events", "groups"
+  add_foreign_key "nannies", "groups"
   add_foreign_key "nannies", "users"
   add_foreign_key "nanny_bookings", "nannies"
   add_foreign_key "nanny_bookings", "users"

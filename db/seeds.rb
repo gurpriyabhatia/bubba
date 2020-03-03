@@ -14,12 +14,21 @@ puts 'Cleaning database...'
 puts 'Destroying events...'
 Event.destroy_all
 
+puts 'Destroying nanny bookings...'
+NannyBooking.destroy_all
+
+puts 'Destroying nannies...'
+Nanny.destroy_all
+
+puts 'Destroying users...'
+User.destroy_all
+
 puts 'destroying groups...'
 Group.destroy_all
 
-puts 'Destroying users...'
 
-User.destroy_all
+
+
 
 puts 'Creating groups...'
 groups = [
@@ -239,9 +248,7 @@ user_8.photo.attach(io: URI.open('https://source.unsplash.com/random'), filename
 user_8.save!
 puts "User created"
 
-puts 'Destroying nannies...'
 
-Nanny.destroy_all
 
 puts 'Creating nannies...'
 
@@ -253,6 +260,7 @@ Nanny.create(
     address: 'Sturt St Hoxton, London N1 7QD',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
+    group_id: Group.first.id,
   )
 puts "Nanny created"
 
@@ -263,6 +271,7 @@ Nanny.create(
     address: '7 Regan Way, Hoxton, London N1 6PH',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
+    group_id: Group.first.id,
   )
 puts "Nanny created"
 
@@ -273,6 +282,7 @@ Nanny.create(
     address: 'Yorkton St, London E2 8N',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
+    group_id: Group.first.id,
   )
 puts "Nanny created"
 
@@ -283,6 +293,7 @@ Nanny.create!(
     address: 'Graham Street Garden Islington, London',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
+    group_id: Group.first.id,
   )
 puts "Nanny created"
 
@@ -293,6 +304,7 @@ Nanny.create!(
     address: 'Kingsland Street, London E2 8DY',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
+    group_id: Group.first.id,
   )
 puts "Nanny created"
 
@@ -303,6 +315,7 @@ Nanny.create!(
     address: 'King Square, London EC1V 8DD',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
+    group_id: Group.first.id,
   )
 puts "Nanny created"
 
@@ -313,6 +326,7 @@ Nanny.create!(
     address: '188 New N Rd, Hoxton, London N1 5EP',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
+    group_id: Group.first.id,
   )
 puts "Nanny created"
 
@@ -323,6 +337,7 @@ Nanny.create!(
     address: '50 Pearson St, London E2 8EL',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
+    group_id: Group.first.id,
   )
 puts "Nanny created"
 

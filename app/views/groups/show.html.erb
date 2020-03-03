@@ -41,6 +41,7 @@
             </div>
 
             <h4>Upcoming events...</h4>
+            <%= link_to "Browse all events", group_events_path(@group) %>
 
             <div class="cards">
               <% @events.first(4).each do |event| %>
@@ -56,6 +57,7 @@
             </div>
 
             <h4>Some of our nannies...</h4>
+            <%= link_to "Browse all nannies", nannies_path %>
 
             <div class="cards">
               <% @nannies.first(4).each do |nanny| %>

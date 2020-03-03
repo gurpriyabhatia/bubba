@@ -5,8 +5,10 @@ class EventsController < ApplicationController
   def index
     if (params[:group_id])
       @group = Group.find(params[:group_id])
+      @events = @group.events.order(:date)
+    else
+      @events = Event.order(:date)
     end
-    @events = Event.order(:date)
   end
 
   def show

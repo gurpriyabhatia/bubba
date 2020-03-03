@@ -6,7 +6,7 @@
   <% @event_bookings.each do |event_booking| %>
     <div class="card-product">
       <div class="card-product-infos">
-        <h6><%= event_booking.event.name %></h6>
+        <h6><%= link_to event_booking.event.name, event_booking_path(event_booking), class: "events-show-nav-link" %></h6>
         <p>Date: <%= event_booking.event.date.strftime("%d/%m/%y") %></p>
         <p><%= event_booking.event.description %></p>
         <p><%= event_booking.spaces_booked %></p>
@@ -18,5 +18,5 @@
 </div>
 
 <!-- add map on show page, edit and cancel booking -->
-<!-- dummy buttons for add to calendar -->
+<!-- edit and cancel booking -->
 <!-- payments functionality -->

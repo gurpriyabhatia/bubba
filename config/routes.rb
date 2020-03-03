@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :nanny_bookings
   end
   # Note(arthur): these are wrong but let's change when we do the page (better to learn)
-  resources :event_bookings, only: [:destroy, :index, :show]
+  resources :event_bookings, only: [:destroy, :index, :show, :edit, :update ]
   resources :event_reviews, only: [ :new, :create ]
 
   resources :events, only: [:index, :show] do

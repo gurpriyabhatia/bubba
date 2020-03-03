@@ -1,6 +1,12 @@
 class NanniesController < ApplicationController
   def index
-    @nannies = Nanny.all
+    if (params[:group_id])
+      @group = Group.find(params[:group_id])
+      @nannies = @group.nannies
+    else
+      @nannies = Nanny.all
+    end
+
     @nanniesmarkers = @nannies.map do |nanny|
     { lat: nanny.latitude,
       lng: nanny.longitude,

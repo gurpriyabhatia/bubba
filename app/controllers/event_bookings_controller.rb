@@ -1,7 +1,8 @@
 class EventBookingsController < ApplicationController
+  before_action :set_event, only: [:new, :create]
 
   def index
-    @event_bookings = EventBooking.all
+    @event_bookings = EventBooking.includes(:event).joins(:event).order(:date)
   end
 
   def show
@@ -16,12 +17,13 @@ class EventBookingsController < ApplicationController
 
   def new
     @event_booking = EventBooking.new
-    @event = Event.find(params[:event_id])
   end
 
   def create
-    @event_booking = EventBooking.new(event_booking_params)
-    @event_booking.user = current_user
+    @event_booking       = EventBooking.new(event_booking_params)
+    @event_booking.user  = current_user
+    @event_booking.event = @event
+
     if @event_booking.save!
       redirect_to event_booking_path(@event_booking)
       # (event_booking:@event_booking.id)
@@ -33,6 +35,10 @@ class EventBookingsController < ApplicationController
   private
 
   def event_booking_params
-    params.require(:event_booking).permit(:event_id, :user_id, :spaces_booked)
+    params.require(:event_booking).permit(:spaces_booked)
+  end
+
+  def set_event
+    @event = Event.find(params[:event_id])
   end
 end

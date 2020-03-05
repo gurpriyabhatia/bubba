@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :set_group, only: [:show, :update]
   def index
     @groups = Group.all
     @markers = @groups.map do |group|
@@ -11,8 +12,6 @@ class GroupsController < ApplicationController
   end
 
   def show
-    # raise
-    @group = Group.find(params[:id])
     @events = @group.events
     @nannies = @group.nannies
     @users = @group.users
@@ -28,8 +27,19 @@ class GroupsController < ApplicationController
   end
 
   def update
+    # Update user group, so use can join the current group
+    @user = current_user
+    @user.group = @group
+    @user.save!
+    redirect_to group_path(@group)
   end
 
   def destroy
+  end
+
+  private
+
+  def set_group
+    @group = Group.find(params[:id])
   end
 end

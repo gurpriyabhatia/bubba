@@ -1,20 +1,37 @@
-</br>
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="pills-current_booking-tab" data-toggle="pill" href="#pills-current_booking" role="tab" aria-controls="pills-current_booking" aria-selected="true">current_booking</a>
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+      aria-controls="pills-home" aria-selected="true">Event bookings</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="pills-all_bookings-tab" data-toggle="pill" href="#pills-all_bookings" role="tab" aria-controls="pills-all_bookings" aria-selected="false">all_bookings</a>
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+      aria-controls="pills-profile" aria-selected="false">Nanny bookings</a>
   </li>
 </ul>
-
-<div class="tab-content" id="pills-tabContent">
-  <div class="tab-pane fade show active" id="pills-current_booking" role="tabpanel" aria-labelledby="pills-current_booking-tab">
-    <% if @current_booking.present?%>
-      <p> YAY! </br> Your booking for <%= @current_booking.event.name %> is now confirmed!</p>
-    <% end %>
+<div class="tab-content pt-2 pl-1" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <% @events.each do |event| %>
+          <% if event.date > Date.today %>
+            <div class="card-product">
+              <div class="card-product-infos col-6-sm-6">
+                <p class="event"><%= event.date.strftime("%d/%m/%y") %></p>
+                <p><%= event.description %></p>
+                    <%= link_to "Modify this booking", event_booking_path(event), class: "btn btn-flat-small" if event.date > Date.today  %>
+                  </div>
+                </div>
+            <% else  %>
+              <p>No past bookings</p>
+              <% end %>
+        <% end %>
   </div>
-  <div class="tab-pane fade" id="pills-all_bookings" role="tabpanel" aria-labelledby="pills-all_bookings-tab">
-    <%= @event_bookings %>
-  </div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <% @nannies.each do |nanny| %>
+          <div class="card-product">
+                <div class="card-product-infos col-6-sm-6">
+                  <p><%= nanny.name %></p>
+                  <%= link_to "Make a review" , nanny_path(nanny), class: "btn btn-flat" %>
+                </div>
+          </div>
+        <% end %>
+      </div>
 </div>

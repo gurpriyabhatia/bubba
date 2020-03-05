@@ -1,12 +1,13 @@
 class EventBookingsController < ApplicationController
   before_action :set_event, only: [:new, :create]
+  before_action :set_event_booking, only: [:show, :edit, :update, :destroy]
 
   def index
     @event_bookings = EventBooking.includes(:event).joins(:event).order(:date)
   end
 
   def show
-    @event_booking = EventBooking.find(params[:id])
+
    #  @nanniesmarkers = @nannies.map do |nanny|
    #  { lat: nanny.latitude,
    #    lng: nanny.longitude,
@@ -33,18 +34,32 @@ class EventBookingsController < ApplicationController
   end
 
   def edit
+
+    @event = @event_booking.event
   end
 
   def update
+
+    if @event_booking.update(event_booking_params)
+      redirect_to event_booking_path(@event_booking)
+    else
+      render :new
+    end
   end
 
-  def delete
+  def destroy
+    @event_booking.destroy
+    redirect_to event_bookings_path(@event_booking)
   end
 
   private
 
   def event_booking_params
     params.require(:event_booking).permit(:spaces_booked)
+  end
+
+  def set_event_booking
+    @event_booking = EventBooking.find(params[:id])
   end
 
   def set_event

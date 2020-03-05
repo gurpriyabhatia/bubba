@@ -5,9 +5,9 @@
 
     <div class= "col-sm-4">
       <%= simple_form_for [@nanny, @nanny_booking] do |f| %>
-        <%= f.input :user_id, as: :hidden, input_html: { value: @nanny.id } %>
-        <%= f.input :date, as: :date%>
-        <%= f.input :duration %>
+        <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+        <%= f.input :date, as: :string%>
+        <%= f.input :duration, label: "Nb. of hours" %>
         <%= f.input :address %>
         <%= f.input :number_of_children %>
         <%= f.input :special_instructions %>

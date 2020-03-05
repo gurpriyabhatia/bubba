@@ -1,1 +1,23 @@
-<h1> I will build a page recapping booking 🙌 </h1>
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <h3>YOUR BOOKINGS</h3>
+    <p><%= link_to 'Add a new booking', nannies_path, :class => "btn btn-flat booking-btn-flat" %> </p>
+  </div>
+
+
+  <% @nanny_bookings.each do |nanny_booking| %>
+    <div class="booking-card">
+      <img src="https://source.unsplash.com/random" alt="">
+
+
+      <%#= image_tag booking.nanny.image, alt: "Picture of the nanny" %>
+      <div class="card-product-infos">
+        <h2>Nanny: <%= nanny_booking.nanny.name %></h2>
+        <p><%= nanny_booking.date.strftime("Date: %d/%m/%y") %> </p>
+        <%= link_to 'View booking', nanny_nanny_booking_path(@nanny, nanny_booking), :class => "link" %>
+
+      </div>
+    </div>
+  <% end %>
+
+</div>

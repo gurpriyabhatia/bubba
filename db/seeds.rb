@@ -10,6 +10,7 @@
 require 'open-uri'
 
 puts 'Cleaning database...'
+NannyBooking.destroy_all
 
 puts 'Destroying events...'
 Event.destroy_all

@@ -20,7 +20,19 @@
 
   <h5>Details</h5>
   <p><i class="fas fa-baby"></i> <%= @event_booking.spaces_booked %></p>
-  <p><i class="far fa-calendar"></i> <%= @event_booking.event.date.strftime("%d/%m/%y") %></p>
+  <p><i class="far fa-calendar"></i> <%= @event_booking.event.date.strftime("%d-%m-%y") %></p>
   <p><i class="far fa-clock"></i> <%= @event_booking.event.time.strftime("%I:%M%P") %></p>
   <p><i class="fas fa-map-marker-alt"></i> <%= @event_booking.event.address %></p>
+
+  <!-- Button code -->
+  <div title="Add to Calendar" class="addeventatc">
+      Add to Calendar
+      <span class="start"><%= @event_booking.event.date.strftime("%d-%m-%y") %> <%= @event_booking.event.time.strftime("%I:%M%P") %></span>
+      <span class="end"> </span>
+      <span class="timezone">Europe/Paris</span>
+      <span class="title"><%= @event_booking.event.name %></span>
+      <span class="description"><%= @event_booking.event.description %></span>
+      <span class="location"><%= @event_booking.event.address %></span>
+  </div>
 </div>
+

@@ -27,14 +27,15 @@
           <h4>Some of our members...</h4>
 
             <div class="cards">
-              <% @users.first(4).each do |user| %>
+              <% @users.last(4).each do |user| %>
+             <!--  <%= image_tag user.photo, class: "avatar-large"  %> -->
                 <div class="card-product-small ">
                     <div class="d-flex flex-column justify-content-center align-items-center">
                       <%= cl_image_tag @group.group_picture.key %>
                       <a class="btn btn-flat-small-fix" href="#"><%= user.full_name %></a>
                     </div>
                     <div class="card-product-infos-small">
-                      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, ...</p>
+                      <p><i class="fas fa-portrait"></i> <%= user.bio %></p>
                     </div>
                 </div>
               <% end %>

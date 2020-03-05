@@ -128,7 +128,9 @@ User.create(
   bio: "I'm great",
   mobile_number: Faker::PhoneNumber.cell_phone,
   address: 'SW6 4JA',
-  password: "hellohello")
+  password: "hellohello",
+  group: Group.first,
+  )
 puts "Alexia created"
 
 User.create(
@@ -137,7 +139,9 @@ User.create(
   bio: "I'm great",
   mobile_number: Faker::PhoneNumber.cell_phone,
   address: 'SW1A 1AA',
-  password: "hellohello")
+  password: "hellohello",
+  group: Group.first,
+  )
 puts "Rachel created"
 
 User.create(
@@ -146,7 +150,9 @@ User.create(
   bio: "I'm great",
   mobile_number: Faker::PhoneNumber.cell_phone,
   address: 'SW1A 1AA',
-  password: "hellohello")
+  password: "hellohello",
+  group: Group.first,
+  )
 puts "Gurpriya created"
 
 User.create(
@@ -155,7 +161,9 @@ User.create(
   bio: "I'm great",
   mobile_number: Faker::PhoneNumber.cell_phone,
   address: 'SW1A 1AA',
-  password: "hellohello")
+  password: "hellohello",
+  group: Group.first,
+  )
 puts "Fix created"
 
 user_1 = User.new(
@@ -164,7 +172,9 @@ user_1 = User.new(
   bio: Faker::Quote.most_interesting_man_in_the_world,
   mobile_number: Faker::PhoneNumber.cell_phone,
   address: 'E2 8DY',
-  password: "123456")
+  password: "123456",
+  group: Group.first,
+  )
 user_1.photo.attach(io: URI.open('https://source.unsplash.com/random'), filename: 'nes.png', content_type: 'image/png')
 user_1.save!
 puts "User created"
@@ -176,7 +186,9 @@ user_2 = User.new(
   bio: Faker::Quote.most_interesting_man_in_the_world,
   mobile_number: Faker::PhoneNumber.cell_phone,
   address: 'SW6 4JA',
-  password: "123456")
+  password: "123456",
+  group: Group.first,
+  )
 user_2.photo.attach(io: URI.open('https://source.unsplash.com/random'), filename: 'nes.png', content_type: 'image/png')
 user_2.save!
 puts "User created"
@@ -187,7 +199,9 @@ user_3 = User.new(
   bio: Faker::Quote.most_interesting_man_in_the_world,
   mobile_number: Faker::PhoneNumber.cell_phone,
   address: 'W6 8AZ',
-  password: "123456")
+  password: "123456",
+  group: Group.first,
+  )
 user_3.photo.attach(io: URI.open('https://source.unsplash.com/random'), filename: 'nes.png', content_type: 'image/png')
 user_3.save!
 puts "User created"
@@ -198,7 +212,9 @@ user_4 = User.new(
   bio: Faker::Quote.most_interesting_man_in_the_world,
   mobile_number: Faker::PhoneNumber.cell_phone,
   address: 'N1C 4QL',
-  password: "123456")
+  password: "123456",
+  group: Group.first,
+  )
 user_4.photo.attach(io: URI.open('https://source.unsplash.com/random'), filename: 'nes.png', content_type: 'image/png')
 user_4.save!
 puts "User created"
@@ -209,7 +225,9 @@ user_5 = User.new(
   bio: Faker::Quote.most_interesting_man_in_the_world,
   mobile_number: Faker::PhoneNumber.cell_phone,
   address: 'W12 8QE',
-  password: "123456")
+  password: "123456",
+  group: Group.first,
+  )
 user_5.photo.attach(io: URI.open('https://source.unsplash.com/random'), filename: 'nes.png', content_type: 'image/png')
 user_5.save!
 puts "User created"
@@ -220,7 +238,9 @@ user_6 = User.new(
   bio: Faker::Quote.most_interesting_man_in_the_world,
   mobile_number: Faker::PhoneNumber.cell_phone,
   address: 'W12 8QE',
-  password: "123456")
+  password: "123456",
+  group: Group.first,
+  )
 user_6.photo.attach(io: URI.open('https://source.unsplash.com/random'), filename: 'nes.png', content_type: 'image/png')
 user_6.save!
 puts "User created"
@@ -231,7 +251,9 @@ user_7 = User.new(
   bio: Faker::Quote.most_interesting_man_in_the_world,
   mobile_number: Faker::PhoneNumber.cell_phone,
   address: 'W12 8QE',
-  password: "123456")
+  password: "123456",
+  group: Group.first,
+  )
 user_7.photo.attach(io: URI.open('https://source.unsplash.com/random'), filename: 'nes.png', content_type: 'image/png')
 user_7.save!
 puts "User created"
@@ -243,7 +265,9 @@ user_8 = User.new(
   bio: Faker::Quote.most_interesting_man_in_the_world,
   mobile_number: Faker::PhoneNumber.cell_phone,
   address: 'W12 8QE',
-  password: "123456")
+  password: "123456",
+  group: Group.first,
+  )
 user_8.photo.attach(io: URI.open('https://source.unsplash.com/random'), filename: 'nes.png', content_type: 'image/png')
 user_8.save!
 puts "User created"
@@ -260,7 +284,7 @@ Nanny.create(
     address: 'Sturt St Hoxton, London N1 7QD',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
-    group_id: Group.first.id,
+    group: Group.first,
   )
 puts "Nanny created"
 
@@ -271,7 +295,7 @@ Nanny.create(
     address: '7 Regan Way, Hoxton, London N1 6PH',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
-    group_id: Group.first.id,
+    group: Group.first,
   )
 puts "Nanny created"
 
@@ -282,7 +306,7 @@ Nanny.create(
     address: 'Yorkton St, London E2 8N',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
-    group_id: Group.first.id,
+    group: Group.first,
   )
 puts "Nanny created"
 
@@ -293,7 +317,7 @@ Nanny.create!(
     address: 'Graham Street Garden Islington, London',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
-    group_id: Group.first.id,
+    group: Group.first,
   )
 puts "Nanny created"
 
@@ -304,7 +328,7 @@ Nanny.create!(
     address: 'Kingsland Street, London E2 8DY',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
-    group_id: Group.first.id,
+    group: Group.first,
   )
 puts "Nanny created"
 
@@ -315,7 +339,7 @@ Nanny.create!(
     address: 'King Square, London EC1V 8DD',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
-    group_id: Group.first.id,
+    group: Group.first,
   )
 puts "Nanny created"
 
@@ -326,7 +350,7 @@ Nanny.create!(
     address: '188 New N Rd, Hoxton, London N1 5EP',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
-    group_id: Group.first.id,
+    group: Group.first,
   )
 puts "Nanny created"
 
@@ -337,7 +361,7 @@ Nanny.create!(
     address: '50 Pearson St, London E2 8EL',
     price_per_hour: Faker::Number.within(range: 5..50),
     bio: Faker::Quote.most_interesting_man_in_the_world,
-    group_id: Group.first.id,
+    group: Group.first,
   )
 puts "Nanny created"
 
@@ -349,7 +373,7 @@ Event.create!(
   date: "28/03/2020",
   time: "28/03/2020, 12:00",
   address: "Haggerston Park, Yorkton St, London E2 8NH",
-  group_id: Group.first.id,
+  group: Group.first,
   )
 
 Event.create!(
@@ -360,7 +384,7 @@ Event.create!(
   address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
   price: 5,
   total_spaces: 30,
-  group_id: Group.first.id,
+  group: Group.first,
   )
 
 Event.create!(
@@ -371,7 +395,7 @@ Event.create!(
   address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
   price: 12,
   total_spaces: 20,
-  group_id: Group.first.id,
+  group: Group.first,
   )
 
 Event.create!(
@@ -380,7 +404,7 @@ Event.create!(
   date: "10/04/2020",
   time: "10/04/2020, 20:00",
   address: "Hoxton Brewhouse, 397-400 Geffrye St, London E2 8HZ",
-  group_id: Group.first.id,
+  group: Group.first,
   )
 
 Event.create!(
@@ -389,7 +413,7 @@ Event.create!(
   date: "11/04/2020",
   time: "11/04/2020, 20:00",
   address: "Hoxton Brewhouse, 397-400 Geffrye St, London E2 8HZ",
-  group_id: Group.first.id,
+  group: Group.first,
   )
 
 Event.create!(
@@ -400,7 +424,7 @@ Event.create!(
   address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
   price: 5,
   total_spaces: 30,
-  group_id: Group.first.id,
+  group: Group.first,
   )
 
 Event.create!(
@@ -411,7 +435,7 @@ Event.create!(
   address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
   price: 5,
   total_spaces: 30,
-  group_id: Group.first.id,
+  group: Group.first,
   )
 
 Event.create!(
@@ -422,7 +446,7 @@ Event.create!(
   address: "Haggerston Park, Yorkton St, London E2 8NH",
   price: 5,
   total_spaces: 20,
-  group_id: Group.first.id,
+  group: Group.first,
   )
 
 Event.create!(
@@ -433,7 +457,7 @@ Event.create!(
   address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
   price: 10,
   total_spaces: 10,
-  group_id: Group.first.id,
+  group: Group.first,
   )
 
 Event.create!(
@@ -442,7 +466,7 @@ Event.create!(
   date: "08/05/2020",
   time: "08/05/2020, 10:00",
   address: "Haggerston Park, Yorkton St, London E2 8NH",
-  group_id: Group.first.id,
+  group: Group.first,
   )
 
 

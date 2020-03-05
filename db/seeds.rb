@@ -15,8 +15,9 @@ puts 'Destroying events...'
 Event.destroy_all
 puts 'destroying groups...'
 Group.destroy_all
-puts 'Destroying nannies...'
+puts 'Destroying nannies and bookings...'
 Nanny.destroy_all
+NannyBooking.destroy_all
 
 puts "Create *The* Bubba Team"
   puts "Ladies first..."

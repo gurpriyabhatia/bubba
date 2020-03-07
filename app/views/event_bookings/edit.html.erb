@@ -1,0 +1,10 @@
+<h1> Edit My Event Booking</h1>
+
+<h3>Edit your booking for <strong><%= @event_booking.event.name %></strong></h3>
+
+<%= simple_form_for @event_booking do |f| %>
+  <%= f.label :spaces_booked, 'No. of Attendees' %>
+  <%= f.input :spaces_booked, :collection => 1..12, label: false%>
+  <%= f.submit "Book now!", class: "btn-flat" %>
+<% end %>
+  </div>

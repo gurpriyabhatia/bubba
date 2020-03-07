@@ -1,4 +1,3 @@
-
 </br>
 <div class="event-show-container">
   <div class="d-flex flex-row justify-content-between my-flex-container">
@@ -12,7 +11,7 @@
 </br>
 <h3><i class="far fa-check-circle" style="color:green;"></i>&nbsp; Booking Confirmed!</h3>
   </br>
-  <h4><%= @event_booking.event.name %></h4>
+  <h4 id="event-name" data-controller="<%= controller_path %>"><%= @event_booking.event.name %></h4>
   </br>
 
   <h5>Description</h5>

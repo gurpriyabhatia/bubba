@@ -7,12 +7,14 @@ class EventBookingsController < ApplicationController
   end
 
   def show
-   #  @nanniesmarkers = @nannies.map do |nanny|
-   #  { lat: nanny.latitude,
-   #    lng: nanny.longitude,
-   #    nannyimage_url: helpers.asset_url('bubba-pushchair.png') }
-   # end
-   # @imgs = @nannies.map { |nanny| [nanny.id, nanny.user.photo] }
+    @event = Event.find(params[:id])
+    @eventmarkers = [
+      { lat: @event.latitude,
+        lng: @event.longitude,
+        nannyimage_url: helpers.asset_url('bubba-pushchair.png')
+      }
+    ]
+    # @imgs = @event.map { |event| [event.id, event.user.photo] }
   end
 
   def new

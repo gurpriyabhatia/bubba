@@ -120,7 +120,14 @@ puts "Create *The* Bubba Team"
     User.create(
       email: "alexia@test.com",
       full_name: "Alexia Tanguy",
-      bio: "I'm great",
+      bio: "We are a fun loving family of 5, who are laid back, generous and kind.
+
+We have a gorgeous daughter who is 3 years old and adorable cuddly boy/girl twins who are 18 months old.
+
+The kids are smiley, sweet and have bundles of character.
+They adorable playing with each other and love an adventure.
+
+We also have a beautifully natured 8 year old cocker spaniel.",
       mobile_number: Faker::PhoneNumber.cell_phone,
       address: '138 Kingsland Rd, London E2 8DY',
       password: "hellohello",
@@ -131,7 +138,7 @@ puts "Create *The* Bubba Team"
     User.create(
       email: "rachel@test.com",
       full_name: "Rachel Clarke",
-      bio: "I'm great",
+      bio: "We’re are a happy family of three girls. I’m a single mum and care for my two little girls. I’m an entrepreneur and my work is quite flexible so I manage to keep a balance between work and precious family time around the house.",
       mobile_number: Faker::PhoneNumber.cell_phone,
       address: '138 Kingsland Rd, London E2 8DY',
       password: "hellohello",
@@ -142,7 +149,7 @@ puts "Create *The* Bubba Team"
     User.create(
       email: "gurpriyal@test.com",
       full_name: "Gurpriya Bhatia",
-      bio: "I'm great",
+      bio: "We are a fun, loving family who live in a small town in Wales called Llandrindod wells.The town has a beautiful lake lots of coffee shops and restaurants places to walk a library parks and supermarkets and small shops. We are in travelling distance of Cardiff and Hereford which are big towns with cinema and shopping centres and adult education colleges.I am a hard working single mum whose life revolves around bringing up my children. It is important to me to get them involved in the local community; the children go to church, enjoy the park and go to mother and baby groups and play schemes for the older children. I am looking for an au pair to supplement my existing childcare which is nursery for the baby and after school club for the older children.",
       mobile_number: Faker::PhoneNumber.cell_phone,
       address: '138 Kingsland Rd, London E2 8DY',
       password: "hellohello",
@@ -154,7 +161,13 @@ puts "Create *The* Bubba Team"
     User.create(
       email: "fix@test.com",
       full_name: "Fix Baud",
-      bio: "I'm great",
+      bio: "We are a lively, busy and fun family of 5 that live in a great area in North West London. We have had Au Pairs for over 10 years now, with our first Au Pair staying with us for over 3 years whilst she completed her degree.
+
+JJ – Dad / husband. A busy commercials director who travels a lot. Interests include cooking, running and football.
+
+Katie – Mother / wife. Currently in between jobs but when working usually out of the house from early in the morning until children’s bedtime. Interests include yoga, sport, socialising and travel.
+
+Jesse – twin boy. 12 years old. Jesse is funny, outgoing and a very active little boy. He's sports mad, loves skateboarding and playing in the park. He loves company and has a great sense of humour. He's very protective or Arlo & Coco.",
       mobile_number: Faker::PhoneNumber.cell_phone,
       address: '138 Kingsland Rd, London E2 8DY',
       password: "hellohello",
@@ -166,7 +179,7 @@ puts 'Creating users...'
     user_1 = User.new(
       email: Faker::Internet.email,
       full_name: 'Pierre-Emmanuel Tanguy',
-      bio: Faker::Quote.most_interesting_man_in_the_world,
+      bio: "Hi, we are a family of 5, husband who is a doctor and mother who is an engineer. Mother has decided to stay home for coming few years as we have a 6, 4 and 2 year old.",
       mobile_number: Faker::PhoneNumber.cell_phone,
       address: 'E2 8DY',
       password: "123456",
@@ -180,7 +193,8 @@ puts 'Creating users...'
     user_2 = User.new(
       email: Faker::Internet.email,
       full_name: 'Celine Lefrou de la Colonge',
-      bio: Faker::Quote.most_interesting_man_in_the_world,
+      bio: "We are a generally peaceful family of four and there's a lot of love and affection in our home. We have a one year old boy and a three year old girl. They are both lovely, inquisitive and keen to learn. The children like reading books, music and spending time at the park or playground.
+We're looking for someone to join our family to help us with some childcare and housework.",
       mobile_number: Faker::PhoneNumber.cell_phone,
       address: 'SW6 4JA',
       password: "123456",
@@ -193,7 +207,7 @@ puts 'Creating users...'
     user_3 = User.new(
         email: Faker::Internet.email,
         full_name: 'Benjamin Baranger',
-        bio: Faker::Quote.most_interesting_man_in_the_world,
+        bio: "We are a happy, messy, busy family of 7. There’s mom and dad and 5 kiddos aged 6 month (twins) to 7. We are looking for someone to become the 8th member of the family and share the highs and some lows. It’s hard work as there’s always someone calling your name but we are a supportive, welcoming and flexible bunch and you would not be alone and would be well supported and coached if needed. We are present parents and love our children more than we can describe in words. That does not mean they can get away with anything - we believe in having boundaries, rules and respect to and for all.",
         mobile_number: Faker::PhoneNumber.cell_phone,
         address: 'W6 8AZ',
         password: "123456",
@@ -206,7 +220,9 @@ puts 'Creating users...'
     user_4 = User.new(
         email: Faker::Internet.email,
         full_name: 'Clementine Contat',
-        bio: Faker::Quote.most_interesting_man_in_the_world,
+        bio: "Dear au pair,
+My daughter and I are looking for someone to be part of our family. Some one Kind and patient.
+Please let me know if you are willing to join us.",
         mobile_number: Faker::PhoneNumber.cell_phone,
         address: 'N1C 4QL',
         password: "123456",
@@ -219,7 +235,7 @@ puts 'Creating users...'
     user_5 = User.new(
         email: Faker::Internet.email,
         full_name: 'Alexandre Tombeur',
-        bio: Faker::Quote.most_interesting_man_in_the_world,
+        bio: "We are a family of 4 living in a beautiful village in Kent, just outside of London. We are looking for a lovely au pair to join us, willing to fit into our busy but quite flexible schedule.",
         mobile_number: Faker::PhoneNumber.cell_phone,
         address: 'W12 8QE',
         password: "123456",
@@ -232,7 +248,11 @@ puts 'Creating users...'
     user_6 = User.new(
         email: Faker::Internet.email,
         full_name: 'Katherine Willis',
-        bio: Faker::Quote.most_interesting_man_in_the_world,
+        bio: "Family of 5
+Mum and four children
+16, 13, 10 and 7
+Only the younger children to be minded
+Mum works part time so plenty of time to explore Northern Ireland",
         mobile_number: Faker::PhoneNumber.cell_phone,
         address: 'W12 8QE',
         password: "123456",
@@ -245,7 +265,7 @@ puts 'Creating users...'
     user_7 = User.new(
         email: Faker::Internet.email,
         full_name: 'Meghan Markle',
-        bio: Faker::Quote.most_interesting_man_in_the_world,
+        bio: "We are looking for someone to join our family and look after our daughter 5 ans our son 2. Both my partner and myself work full time with my partner being away alot.",
         mobile_number: Faker::PhoneNumber.cell_phone,
         address: 'W12 8QE',
         password: "123456",
@@ -259,7 +279,7 @@ puts 'Creating users...'
     user_8 = User.new(
         email: Faker::Internet.email,
         full_name: 'Kate Middleton',
-        bio: Faker::Quote.most_interesting_man_in_the_world,
+        bio: "We are a lovely family - Mum & Dad with Archie,14, Emily,12 and Honor,7 and have two dogs. We live in Windsor Great Park which is beautiful. We have had our current au pair for three years but she is returning to New Zealand in April 2020.",
         mobile_number: Faker::PhoneNumber.cell_phone,
         address: 'W12 8QE',
         password: "123456",

@@ -1,52 +1,52 @@
 <% if @group %>
-
   <h2>Nannies available in <%= @group.name %></h2>
   <%= link_to "Back to #{@group.name}", group_path(@group), class: "events-nav-link"%>
-
 <% else %>
-
   <h2>Available Nannies</h2>
-
 <% end %>
 
 
 
 <div class = "container">
-    <div class="content">
-      <div class= "row mr-1 ml-1" >
-       <input class="mapboxgl-ctrl-geocoder--input-bubba mb-3 mt-3" type="text" placeholder="Search" aria-label="Search" id="group_address">
-
-    <a class="btn btn-flat" href="#">Search</a>
-    </div>
-
-      <div id="map-wrapper">
-            <div
-              id="mapnannies"
-              style="
-              width: 100%;
-              height: 250px;
-              margin: 32px 0;
-              border-radius: 6px;"
-              data-markers="<%= @nanniesmarkers.to_json %>"
-              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-            ></div>
+  <div class="content">
+    <div class="remove-if-scroll">
+        <div class= "row mr-1 ml-1" >
+          <input class="mapboxgl-ctrl-geocoder--input-bubba mb-3 mt-3" type="text" placeholder="Search" aria-label="Search" id="group_address">
+          <a class="btn btn-flat" href="#">Search</a>
         </div>
+
+        <div id="map-wrapper">
+          <div
+            id="mapnannies"
+            style="
+            width: 100%;
+            height: 250px;
+            margin: 32px 0;
+            border-radius: 6px;"
+            data-markers="<%= @nanniesmarkers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+          ></div>
+        </div>
+    </div>
 
       <div class="cards">
         <% @nannies.each do |nanny| %>
             <div class="card-product">
               <% if nanny.user.photo.attached? %>
-              <%= cl_image_tag(nanny.user.photo.key, :width=>300, :height=>300, :crop=>"scale") %>
+                <%= cl_image_tag(nanny.user.photo.key, :width=>300, :height=>300, :crop=>"scale") %>
               <% end %>
 
               <div class="card-product-infos">
                 <h2><%= link_to nanny.name, nanny_path(nanny)  %></h2>
                 <p> <strong> £<%= nanny.price_per_hour%> per hour </strong></p>
               </div>
-          </div>
+            </div>
         <% end %>
       </div>
-    </div>
 </div>
 
-
+<script>
+  document.addEventListener('scroll', (event) => {
+  document.querySelector(".remove-if-scroll").remove();
+});
+</script>

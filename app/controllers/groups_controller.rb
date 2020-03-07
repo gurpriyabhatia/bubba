@@ -27,7 +27,7 @@ class GroupsController < ApplicationController
   end
 
   def update
-    # Update user group, so use can join the current group
+    # Update user group, so user can join the current group
     @user = current_user
     @user.group = @group
     @user.save!

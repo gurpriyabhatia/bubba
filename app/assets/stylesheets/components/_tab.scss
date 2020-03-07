@@ -1,10 +1,10 @@
 /* active (faded) */
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus {
   color: black;
-  background-color: #fcd900;
+  background-color: $bubba2;
 }
 
 .nav-pills > li.active > a:hover {
-    background-color: #efcb00;
+    background-color: $bubba2;
     color:black;
 }

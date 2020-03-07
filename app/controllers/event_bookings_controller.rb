@@ -37,7 +37,6 @@ class EventBookingsController < ApplicationController
   end
 
   def update
-
     if @event_booking.update(event_booking_params)
       redirect_to event_booking_path(@event_booking)
     else
@@ -47,7 +46,7 @@ class EventBookingsController < ApplicationController
 
   def destroy
     @event_booking.destroy
-    redirect_to event_bookings_path(@event_booking)
+    redirect_to event_bookings_path
   end
 
   private

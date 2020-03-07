@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :groups do
     resources :events
+    resources :nannies, only: [:index]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :nannies do
@@ -18,4 +19,5 @@ Rails.application.routes.draw do
     resources :event_bookings, only: [:new, :create]
     # get '/confirmation' to: "pages#dashboard", as: :dashboard
   end
+
 end

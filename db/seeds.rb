@@ -9,15 +9,24 @@
 
 require 'open-uri'
 puts "Let's clean this database..."
+
 puts 'Destroying users...'
 User.destroy_all
+
 puts 'Destroying events...'
 Event.destroy_all
+
+puts 'Destroying nanny bookings...'
+NannyBooking.destroy_all
+
+puts 'Destroying nannies...'
+Nanny.destroy_all
+
+puts 'Destroying users...'
+User.destroy_all
+
 puts 'destroying groups...'
 Group.destroy_all
-puts 'Destroying nannies and bookings...'
-Nanny.destroy_all
-NannyBooking.destroy_all
 
 puts "Create *The* Bubba Team"
   puts "Ladies first..."
@@ -27,7 +36,9 @@ puts "Create *The* Bubba Team"
       bio: "I'm great",
       mobile_number: Faker::PhoneNumber.cell_phone,
       address: '138 Kingsland Rd, London E2 8DY',
-      password: "hellohello")
+      password: "hellohello",
+      group: Group.first,
+      )
     puts "Alexia created"
 
     User.create(
@@ -36,7 +47,9 @@ puts "Create *The* Bubba Team"
       bio: "I'm great",
       mobile_number: Faker::PhoneNumber.cell_phone,
       address: '138 Kingsland Rd, London E2 8DY',
-      password: "hellohello")
+      password: "hellohello",
+      group: Group.first,
+      )
     puts "Rachel created"
 
     User.create(
@@ -45,7 +58,9 @@ puts "Create *The* Bubba Team"
       bio: "I'm great",
       mobile_number: Faker::PhoneNumber.cell_phone,
       address: '138 Kingsland Rd, London E2 8DY',
-      password: "hellohello")
+      password: "hellohello",
+      group: Group.first,
+      )
     puts "Gurpriya created"
 
   puts "Then..."
@@ -55,7 +70,9 @@ puts "Create *The* Bubba Team"
       bio: "I'm great",
       mobile_number: Faker::PhoneNumber.cell_phone,
       address: '138 Kingsland Rd, London E2 8DY',
-      password: "hellohello")
+      password: "hellohello",
+      group: Group.first,
+      )
     puts "Fix created"
 
 puts 'Creating users...'
@@ -65,7 +82,9 @@ puts 'Creating users...'
       bio: Faker::Quote.most_interesting_man_in_the_world,
       mobile_number: Faker::PhoneNumber.cell_phone,
       address: 'E2 8DY',
-      password: "123456")
+      password: "123456",
+      group: Group.first,
+      )
       user_1.photo.attach(io: URI.open('https://res.cloudinary.com/dolzriuzv/image/upload/v1583441822/User-9_ajhycb.png'), filename: 'nes.png', content_type: 'image/png')
       user_1.save!
     puts "User created"
@@ -77,7 +96,9 @@ puts 'Creating users...'
       bio: Faker::Quote.most_interesting_man_in_the_world,
       mobile_number: Faker::PhoneNumber.cell_phone,
       address: 'SW6 4JA',
-      password: "123456")
+      password: "123456",
+      group: Group.first,
+      )
       user_2.photo.attach(io: URI.open('https://res.cloudinary.com/dolzriuzv/image/upload/v1583441822/User-4_jsomwf.png'), filename: 'nes.png', content_type: 'image/png')
       user_2.save!
     puts "User created"
@@ -88,7 +109,9 @@ puts 'Creating users...'
         bio: Faker::Quote.most_interesting_man_in_the_world,
         mobile_number: Faker::PhoneNumber.cell_phone,
         address: 'W6 8AZ',
-        password: "123456")
+        password: "123456",
+        group: Group.first,
+        )
         user_3.photo.attach(io: URI.open('https://res.cloudinary.com/dolzriuzv/image/upload/v1583441822/User-7_paahxr.png'), filename: 'nes.png', content_type: 'image/png')
         user_3.save!
     puts "User created"
@@ -99,7 +122,9 @@ puts 'Creating users...'
         bio: Faker::Quote.most_interesting_man_in_the_world,
         mobile_number: Faker::PhoneNumber.cell_phone,
         address: 'N1C 4QL',
-        password: "123456")
+        password: "123456",
+        group: Group.first,
+        )
         user_4.photo.attach(io: URI.open('https://res.cloudinary.com/dolzriuzv/image/upload/v1583441822/User-1_v2wk46.png'), filename: 'nes.png', content_type: 'image/png')
         user_4.save!
     puts "User created"
@@ -110,7 +135,9 @@ puts 'Creating users...'
         bio: Faker::Quote.most_interesting_man_in_the_world,
         mobile_number: Faker::PhoneNumber.cell_phone,
         address: 'W12 8QE',
-        password: "123456")
+        password: "123456",
+        group: Group.first,
+        )
       user_5.photo.attach(io: URI.open('https://res.cloudinary.com/dolzriuzv/image/upload/v1583441822/User-6_bx1e0w.png'), filename: 'nes.png', content_type: 'image/png')
       user_5.save!
     puts "User created"
@@ -121,7 +148,9 @@ puts 'Creating users...'
         bio: Faker::Quote.most_interesting_man_in_the_world,
         mobile_number: Faker::PhoneNumber.cell_phone,
         address: 'W12 8QE',
-        password: "123456")
+        password: "123456",
+        group: Group.first,
+        )
       user_6.photo.attach(io: URI.open('https://res.cloudinary.com/dolzriuzv/image/upload/v1583441822/User-3_v9hvfb.png'), filename: 'nes.png', content_type: 'image/png')
       user_6.save!
     puts "User created"
@@ -132,7 +161,9 @@ puts 'Creating users...'
         bio: Faker::Quote.most_interesting_man_in_the_world,
         mobile_number: Faker::PhoneNumber.cell_phone,
         address: 'W12 8QE',
-        password: "123456")
+        password: "123456",
+        group: Group.first,
+        )
       user_7.photo.attach(io: URI.open('https://res.cloudinary.com/dolzriuzv/image/upload/v1583441822/User-2_gcgdiy.png'), filename: 'nes.png', content_type: 'image/png')
       user_7.save!
     puts "User created"
@@ -144,7 +175,9 @@ puts 'Creating users...'
         bio: Faker::Quote.most_interesting_man_in_the_world,
         mobile_number: Faker::PhoneNumber.cell_phone,
         address: 'W12 8QE',
-        password: "123456")
+        password: "123456",
+        group: Group.first,
+        )
       user_8.photo.attach(io: URI.open('https://res.cloudinary.com/dolzriuzv/image/upload/v1583441822/User-5_rcvrjt.png'), filename: 'nes.png', content_type: 'image/png')
       user_8.save!
     puts "User created"
@@ -158,6 +191,7 @@ puts 'Then we have to create nannies...'
       address: 'Sturt St Hoxton, London N1 7QD',
       price_per_hour: Faker::Number.within(range: 5..50),
       bio: Faker::Quote.most_interesting_man_in_the_world,
+      group: Group.first,
     )
   puts "Nanny created"
 
@@ -168,6 +202,7 @@ puts 'Then we have to create nannies...'
       address: '7 Regan Way, Hoxton, London N1 6PH',
       price_per_hour: Faker::Number.within(range: 5..50),
       bio: Faker::Quote.most_interesting_man_in_the_world,
+      group: Group.first,
     )
   puts "Nanny created"
 
@@ -178,6 +213,7 @@ puts 'Then we have to create nannies...'
       address: 'Yorkton St, London E2 8N',
       price_per_hour: Faker::Number.within(range: 5..50),
       bio: Faker::Quote.most_interesting_man_in_the_world,
+      group: Group.first,
     )
   puts "Nanny created"
 
@@ -188,6 +224,7 @@ puts 'Then we have to create nannies...'
       address: 'Graham Street Garden Islington, London',
       price_per_hour: Faker::Number.within(range: 5..50),
       bio: Faker::Quote.most_interesting_man_in_the_world,
+      group: Group.first,
     )
   puts "Nanny created"
 
@@ -198,6 +235,7 @@ puts 'Then we have to create nannies...'
       address: 'Kingsland Street, London E2 8DY',
       price_per_hour: Faker::Number.within(range: 5..50),
       bio: Faker::Quote.most_interesting_man_in_the_world,
+      group: Group.first,
     )
   puts "Nanny created"
 
@@ -208,6 +246,7 @@ puts 'Then we have to create nannies...'
       address: 'King Square, London EC1V 8DD',
       price_per_hour: Faker::Number.within(range: 5..50),
       bio: Faker::Quote.most_interesting_man_in_the_world,
+      group: Group.first,
     )
   puts "Nanny created"
 
@@ -218,6 +257,7 @@ puts 'Then we have to create nannies...'
       address: '188 New N Rd, Hoxton, London N1 5EP',
       price_per_hour: Faker::Number.within(range: 5..50),
       bio: Faker::Quote.most_interesting_man_in_the_world,
+      group: Group.first,
     )
   puts "Nanny created"
 
@@ -228,6 +268,7 @@ puts 'Then we have to create nannies...'
       address: '50 Pearson St, London E2 8EL',
       price_per_hour: Faker::Number.within(range: 5..50),
       bio: Faker::Quote.most_interesting_man_in_the_world,
+      group: Group.first,
     )
   puts "Nanny created"
 
@@ -325,7 +366,7 @@ puts 'Creating events...'
     date: "28/03/2020",
     time: "28/03/2020, 12:00",
     address: "Haggerston Park, Yorkton St, London E2 8NH",
-    group_id: Group.first.id,
+    group: Group.first,
     )
 
   Event.create!(
@@ -336,7 +377,7 @@ puts 'Creating events...'
     address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
     price: 5,
     total_spaces: 30,
-    group_id: Group.first.id,
+    group: Group.first,
     )
 
   Event.create!(
@@ -347,7 +388,7 @@ puts 'Creating events...'
     address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
     price: 12,
     total_spaces: 20,
-    group_id: Group.first.id,
+    group: Group.first,
     )
 
   Event.create!(
@@ -356,7 +397,7 @@ puts 'Creating events...'
     date: "10/04/2020",
     time: "10/04/2020, 20:00",
     address: "Hoxton Brewhouse, 397-400 Geffrye St, London E2 8HZ",
-    group_id: Group.first.id,
+    group: Group.first,
     )
 
   Event.create!(
@@ -365,7 +406,7 @@ puts 'Creating events...'
     date: "11/04/2020",
     time: "11/04/2020, 20:00",
     address: "Hoxton Brewhouse, 397-400 Geffrye St, London E2 8HZ",
-    group_id: Group.first.id,
+    group: Group.first,
     )
 
   Event.create!(
@@ -376,7 +417,7 @@ puts 'Creating events...'
     address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
     price: 5,
     total_spaces: 30,
-    group_id: Group.first.id,
+    group: Group.first,
     )
 
   Event.create!(
@@ -387,7 +428,7 @@ puts 'Creating events...'
     address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
     price: 5,
     total_spaces: 30,
-    group_id: Group.first.id,
+    group: Group.first,
     )
 
   Event.create!(
@@ -398,7 +439,7 @@ puts 'Creating events...'
     address: "Haggerston Park, Yorkton St, London E2 8NH",
     price: 5,
     total_spaces: 20,
-    group_id: Group.first.id,
+    group: Group.first,
     )
 
   Event.create!(
@@ -409,7 +450,7 @@ puts 'Creating events...'
     address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
     price: 10,
     total_spaces: 10,
-    group_id: Group.first.id,
+    group: Group.first,
     )
 
   Event.create!(
@@ -418,10 +459,11 @@ puts 'Creating events...'
     date: "08/05/2020",
     time: "08/05/2020, 10:00",
     address: "Haggerston Park, Yorkton St, London E2 8NH",
-    group_id: Group.first.id,
+    group: Group.first,
     )
   puts 'Events created!'
   puts "Database is now ready to use! Enjoy"
+
 
 
 

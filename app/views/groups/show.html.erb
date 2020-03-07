@@ -1,7 +1,8 @@
 <div class="container">
   <div class="group-show-container">
 
-    <% unless current_user.group_id.nil? || current_user.group_id != @group.id %>
+
+    <% unless current_user.group.nil? || current_user.group.id != @group.id %>
 
       <%= render 'member_show.html.erb' %>
 
@@ -17,31 +18,33 @@
 
 
 
-            <div class="">
+            <div class="group-info">
               <p><i class="fas fa-user-circle"></i> <%= @group.description %></p>
               <p><i class="fas fa-map-marker-alt"></i> <%= @group.location %></p>
             </div>
 
 
-          <h4>Some of our members...</h4>
+          <h4 class="group-show-h4">Some of our members...</h4>
 
-            <div class="cards">
-              <% @users.first(4).each do |user| %>
+            <div>
+              <% @users.last(4).each do |user| %>
+             <!--  <%= image_tag user.photo, class: "avatar-large"  %> -->
                 <div class="card-product-small ">
                     <div class="d-flex flex-column justify-content-center align-items-center">
                       <%= cl_image_tag @group.group_picture.key %>
                       <a class="btn btn-flat-small-fix" href="#"><%= user.full_name %></a>
                     </div>
                     <div class="card-product-infos-small">
-                      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, ...</p>
+                      <p><i class="fas fa-portrait"></i> <%= user.bio %></p>
                     </div>
                 </div>
               <% end %>
             </div>
 
-            <h4>Upcoming events...</h4>
+            <h4 class="group-show-h4">Upcoming events...</h4>
+            <%= link_to "Browse all events", group_events_path(@group), class: "groups-nav-link" %>
 
-            <div class="cards">
+            <div>
               <% @events.first(4).each do |event| %>
                 <div class="card-product">
                         <div class="card-product-infos">
@@ -54,9 +57,60 @@
               <% end %>
             </div>
 
-            <h4>Some of our nannies...</h4>
+            <h4 class="group-show-h4">Some of our nannies...</h4>
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <% nannies = @nannies.first(4).to_a %>
+                  <div class="carousel-item active">
+                    <div class="card-product">
+                            <div class="card-product-infos">
+                              <h6><%= nannies[0].name %></h6>
+                              <p><%= nannies[0].bio %></p>
+                            </div>
+                     </div>
+                  </div>
+                <div class="carousel-item">
+                  <div class="card-product">
+                          <div class="card-product-infos">
+                            <h6><%= nannies[1].name %></h6>
+                            <p><%= nannies[1].bio %></p>
+                          </div>
+                   </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card-product">
+                          <div class="card-product-infos">
+                            <h6><%= nannies[2].name %></h6>
+                            <p><%= nannies[2].bio %></p>
+                          </div>
+                   </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card-product">
+                          <div class="card-product-infos">
+                            <h6><%= nannies[3].name %></h6>
+                            <p><%= nannies[3].bio %></p>
+                          </div>
+                   </div>
+                </div>
+                <div class="carousel-item">
+                  <p><%= link_to "Browse all nannies", group_nannies_path(@group), class: "groups-nav-link" %></p>
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
 
-            <div class="cards">
+
+
+            <!-- Previous nanny cards (before carousel) -->
+            <!-- <div>
               <% @nannies.first(4).each do |nanny| %>
                 <div class="card-product">
                         <div class="card-product-infos">
@@ -65,7 +119,7 @@
                         </div>
                       </div>
               <% end %>
-            </div>
+            </div> -->
 
 
       </div>

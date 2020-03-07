@@ -2,21 +2,34 @@
   <h1> All bookings </h1>
    <%= link_to "Back to events", group_events_path(@event_bookings.first.event.group), class: "events-show-nav-link" %>
 
+  <div class="cards-full">
+    <% @event_bookings.each do |event_booking| %>
+      <div class="card-product">
+        <div class="card-product-infos">
+          <h6><%= link_to event_booking.event.name, event_booking_path(event_booking), class: "events-show-nav-link" %></h6>
+          <div class="d-flex flex-row justify-content-between my-flex-container">
+           <div class="p-2 my-flex-item">
+              <%= link_to 'Edit', edit_event_booking_path(event_booking), class: "events-show-nav-link-small" %>
+           </div>
+           <div class="p-2 my-flex-item">
+              <%= link_to 'Cancel', event_booking_path(event_booking),
+              method: :delete,
+              data: {confirm: "Are you sure?"},
+              class: "events-show-nav-link-small" %>
+           </div>
+          </div>
+          <p><i class="far fa-calendar"></i> <%= event_booking.event.date.strftime("%d/%m/%y") %></p>
+          <p> <%= event_booking.event.description %></p>
+          <p><i class="fas fa-baby"></i> <%= event_booking.spaces_booked %></p>
 
-  <% @event_bookings.each do |event_booking| %>
-    <div class="card-product">
-      <div class="card-product-infos">
-        <h6><%= event_booking.event.name %></h6>
-        <p>Date: <%= event_booking.event.date.strftime("%d/%m/%y") %></p>
-        <p><%= event_booking.event.description %></p>
-        <p><%= event_booking.spaces_booked %></p>
-
-        <p><%= event_booking.event.address %></p>
+          <p><i class="fas fa-map-marker-alt"></i> <%= event_booking.event.address %></p>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+
 </div>
 
 <!-- add map on show page, edit and cancel booking -->
-<!-- dummy buttons for add to calendar -->
 <!-- payments functionality -->
+<!-- Implement Scroll -->

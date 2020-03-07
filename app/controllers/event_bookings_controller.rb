@@ -7,7 +7,6 @@ class EventBookingsController < ApplicationController
   end
 
   def show
-
    #  @nanniesmarkers = @nannies.map do |nanny|
    #  { lat: nanny.latitude,
    #    lng: nanny.longitude,
@@ -34,7 +33,6 @@ class EventBookingsController < ApplicationController
   end
 
   def edit
-
     @event = @event_booking.event
   end
 
@@ -58,11 +56,12 @@ class EventBookingsController < ApplicationController
     params.require(:event_booking).permit(:spaces_booked)
   end
 
+  def set_event
+    @event = Event.find(params[:event_id])
+  end
+
   def set_event_booking
     @event_booking = EventBooking.find(params[:id])
   end
 
-  def set_event
-    @event = Event.find(params[:event_id])
-  end
 end

@@ -165,7 +165,7 @@ puts "Create *The* Bubba Team"
 puts 'Creating users...'
     user_1 = User.new(
       email: Faker::Internet.email,
-      full_name: Faker::Name.name,
+      full_name: 'Pierre-Emmanuel Tanguy',
       bio: Faker::Quote.most_interesting_man_in_the_world,
       mobile_number: Faker::PhoneNumber.cell_phone,
       address: 'E2 8DY',
@@ -179,7 +179,7 @@ puts 'Creating users...'
 
     user_2 = User.new(
       email: Faker::Internet.email,
-      full_name: Faker::Name.name,
+      full_name: 'Celine Lefrou de la Colonge',
       bio: Faker::Quote.most_interesting_man_in_the_world,
       mobile_number: Faker::PhoneNumber.cell_phone,
       address: 'SW6 4JA',
@@ -192,7 +192,7 @@ puts 'Creating users...'
 
     user_3 = User.new(
         email: Faker::Internet.email,
-        full_name: Faker::Name.name,
+        full_name: 'Benjamin Baranger',
         bio: Faker::Quote.most_interesting_man_in_the_world,
         mobile_number: Faker::PhoneNumber.cell_phone,
         address: 'W6 8AZ',
@@ -205,7 +205,7 @@ puts 'Creating users...'
 
     user_4 = User.new(
         email: Faker::Internet.email,
-        full_name: Faker::Name.name,
+        full_name: 'Clementine Contat',
         bio: Faker::Quote.most_interesting_man_in_the_world,
         mobile_number: Faker::PhoneNumber.cell_phone,
         address: 'N1C 4QL',
@@ -218,7 +218,7 @@ puts 'Creating users...'
 
     user_5 = User.new(
         email: Faker::Internet.email,
-        full_name: Faker::Name.name,
+        full_name: 'Alexandre Tombeur',
         bio: Faker::Quote.most_interesting_man_in_the_world,
         mobile_number: Faker::PhoneNumber.cell_phone,
         address: 'W12 8QE',
@@ -231,7 +231,7 @@ puts 'Creating users...'
 
     user_6 = User.new(
         email: Faker::Internet.email,
-        full_name: Faker::Name.name,
+        full_name: 'Katherine Willis',
         bio: Faker::Quote.most_interesting_man_in_the_world,
         mobile_number: Faker::PhoneNumber.cell_phone,
         address: 'W12 8QE',
@@ -244,7 +244,7 @@ puts 'Creating users...'
 
     user_7 = User.new(
         email: Faker::Internet.email,
-        full_name: Faker::Name.name,
+        full_name: 'Meghan Markle',
         bio: Faker::Quote.most_interesting_man_in_the_world,
         mobile_number: Faker::PhoneNumber.cell_phone,
         address: 'W12 8QE',
@@ -258,7 +258,7 @@ puts 'Creating users...'
 
     user_8 = User.new(
         email: Faker::Internet.email,
-        full_name: Faker::Name.name,
+        full_name: 'Kate Middleton',
         bio: Faker::Quote.most_interesting_man_in_the_world,
         mobile_number: Faker::PhoneNumber.cell_phone,
         address: 'W12 8QE',
@@ -273,88 +273,94 @@ puts 'Creating users...'
 puts 'Then we have to create nannies...'
   Nanny.create(
       user_id: user_1.id,
-      name: Faker::Name.name,
+      name: user_1.full_name,
       mobile_number: Faker::PhoneNumber.cell_phone,
       address: 'Sturt St Hoxton, London N1 7QD',
       price_per_hour: Faker::Number.within(range: 5..50),
-      bio: Faker::Quote.most_interesting_man_in_the_world,
+      bio: 'I am a 22-year old student. I am currently at the University of Westminster as a social media, culture and society MA student.
+I am French and back in Paris I used to babysit all the time kids from a few months old to approximately 8-10.
+Also, I have three nieces (the oldest is four) so I am used to taking care of young children.',
       group: Group.first,
     )
   puts "Nanny created"
 
   Nanny.create(
       user_id: user_2.id,
-      name: Faker::Name.name,
+      name: user_2.full_name,
       mobile_number: Faker::PhoneNumber.cell_phone,
       address: '7 Regan Way, Hoxton, London N1 6PH',
       price_per_hour: Faker::Number.within(range: 5..50),
-      bio: Faker::Quote.most_interesting_man_in_the_world,
+      bio: 'I have over 7 years experience working with children babysitting and currently a history teacher, teaching years 11-16 in a secondary school. I am willing to offer all rounded support when babysitting whether it be through homework or acquisition of new skills/development.
+From driving children to and from sports activities to initiating and monitoring games and arts & crafts..',
       group: Group.first,
     )
   puts "Nanny created"
 
   Nanny.create(
       user_id: user_3.id,
-      name: Faker::Name.name,
+      name: user_3.full_name,
       mobile_number: Faker::PhoneNumber.cell_phone,
       address: 'Yorkton St, London E2 8N',
       price_per_hour: Faker::Number.within(range: 5..50),
-      bio: Faker::Quote.most_interesting_man_in_the_world,
+      bio: 'I am a qualified nanny with +13 years of experience in childcare.
+After my diploma I got the qualification as a "Social worker for Children", I had an internship in a nursery school and I worked on a summer campus where I taught children how to swim.
+I am currently working as a full time nanny taking care of a 7 months old baby boy M..',
       group: Group.first,
     )
   puts "Nanny created"
 
   Nanny.create!(
       user_id: user_4.id,
-      name: Faker::Name.name,
+      name: user_4.full_name,
       mobile_number: Faker::PhoneNumber.cell_phone,
       address: 'Graham Street Garden Islington, London',
       price_per_hour: Faker::Number.within(range: 5..50),
-      bio: Faker::Quote.most_interesting_man_in_the_world,
+      bio: 'I am currently an au-pair looking after three school-aged children & I would love to do some babysitting too as I have some experience already with children! I would love to gain more experience & have a positive influence on them.',
       group: Group.first,
     )
   puts "Nanny created"
 
   Nanny.create!(
       user_id: user_5.id,
-      name: Faker::Name.name,
+      name: user_5.full_name,
       mobile_number: Faker::PhoneNumber.cell_phone,
       address: 'Kingsland Street, London E2 8DY',
       price_per_hour: Faker::Number.within(range: 5..50),
-      bio: Faker::Quote.most_interesting_man_in_the_world,
+      bio: 'I live in North London and hold the NNEB Diploma.
+I have worked as a nanny doing various jobs from 1995 to 2002 fulfilling all aspects to include all nursery duties and continuing established routines. As the children grew moving onto learning through play, clubs such as Tick Tock, toddler groups, swimmimg, day trips, music groups and parks,. I had my daughter in 2002..',
       group: Group.first,
     )
   puts "Nanny created"
 
   Nanny.create!(
       user_id: user_6.id,
-      name: Faker::Name.name,
+      name: user_6.full_name,
       mobile_number: Faker::PhoneNumber.cell_phone,
       address: 'King Square, London EC1V 8DD',
       price_per_hour: Faker::Number.within(range: 5..50),
-      bio: Faker::Quote.most_interesting_man_in_the_world,
+      bio: 'I am  looking for a full time/part time  baby sitting job. I have roughly 3 years of experience in working with kids ages from 6 months and older. I am flexible, patient and very trustworthy. I am hoping to pursue a career in childcare as i love working with kids, watching them grow and learn is a dream come true.',
       group: Group.first,
     )
   puts "Nanny created"
 
   Nanny.create!(
       user_id: user_7.id,
-      name: Faker::Name.name,
+      name: user_7.full_name,
       mobile_number: Faker::PhoneNumber.cell_phone,
       address: '188 New N Rd, Hoxton, London N1 5EP',
       price_per_hour: Faker::Number.within(range: 5..50),
-      bio: Faker::Quote.most_interesting_man_in_the_world,
+      bio: 'I am a 40 year old mother of 2. I have over 20 years of experience of taking care of children. I have also worked as a carer in hospitals. I have looked after children from birth up to age 15. I have also taken care of children with disabilities. I am able to do anything from just a few hours to a few days. I am happy to cover holidays. I am also good with animals. Contact me for more info',
       group: Group.first,
     )
   puts "Nanny created"
 
   Nanny.create!(
       user_id: user_8.id,
-      name: Faker::Name.name,
+      name: user_8.full_name,
       mobile_number: Faker::PhoneNumber.cell_phone,
       address: '50 Pearson St, London E2 8EL',
       price_per_hour: Faker::Number.within(range: 5..50),
-      bio: Faker::Quote.most_interesting_man_in_the_world,
+      bio: 'I am 47 years old mother of two who are now 20 and 26. I am also a chef with years of experience. I am able to attend all needs when it comes to the kitchen, preparing healthy meals, natural juices, baking, preparation of food for the week and more.',
       group: Group.first,
     )
   puts "Nanny created"

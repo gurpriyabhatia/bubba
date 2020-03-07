@@ -28,10 +28,9 @@
 
             <div>
               <% @users.last(4).each do |user| %>
-             <!--  <%= image_tag user.photo, class: "avatar-large"  %> -->
                 <div class="card-product-small ">
                     <div class="d-flex flex-column justify-content-center align-items-center">
-                      <%= cl_image_tag @group.group_picture.key %>
+                      <%= image_tag user.photo, class: "avatar-large"  %>
                       <a class="btn btn-flat-small-fix" href="#"><%= user.full_name %></a>
                     </div>
                     <div class="card-product-infos-small">
@@ -65,6 +64,7 @@
                     <div class="carousel-item active">
                       <div class="card-product">
                               <div class="card-product-infos">
+                                <%= image_tag nannies[0].user.photo, class: "avatar-large"  %>
                                 <h6><%= nannies[0].name %></h6>
                                 <p><%= nannies[0].bio %></p>
                               </div>
@@ -73,6 +73,7 @@
                   <div class="carousel-item">
                     <div class="card-product">
                             <div class="card-product-infos">
+                              <%= image_tag nannies[1].user.photo, class: "avatar-large"  %>
                               <h6><%= nannies[1].name %></h6>
                               <p><%= nannies[1].bio %></p>
                             </div>
@@ -81,6 +82,7 @@
                   <div class="carousel-item">
                     <div class="card-product">
                             <div class="card-product-infos">
+                              <%= image_tag nannies[2].user.photo, class: "avatar-large"  %>
                               <h6><%= nannies[2].name %></h6>
                               <p><%= nannies[2].bio %></p>
                             </div>
@@ -89,6 +91,7 @@
                   <div class="carousel-item">
                     <div class="card-product">
                             <div class="card-product-infos">
+                              <%= image_tag nannies[3].user.photo, class: "avatar-large"  %>
                               <h6><%= nannies[3].name %></h6>
                               <p><%= nannies[3].bio %></p>
                             </div>

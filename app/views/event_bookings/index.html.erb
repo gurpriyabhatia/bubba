@@ -1,6 +1,8 @@
+<% if @event_bookings.first %>
 <div class="event-show-container">
   <h1> All bookings </h1>
    <%= link_to "Back to events", group_events_path(@event_bookings.first.event.group), class: "events-show-nav-link" %>
+
 
   <div class="cards-full">
     <% @event_bookings.each do |event_booking| %>
@@ -27,6 +29,10 @@
       </div>
     <% end %>
   </div>
+<% else %>
+
+<h4>You dont have any bookings at the moment 😕 ..Book an event <%= link_to " here!",  group_events_path(current_user.group.id) %> </h4>
+<% end %>
 
 </div>
 

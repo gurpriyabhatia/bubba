@@ -4,7 +4,7 @@
       <div class="shadow-sm p-3 mb-5 mt-5 bg-white rounded nanny-profile-card">
         <div class="row">
           <div class="nanny-avatar-container">
-          <img src="https://source.unsplash.com/random" alt="">
+          <%=  cl_image_tag("#{@nanny_booking.nanny.user.photo.key}", :width=>279, :height=>279, :crop => :thumb, :gravity => :face) if @nanny_booking.nanny.user.photo.attached? %>
           </div>
         </div>
         <class class="card p-3 mt-3 mb-3 border border-white">

@@ -7,7 +7,7 @@
 
   <% @nanny_bookings.each do |nanny_booking| %>
     <div class="booking-card">
-      <img src="https://source.unsplash.com/random" alt="">
+      <%=  cl_image_tag("#{nanny_booking.nanny.user.photo.key}", :width=>279, :height=>279, :crop => :thumb, :gravity => :face) if nanny_booking.nanny.user.photo.attached? %>
 
 
       <%#= image_tag booking.nanny.image, alt: "Picture of the nanny" %>

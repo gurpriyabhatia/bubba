@@ -1,23 +1,23 @@
 <% if @event_bookings.first %>
 <div class="event-show-container">
   <h1> All bookings </h1>
-   <%= link_to "Back to events", group_events_path(@event_bookings.first.event.group), class: "events-show-nav-link" %>
+   <%= link_to "Back to events", group_events_path(@event_bookings.first.event.group), class: "link" %>
 
 
   <div class="cards-full">
     <% @event_bookings.each do |event_booking| %>
       <div class="card-product">
         <div class="card-product-infos">
-          <h6><%= link_to event_booking.event.name, event_booking_path(event_booking), class: "events-show-nav-link" %></h6>
+          <h6><%= link_to event_booking.event.name, event_booking_path(event_booking), class: "link" %></h6>
           <div class="d-flex flex-row justify-content-between my-flex-container">
            <div class="p-2 my-flex-item">
-              <%= link_to 'Edit', edit_event_booking_path(event_booking), class: "events-show-nav-link-small" %>
+              <%= link_to 'Edit', edit_event_booking_path(event_booking), class: "btn btn-flat-small" %>
            </div>
            <div class="p-2 my-flex-item">
               <%= link_to 'Cancel', event_booking_path(event_booking),
               method: :delete,
               data: {confirm: "Are you sure?"},
-              class: "events-show-nav-link-small" %>
+              class: "btn btn-flat-small" %>
            </div>
           </div>
           <p><i class="far fa-calendar"></i> <%= event_booking.event.date.strftime("%d/%m/%y") %></p>

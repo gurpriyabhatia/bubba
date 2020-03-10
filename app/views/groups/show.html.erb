@@ -14,10 +14,6 @@
 
 
 
-
-
-
-
             <div class="group-info">
               <p><i class="fas fa-user-circle"></i> <%= @group.description %></p>
               <p><i class="fas fa-map-marker-alt"></i> <%= @group.location %></p>
@@ -32,7 +28,7 @@
                 <div class="card-product-small ">
                     <div class="d-flex flex-column justify-content-center align-items-center">
                       <%= cl_image_tag @group.group_picture.key %>
-                      <a class="btn btn-flat-small-fix" href="#"><%= user.full_name %></a>
+                      <a class="btn btn-flat-small" href="#"><%= user.full_name %></a>
                     </div>
                     <div class="card-product-infos-small">
                       <p><i class="fas fa-portrait"></i> <%= user.bio %></p>
@@ -42,7 +38,7 @@
             </div>
 
             <h4 class="group-show-h4">Upcoming events...</h4>
-            <%= link_to "Browse all events", group_events_path(@group), class: "groups-nav-link" %>
+            <%= link_to "Browse all events", group_events_path(@group), class: "link" %>
 
             <div>
               <% @events.first(4).each do |event| %>

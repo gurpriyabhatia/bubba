@@ -14,22 +14,6 @@
       <p><i class="fas fa-map-marker-alt"></i> <%= @group.location %></p>
     </div>
 
-    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-members" role="tab"
-          aria-controls="pills-home" aria-selected="true">Members</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
-          aria-controls="pills-profile" aria-selected="false">Events</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
-          aria-controls="pills-profile" aria-selected="false">Nannies</a>
-      </li>
-    </ul>
-
-    <div class="tab-content pt-2 pl-1" id="pills-tabContent">
       <div class="tab-pane fade show active" id="pills-members" role="tabpanel" aria-labelledby="pills-members-tab">
         <h4 class="group-show-h4">Some of our members...</h4>
         <div>
@@ -45,9 +29,7 @@
             </div>
           <% end %>
         </div>
-      </div>
 
-      <div class="tab-pane fade show active" id="pills-events" role="tabpanel" aria-labelledby="pills-events-tab">
         <h4 class="group-show-h4">Upcoming events...</h4>
         <%= link_to "Browse all events", group_events_path(@group), class: "groups-nav-link" %>
         <div>
@@ -62,9 +44,7 @@
             </div>
           <% end %>
         </div>
-      </div>
 
-      <div class="tab-pane fade show active" id="pills-nannies" role="tabpanel" aria-labelledby="pills-nannies-tab">
         <h4 class="group-show-h4">Some of our nannies...</h4>
         <p><%= link_to "Browse all nannies", group_nannies_path(@group), class: "groups-nav-link" %></p>
         <% unless @group.nannies.empty? %>
@@ -123,7 +103,6 @@
             </a>
           </div>
         <% end %>
-      </div>
     </div>
   </div>
 </div>

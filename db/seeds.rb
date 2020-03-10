@@ -387,7 +387,7 @@ I have worked as a nanny doing various jobs from 1995 to 2002 fulfilling all asp
 
 
 puts 'Creating events...'
-  Event.create!(
+  event_1 = Event.new(
     name: "Family Picnic",
     description: "A picnic for all the family, bring food!",
     date: "28/03/2020",
@@ -395,8 +395,12 @@ puts 'Creating events...'
     address: "Haggerston Park, Yorkton St, London E2 8NH",
     group: Group.first,
     )
+  event_1.photo.attach(io: URI.open('https://res.cloudinary.com/dolzriuzv/image/upload/v1583868960/picnic_v4djfa.jpg'), filename: 'picnic.jpg', content_type: 'image/jpg')
+  event_1.save!
 
-  Event.create!(
+
+
+  event_2 = Event.new(
     name: "Playgroup",
     description: "Bring your little ones along to the weekly playgroup.",
     date: "04/04/2020",
@@ -406,8 +410,10 @@ puts 'Creating events...'
     total_spaces: 30,
     group: Group.first,
     )
+  event_2.photo.attach(io: URI.open('https://res.cloudinary.com/dolzriuzv/image/upload/v1583868960/playgroup_epetnj.jpg'), filename: 'picnic.jpg', content_type: 'image/jpg')
+  event_2.save!
 
-  Event.create!(
+  event_3 = Event.new(
     name: "Toddler Ballet",
     description: "A one off dance class for your little ones.",
     date: "05/04/2020",
@@ -417,8 +423,10 @@ puts 'Creating events...'
     total_spaces: 20,
     group: Group.first,
     )
+  event_3.photo.attach(io: URI.open('https://res.cloudinary.com/dolzriuzv/image/upload/v1583868959/ballet_hlhosv.jpg'), filename: 'picnic.jpg', content_type: 'image/jpg')
+  event_3.save!
 
-  Event.create!(
+  event_4 = Event.new(
     name: "Beers for Dads",
     description: "Our monthly meet-up for the local dads out there who need some family-free time 😅",
     date: "10/04/2020",
@@ -426,8 +434,10 @@ puts 'Creating events...'
     address: "Hoxton Brewhouse, 397-400 Geffrye St, London E2 8HZ",
     group: Group.first,
     )
+  event_4.photo.attach(io: URI.open('https://res.cloudinary.com/dolzriuzv/image/upload/v1583868959/beers_xzq0dt.jpg'), filename: 'picnic.jpg', content_type: 'image/jpg')
+  event_4.save!
 
-  Event.create!(
+  event_5 = Event.new(
     name: "Beers for Mums",
     description: "Our monthly meet-up for the local mums out there who need some family-free time 😅",
     date: "11/04/2020",
@@ -435,8 +445,10 @@ puts 'Creating events...'
     address: "Hoxton Brewhouse, 397-400 Geffrye St, London E2 8HZ",
     group: Group.first,
     )
+  event_5.photo.attach(io: URI.open('https://res.cloudinary.com/dolzriuzv/image/upload/v1583868959/beers_xzq0dt.jpg'), filename: 'picnic.jpg', content_type: 'image/jpg')
+  event_5.save!
 
-  Event.create!(
+  event_6 = Event.new(
     name: "Playgroup",
     description: "Bring your little ones along to the weekly playgroup.",
     date: "11/04/2020",
@@ -446,8 +458,10 @@ puts 'Creating events...'
     total_spaces: 30,
     group: Group.first,
     )
+  event_6.photo.attach(io: URI.open('https://res.cloudinary.com/dolzriuzv/image/upload/v1583868960/playgroup_epetnj.jpg'), filename: 'picnic.jpg', content_type: 'image/jpg')
+  event_6.save!
 
-  Event.create!(
+  event_7 = Event.new(
     name: "Playgroup",
     description: "Bring your little ones along to the weekly playgroup.",
     date: "18/04/2020",
@@ -457,8 +471,10 @@ puts 'Creating events...'
     total_spaces: 30,
     group: Group.first,
     )
+  event_7.photo.attach(io: URI.open('https://res.cloudinary.com/dolzriuzv/image/upload/v1583868960/playgroup_epetnj.jpg'), filename: 'picnic.jpg', content_type: 'image/jpg')
+  event_7.save!
 
-  Event.create!(
+  event_8 = Event.new(
     name: "Treasure Hunt",
     description: "Take part in our treasure hunt event! All proceeds go to charity 😇",
     date: "19/04/2020",
@@ -468,8 +484,10 @@ puts 'Creating events...'
     total_spaces: 20,
     group: Group.first,
     )
+  event_8.photo.attach(io: URI.open('https://res.cloudinary.com/dolzriuzv/image/upload/v1583868960/treasure-hunt_wbzleo.jpg'), filename: 'picnic.jpg', content_type: 'image/jpg')
+  event_8.save!
 
-  Event.create!(
+  event_9 = Event.new(
     name: "Parent Toddler Yoga",
     description: "Unwind in this one off yoga session. Limited spaces!",
     date: "21/04/2020",
@@ -479,8 +497,10 @@ puts 'Creating events...'
     total_spaces: 10,
     group: Group.first,
     )
+  event_9.photo.attach(io: URI.open('https://res.cloudinary.com/dolzriuzv/image/upload/v1583868960/yoga_jvycao.jpg'), filename: 'picnic.jpg', content_type: 'image/jpg')
+  event_9.save!
 
-  Event.create!(
+  event_10 = Event.new(
     name: "Bank Holiday Picnic",
     description: "Join us for a picnic this bank holiday. Open to everyone!",
     date: "08/05/2020",
@@ -488,6 +508,8 @@ puts 'Creating events...'
     address: "Haggerston Park, Yorkton St, London E2 8NH",
     group: Group.first,
     )
+  event_10.photo.attach(io: URI.open('https://res.cloudinary.com/dolzriuzv/image/upload/v1583868960/picnic_v4djfa.jpg'), filename: 'picnic.jpg', content_type: 'image/jpg')
+  event_10.save!
   puts 'Events created!'
   puts "Database is now ready to use! Enjoy"
 

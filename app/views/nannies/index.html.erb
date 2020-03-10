@@ -1,6 +1,6 @@
 <% if @group %>
   <h2>Nannies available in <%= @group.name %></h2>
-  <%= link_to "Back to #{@group.name}", group_path(@group), class: "events-nav-link"%>
+  <%= link_to "Back to #{@group.name}", group_path(@group), class: "link"%>
 <% else %>
   <h2>Available Nannies</h2>
 <% end %>
@@ -37,7 +37,7 @@
               <% end %>
 
               <div class="card-product-infos">
-                <h2><%= link_to nanny.name, nanny_path(nanny)  %></h2>
+                <h2><%= link_to nanny.name, nanny_path(nanny), class: "link"  %></h2>
                 <p> <strong> £<%= nanny.price_per_hour%> per hour </strong></p>
               </div>
             </div>

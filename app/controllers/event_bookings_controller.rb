@@ -1,20 +1,20 @@
 class EventBookingsController < ApplicationController
-  before_action :set_event, only: [:new, :create]
   before_action :set_event_booking, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:new, :create]
 
   def index
     @event_bookings = EventBooking.includes(:event).joins(:event).order(:date)
   end
 
   def show
-    @event = Event.find(params[:id])
-    @eventmarkers = [
+    @event = @event_booking.event
+    @markers = [
       { lat: @event.latitude,
         lng: @event.longitude,
-        nannyimage_url: helpers.asset_url('bubba-pushchair.png')
+        image_url: helpers.asset_url('bubba-event.png')
       }
     ]
-    # @imgs = @event.map { |event| [event.id, event.user.photo] }
+    # @imgs = [@event.id, @event.user.photo]
   end
 
   def new

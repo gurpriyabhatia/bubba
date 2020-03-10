@@ -12,12 +12,20 @@ const buildMap = () => {
 };
 
 const addMarkersToMap = (map, markers) => {
+  const title = document.querySelector("#event-name")
+
   markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
 
     const element = document.createElement('div');
     element.className = 'marker';
-    element.style.backgroundImage = `url('${marker.image_url}')`;
+
+    if (title) {
+      element.style.backgroundImage = `url('${marker.image_url}')`;
+    } else {
+      element.style.backgroundImage = `url('${marker.image_url}')`;
+    }
+
     element.style.backgroundSize = 'contain';
     element.style.width = '45px';
     element.style.height = '45px';
@@ -39,7 +47,6 @@ const initMapbox = () => {
   if (mapElement) {
     const map = buildMap();
     const markers = JSON.parse(mapElement.dataset.markers);
-
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,

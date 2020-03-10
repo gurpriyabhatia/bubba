@@ -392,7 +392,7 @@ puts 'Creating events...'
     description: "A picnic for all the family, bring food!",
     date: "28/03/2020",
     time: "28/03/2020, 12:00",
-    address: "Haggerston Park, Yorkton St, London E2 8NH",
+    address: "50 Pearson St, London E2 8EL",
     group: Group.first,
     )
 
@@ -401,7 +401,7 @@ puts 'Creating events...'
     description: "Bring your little ones along to the weekly playgroup.",
     date: "04/04/2020",
     time: "04/04/2020, 10:00",
-    address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
+    address: "7 Regan Way, Hoxton, London N1 6PH",
     price: 5,
     total_spaces: 30,
     group: Group.first,
@@ -412,7 +412,7 @@ puts 'Creating events...'
     description: "A one off dance class for your little ones.",
     date: "05/04/2020",
     time: "05/04/2020, 10:00",
-    address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
+    address: "7 Regan Way, Hoxton, London N1 6PH",
     price: 12,
     total_spaces: 20,
     group: Group.first,
@@ -423,7 +423,7 @@ puts 'Creating events...'
     description: "Our monthly meet-up for the local dads out there who need some family-free time 😅",
     date: "10/04/2020",
     time: "10/04/2020, 20:00",
-    address: "Hoxton Brewhouse, 397-400 Geffrye St, London E2 8HZ",
+    address: "397-400 Geffrye St, London E2 8HZ",
     group: Group.first,
     )
 
@@ -432,7 +432,7 @@ puts 'Creating events...'
     description: "Our monthly meet-up for the local mums out there who need some family-free time 😅",
     date: "11/04/2020",
     time: "11/04/2020, 20:00",
-    address: "Hoxton Brewhouse, 397-400 Geffrye St, London E2 8HZ",
+    address: "397-400 Geffrye St, London E2 8HZ",
     group: Group.first,
     )
 
@@ -441,7 +441,7 @@ puts 'Creating events...'
     description: "Bring your little ones along to the weekly playgroup.",
     date: "11/04/2020",
     time: "11/04/2020, 10:00",
-    address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
+    address: "7 Regan Way, Hoxton, London N1 6PH",
     price: 5,
     total_spaces: 30,
     group: Group.first,
@@ -452,7 +452,7 @@ puts 'Creating events...'
     description: "Bring your little ones along to the weekly playgroup.",
     date: "18/04/2020",
     time: "18/04/2020, 10:00",
-    address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
+    address: "7 Regan Way, Hoxton, London N1 6PH",
     price: 5,
     total_spaces: 30,
     group: Group.first,
@@ -463,7 +463,7 @@ puts 'Creating events...'
     description: "Take part in our treasure hunt event! All proceeds go to charity 😇",
     date: "19/04/2020",
     time: "19/04/2020, 10:00",
-    address: "Haggerston Park, Yorkton St, London E2 8NH",
+    address: "King Square, London EC1V 8DD",
     price: 5,
     total_spaces: 20,
     group: Group.first,
@@ -474,7 +474,7 @@ puts 'Creating events...'
     description: "Unwind in this one off yoga session. Limited spaces!",
     date: "21/04/2020",
     time: "21/04/2020, 10:00",
-    address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
+    address: "7 Regan Way, Hoxton, London N1 6PH",
     price: 10,
     total_spaces: 10,
     group: Group.first,
@@ -485,7 +485,7 @@ puts 'Creating events...'
     description: "Join us for a picnic this bank holiday. Open to everyone!",
     date: "08/05/2020",
     time: "08/05/2020, 10:00",
-    address: "Haggerston Park, Yorkton St, London E2 8NH",
+    address: "Kingsland Street, London E2 8DY",
     group: Group.first,
     )
   puts 'Events created!'

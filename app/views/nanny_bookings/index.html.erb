@@ -1,3 +1,4 @@
+<% if @nanny_bookings.first %>
 <div class="container">
   <div class="d-flex justify-content-between">
     <h3>YOUR BOOKINGS</h3>
@@ -19,5 +20,9 @@
       </div>
     </div>
   <% end %>
+  <% else %>
+
+<h4>You don't have any booking at the moment ..Book a nanny <%= link_to " here!",  nannies_path %> </h4>
+<% end %>
 
 </div>

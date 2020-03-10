@@ -1,5 +1,5 @@
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-    <style> .nav-item > .active{ background-color: #84CEEB !important;}</style>
+    <style> .nav-item > .active{ background-color: #b36cc4 !important; opacity: 0.75;}</style>
   <li class="nav-item">
     <a class="btn-flat nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
       aria-controls="pills-home" aria-selected="true">Nanny bookings</a>
@@ -28,7 +28,7 @@
                 <div class="card-product-infos col-6-sm-6 mt-2 mb-2">
                   <p>On <%= booking.date.strftime("%d/%m/%y") %>, <strong><%= booking.nanny.name %></strong> took care of <%= booking.number_of_children %> <%= booking.number_of_children  > 1 ? "childrens" : "child"  %> during <%= booking.duration %> <%= booking.duration > 1 ? "hours" : "hour" %></p>
                   <p>Was paid with your <i class="far fa-credit-card"></i> <%= booking.number_of_children > 1 ? "Mastercard" : "Visa" %> _1234</p>
-                  <%= link_to "Statement", dashboard_path  %>
+                  <%= link_to "Statement", dashboard_path, class: "btn btn-flat-small"  %>
                 </div>
               </div>
           <% end %>
@@ -40,14 +40,16 @@
       <% if event_booking.event.date > Date.today %>
           <div class="card-product">
                 <div class="card-product-infos col-6-sm-6">
-                  <p><%= event_booking.event.date.strftime("%d/%m/%y") %> for <%= event_booking.event.name %></p>
-                  <%= link_to "Make a review" , event_bookings_path, class: "btn btn-flat" %>
+                  <p>On <%= event_booking.event.date.strftime("%d/%m/%y") %>, <%= event_booking.event.name %></p>
+                  <p><%= event_booking.event.address %></p>
+                  <%= link_to "Add a reminder" , event_bookings_path, class: "btn btn-flat-small" %>
                 </div>
           </div>
       <% else %>
         <div class="card-product-past">
                 <div class="card-product-infos col-6-sm-6">
-                  <p><%= event_booking.event.date.strftime("%d/%m/%y") %> for <%= event_booking.event.name %></p>
+                  <p>On <%= event_booking.event.date.strftime("%d/%m/%y") %>, <%= event_booking.event.name %></p>
+                  <p><%= event_booking.event.address %></p>
                 </div>
       <% end %>
     <% end %>

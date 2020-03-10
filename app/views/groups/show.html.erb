@@ -26,7 +26,7 @@
     <%= link_to "Browse all events", group_events_path(@group), class: "groups-nav-link" %>
     <div>
       <% @events.first(4).each do |event| %>
-        <div class="card-product" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path event.photo.key, height: 300, width: 400, crop: :fill %>')" >
+        <div class="card-product" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path event.photo.key, height: 150, width: 300, crop: :fill %>')" >
           <div class="card-product-infos event-card">
             <h6><%= event.name %></h6>
             <p><i class="far fa-calendar"></i> <%= event.date.strftime("%d/%m/%y") %></p>

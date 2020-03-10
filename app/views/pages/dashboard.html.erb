@@ -2,38 +2,55 @@
     <style> .nav-item > .active{ background-color: #84CEEB !important;}</style>
   <li class="nav-item">
     <a class="btn-flat nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
-      aria-controls="pills-home" aria-selected="true">Event bookings</a>
+      aria-controls="pills-home" aria-selected="true">Nanny bookings</a>
   </li>
   <li class="nav-item">
     <a class="btn-flat nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
-      aria-controls="pills-profile" aria-selected="false">Nanny bookings</a>
+      aria-controls="pills-profile" aria-selected="false">Event bookings</a>
   </li>
 </ul>
 <div class="tab-content pt-2 pl-1" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-    <% @events.each do |event| %>
-          <% if event.date > Date.today %>
-            <div class="card-product">
-              <div class="card-product-infos col-6-sm-6">
-                <p class="event"><%= event.date.strftime("%d/%m/%y") %></p>
-                <p><%= event.description %></p>
-                    <%= link_to "Modify this booking", event_booking_path(event), class: "btn btn-flat-small" if event.date > Date.today  %>
-                  </div>
+    <% @nanny_bookings.each do |booking| %>
+          <% if booking.date > Date.today %>
+              <div class="card-product">
+                <%=  cl_image_tag("#{booking.nanny.user.photo.key}", :width=>250, :height=>250, :crop => :fill) if booking.nanny.user.photo.attached? %>
+                <div class="card-product-infos col-6-sm-6 mt-2 mb-2">
+                  <p>You've booked <strong><%= booking.nanny.name %></strong> on <%= booking.date.strftime("%d/%m/%y") %> to take care of <%= booking.number_of_children %> <%= booking.number_of_children  > 1 ? "childrens" : "child"  %> during <%= booking.duration %> <%= booking.duration > 1 ? "hours" : "hour" %> </p>
+                  <p><%= booking.address %></p>
+                  <%= link_to "Modify this booking", nanny_path(booking.nanny), class: "btn btn-flat-small" %>
                 </div>
-            <% else  %>
-              <p>No past bookings</p>
-              <% end %>
-        <% end %>
+              </div>
+
+          <% else  %>
+              <div class="card-product past">
+                <%=  cl_image_tag("#{booking.nanny.user.photo.key}", :width=>250, :height=>250, :crop => :fill) if booking.nanny.user.photo.attached? %>
+                <div class="card-product-infos col-6-sm-6 mt-2 mb-2">
+                  <p>On <%= booking.date.strftime("%d/%m/%y") %>, <strong><%= booking.nanny.name %></strong> took care of <%= booking.number_of_children %> <%= booking.number_of_children  > 1 ? "childrens" : "child"  %> during <%= booking.duration %> <%= booking.duration > 1 ? "hours" : "hour" %></p>
+                  <p>Was paid with your <i class="far fa-credit-card"></i> <%= booking.number_of_children > 1 ? "Mastercard" : "Visa" %> _1234</p>
+                  <%= link_to "Statement", dashboard_path  %>
+                </div>
+              </div>
+          <% end %>
+    <% end %>
   </div>
+
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-    <% @nannies.each do |nanny| %>
+    <% @event_bookings.each do |event_booking| %>
+      <% if event_booking.event.date > Date.today %>
           <div class="card-product">
                 <div class="card-product-infos col-6-sm-6">
-                  <p><%= nanny.name %></p>
-                  <%= link_to "Make a review" , nanny_path(nanny), class: "btn btn-flat" %>
+                  <p><%= event_booking.event.date.strftime("%d/%m/%y") %> for <%= event_booking.event.name %></p>
+                  <%= link_to "Make a review" , event_bookings_path, class: "btn btn-flat" %>
                 </div>
           </div>
-        <% end %>
+      <% else %>
+        <div class="card-product-past">
+                <div class="card-product-infos col-6-sm-6">
+                  <p><%= event_booking.event.date.strftime("%d/%m/%y") %> for <%= event_booking.event.name %></p>
+                </div>
+      <% end %>
+    <% end %>
       </div>
 </div>
 

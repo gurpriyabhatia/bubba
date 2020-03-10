@@ -1,7 +1,8 @@
 class NannyBookingsController < ApplicationController
   def index
     @nanny = Nanny.find(params[:nanny_id])
-    @nanny_bookings = NannyBooking.all
+    #@nanny_bookings = NannyBooking.all
+    @nanny_bookings = NannyBooking.includes(:nanny).joins(:nanny).order(:date)
   end
 
   def show

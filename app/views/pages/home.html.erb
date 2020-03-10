@@ -1,4 +1,4 @@
-<div class="text-center d-flex flex-column align-items-center">
+<!-- <div class="text-center d-flex flex-column align-items-center">
 <h1>BUBBA</h1>
 </div>
 <br>
@@ -15,5 +15,28 @@
         <%= link_to "Nannies", nannies_path, :class => "btn btn-flat mb-3", :style => "width:250px;" %>
         <%= link_to "Advice", groups_path, :class => "btn btn-flat mb-3", :style => "width:250px;" %>
     </div>
-</div>
+</div> -->
 
+
+
+<div class="overlay"></div>
+<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="home-video">
+  <source src="assets/home-page.mp4" type="video/mp4">
+</video>
+<div class="container h-100">
+  <div class="d-flex h-100 text-center align-items-center">
+    <div class="w-100 text-white">
+      <h1 class="display-3">Bubba</h1>
+      <h4>Creating a community of parents in busy cities</h4>
+      <br>
+      <br>
+      <h4>What are you looking for?</h4>
+        <div class="text-center d-flex flex-column align-items-center">
+        <%= link_to "Groups", groups_path, :class => "btn btn-flat-home mb-3 custom-class" %>
+        <%= link_to "Events", events_path, :class => "btn btn-flat-home mb-3 custom-class"%>
+        <%= link_to "Nannies", nannies_path, :class => "btn btn-flat-home mb-3 custom-class" %>
+        <%= link_to "Advice", groups_path, :class => "btn btn-flat-home mb-3 custom-class" %>
+    </div>
+    </div>
+  </div>
+</div>

@@ -177,7 +177,7 @@ Jesse – twin boy. 12 years old. Jesse is funny, outgoing and a very active lit
 
 puts 'Creating users...'
     user_1 = User.new(
-      email: Faker::Internet.email,
+      email: 'pet@gmail.com',
       full_name: 'Pierre-Emmanuel Tanguy',
       bio: "Hi, we are a family of 5, husband who is a doctor and mother who is an engineer. Mother has decided to stay home for coming few years as we have a 6, 4 and 2 year old.",
       mobile_number: Faker::PhoneNumber.cell_phone,
@@ -191,7 +191,7 @@ puts 'Creating users...'
 
 
     user_2 = User.new(
-      email: Faker::Internet.email,
+      email: 'clc@gmail.com',
       full_name: 'Celine Lefrou de la Colonge',
       bio: "We are a generally peaceful family of four and there's a lot of love and affection in our home. We have a one year old boy and a three year old girl. They are both lovely, inquisitive and keen to learn. The children like reading books, music and spending time at the park or playground.
 We're looking for someone to join our family to help us with some childcare and housework.",
@@ -205,7 +205,7 @@ We're looking for someone to join our family to help us with some childcare and 
     puts "User created"
 
     user_3 = User.new(
-        email: Faker::Internet.email,
+        email: 'bb@gmail.com',
         full_name: 'Benjamin Baranger',
         bio: "We are a happy, messy, busy family of 7. There’s mom and dad and 5 kiddos aged 6 month (twins) to 7. We are looking for someone to become the 8th member of the family and share the highs and some lows. It’s hard work as there’s always someone calling your name but we are a supportive, welcoming and flexible bunch and you would not be alone and would be well supported and coached if needed. We are present parents and love our children more than we can describe in words. That does not mean they can get away with anything - we believe in having boundaries, rules and respect to and for all.",
         mobile_number: Faker::PhoneNumber.cell_phone,
@@ -218,7 +218,7 @@ We're looking for someone to join our family to help us with some childcare and 
     puts "User created"
 
     user_4 = User.new(
-        email: Faker::Internet.email,
+        email: 'cc@gmail.com',
         full_name: 'Clementine Contat',
         bio: "Dear au pair,
 My daughter and I are looking for someone to be part of our family. Some one Kind and patient.
@@ -233,7 +233,7 @@ Please let me know if you are willing to join us.",
     puts "User created"
 
     user_5 = User.new(
-        email: Faker::Internet.email,
+        email: 'at@gmail.com',
         full_name: 'Alexandre Tombeur',
         bio: "We are a family of 4 living in a beautiful village in Kent, just outside of London. We are looking for a lovely au pair to join us, willing to fit into our busy but quite flexible schedule.",
         mobile_number: Faker::PhoneNumber.cell_phone,
@@ -246,7 +246,7 @@ Please let me know if you are willing to join us.",
     puts "User created"
 
     user_6 = User.new(
-        email: Faker::Internet.email,
+        email: 'kw@gmail.com',
         full_name: 'Katherine Willis',
         bio: "Family of 5
 Mum and four children
@@ -263,7 +263,7 @@ Mum works part time so plenty of time to explore Northern Ireland",
     puts "User created"
 
     user_7 = User.new(
-        email: Faker::Internet.email,
+        email: 'mm@gmail.ca',
         full_name: 'Meghan Markle',
         bio: "We are looking for someone to join our family and look after our daughter 5 ans our son 2. Both my partner and myself work full time with my partner being away alot.",
         mobile_number: Faker::PhoneNumber.cell_phone,
@@ -277,7 +277,7 @@ Mum works part time so plenty of time to explore Northern Ireland",
 
 
     user_8 = User.new(
-        email: Faker::Internet.email,
+        email: 'km@gmail.uk',
         full_name: 'Kate Middleton',
         bio: "We are a lovely family - Mum & Dad with Archie,14, Emily,12 and Honor,7 and have two dogs. We live in Windsor Great Park which is beautiful. We have had our current au pair for three years but she is returning to New Zealand in April 2020.",
         mobile_number: Faker::PhoneNumber.cell_phone,
@@ -392,7 +392,7 @@ puts 'Creating events...'
     description: "A picnic for all the family, bring food!",
     date: "28/03/2020",
     time: "28/03/2020, 12:00",
-    address: "Haggerston Park, Yorkton St, London E2 8NH",
+    address: "50 Pearson St, London E2 8EL",
     group: Group.first,
     )
   event_1.photo.attach(io: URI.open('https://res.cloudinary.com/dolzriuzv/image/upload/v1583868960/picnic_v4djfa.jpg'), filename: 'picnic.jpg', content_type: 'image/jpg')
@@ -405,7 +405,7 @@ puts 'Creating events...'
     description: "Bring your little ones along to the weekly playgroup.",
     date: "04/04/2020",
     time: "04/04/2020, 10:00",
-    address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
+    address: "7 Regan Way, Hoxton, London N1 6PH",
     price: 5,
     total_spaces: 30,
     group: Group.first,
@@ -418,7 +418,7 @@ puts 'Creating events...'
     description: "A one off dance class for your little ones.",
     date: "05/04/2020",
     time: "05/04/2020, 10:00",
-    address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
+    address: "7 Regan Way, Hoxton, London N1 6PH",
     price: 12,
     total_spaces: 20,
     group: Group.first,
@@ -431,7 +431,7 @@ puts 'Creating events...'
     description: "Our monthly meet-up for the local dads out there who need some family-free time 😅",
     date: "10/04/2020",
     time: "10/04/2020, 20:00",
-    address: "Hoxton Brewhouse, 397-400 Geffrye St, London E2 8HZ",
+    address: "397-400 Geffrye St, London E2 8HZ",
     group: Group.first,
     )
   event_4.photo.attach(io: URI.open('https://res.cloudinary.com/dolzriuzv/image/upload/v1583868959/beers_xzq0dt.jpg'), filename: 'picnic.jpg', content_type: 'image/jpg')
@@ -442,7 +442,7 @@ puts 'Creating events...'
     description: "Our monthly meet-up for the local mums out there who need some family-free time 😅",
     date: "11/04/2020",
     time: "11/04/2020, 20:00",
-    address: "Hoxton Brewhouse, 397-400 Geffrye St, London E2 8HZ",
+    address: "397-400 Geffrye St, London E2 8HZ",
     group: Group.first,
     )
   event_5.photo.attach(io: URI.open('https://res.cloudinary.com/dolzriuzv/image/upload/v1583868959/beers_xzq0dt.jpg'), filename: 'picnic.jpg', content_type: 'image/jpg')
@@ -453,7 +453,7 @@ puts 'Creating events...'
     description: "Bring your little ones along to the weekly playgroup.",
     date: "11/04/2020",
     time: "11/04/2020, 10:00",
-    address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
+    address: "7 Regan Way, Hoxton, London N1 6PH",
     price: 5,
     total_spaces: 30,
     group: Group.first,
@@ -466,7 +466,7 @@ puts 'Creating events...'
     description: "Bring your little ones along to the weekly playgroup.",
     date: "18/04/2020",
     time: "18/04/2020, 10:00",
-    address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
+    address: "7 Regan Way, Hoxton, London N1 6PH",
     price: 5,
     total_spaces: 30,
     group: Group.first,
@@ -479,7 +479,7 @@ puts 'Creating events...'
     description: "Take part in our treasure hunt event! All proceeds go to charity 😇",
     date: "19/04/2020",
     time: "19/04/2020, 10:00",
-    address: "Haggerston Park, Yorkton St, London E2 8NH",
+    address: "King Square, London EC1V 8DD",
     price: 5,
     total_spaces: 20,
     group: Group.first,
@@ -492,7 +492,7 @@ puts 'Creating events...'
     description: "Unwind in this one off yoga session. Limited spaces!",
     date: "21/04/2020",
     time: "21/04/2020, 10:00",
-    address: "Regan Way Community Hall, 7 Regan Way, Hoxton, London N1 6PH",
+    address: "7 Regan Way, Hoxton, London N1 6PH",
     price: 10,
     total_spaces: 10,
     group: Group.first,
@@ -505,7 +505,7 @@ puts 'Creating events...'
     description: "Join us for a picnic this bank holiday. Open to everyone!",
     date: "08/05/2020",
     time: "08/05/2020, 10:00",
-    address: "Haggerston Park, Yorkton St, London E2 8NH",
+    address: "Kingsland Street, London E2 8DY",
     group: Group.first,
     )
   event_10.photo.attach(io: URI.open('https://res.cloudinary.com/dolzriuzv/image/upload/v1583868960/picnic_v4djfa.jpg'), filename: 'picnic.jpg', content_type: 'image/jpg')

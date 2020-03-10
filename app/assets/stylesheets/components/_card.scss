@@ -12,6 +12,7 @@
     margin-bottom: 4px;
   }
 
+
   .card-product .event-card{
     height: 200px;
     color: white;
@@ -22,6 +23,16 @@
     h6 {
       font-size: 24px;
     }
+  }
+
+  .card-product.past {
+    background: #b36cc4
+  }
+
+  .card-product img {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
   }
 
   // .card-product img {
@@ -91,3 +102,4 @@
   background-color: $bubba2;
   border-radius: 6px;
 }
+

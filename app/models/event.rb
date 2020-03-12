@@ -3,6 +3,7 @@ class Event < ApplicationRecord
   has_many :event_reviews, dependent: :destroy
   has_many :event_bookings, dependent: :destroy
   has_many :users, through: :event_bookings
+  has_one_attached :photo
   validates :name, :description, :date, :time, :address, presence: true
   validates :price, numericality: true
   validates :total_spaces, numericality: true, allow_nil: true

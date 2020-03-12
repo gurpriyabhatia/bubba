@@ -1,12 +1,73 @@
 // Specific CSS for your home-page
-body {
-  background-color: $bubba-gray;
+// body {
+//   background-color: $bubba-gray;
+// }
+
+// h1 {
+//   font-weight: 900;
+// };
+
+// .min-height {
+//   min-height: calc(100vh - 150px);
+// }
+
+
+header {
+  position: relative;
+  background-color: black;
+  height: 100vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
 }
 
-h1 {
-  font-weight: 900;
-};
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
 
-.min-height {
-  min-height: calc(100vh - 150px);
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.home-video{
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  opacity: 0.8
+}
+
+
+@media (pointer: coarse) and (hover: none) {
+  header {
+    background:"assets/home-page.mp4" black no-repeat center center scroll;
+  }
+  header video {
+    display: none;
+  }
 }

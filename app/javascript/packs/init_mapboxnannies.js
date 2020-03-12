@@ -47,8 +47,14 @@ const initMapboxNannies = () => {
   }
 };
 
-setTimeout(function(){ document.querySelector(".mapboxgl-ctrl-geocoder--input").remove();
- document.querySelector(".mapboxgl-ctrl-geocoder--icon-search").remove();    }, 50);
+setTimeout( function() {
+  if (document.querySelector(".mapboxgl-ctrl-geocoder--input")) {
+    document.querySelector(".mapboxgl-ctrl-geocoder--input").remove();
+  }
+  if (document.querySelector(".mapboxgl-ctrl-geocoder--icon-search")) {
+    document.querySelector(".mapboxgl-ctrl-geocoder--icon-search").remove();
+  }
+}, 50);
 
 
 

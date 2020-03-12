@@ -47,6 +47,8 @@
 
 <script>
   document.addEventListener('scroll', (event) => {
-  document.querySelector(".remove-if-scroll").remove();
-});
+    if (document.querySelector(".remove-if-scroll")) {
+      document.querySelector(".remove-if-scroll").remove();
+    }
+  });
 </script>

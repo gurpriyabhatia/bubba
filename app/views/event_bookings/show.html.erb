@@ -40,7 +40,7 @@
   <!-- Button code -->
   <div title="Add to Calendar" class="addeventatc">
       Add to Calendar
-      <span class="start"><%= @event_booking.event.date.strftime("%d-%m-%y") %> <%= @event_booking.event.time.strftime("%I:%M%P") %></span>
+      <span class="start"><%= @event_booking.event.date.strftime("%y-%m-%d") %> <%= @event_booking.event.time.strftime("%I:%M%P") %></span>
       <span class="end"> </span>
       <span class="timezone">Europe/Paris</span>
       <span class="title"><%= @event_booking.event.name %></span>

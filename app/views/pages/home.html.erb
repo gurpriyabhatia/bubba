@@ -20,9 +20,13 @@
 
 
 <div class="overlay"></div>
-<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="home-video">
+
+<!-- <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="home-video">
   <source src="assets/home-page.mp4" type="video/mp4">
-</video>
+</video> -->
+
+<%= video_tag "home-page.mp4", autoplay: "autoplay", id: "video", muted: true, loop: "true", :class => "home-video"%>
+
 <div class="container h-100">
   <div class="d-flex h-100 text-center align-items-center">
     <div class="w-100 text-white">

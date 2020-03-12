@@ -1,0 +1,5 @@
+meta_product_name: "Bubba"
+meta_title: "Bubba - Creating a Community for New Parents in Busy Cities"
+meta_description: "Relevant description"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

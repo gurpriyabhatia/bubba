@@ -1,28 +1,31 @@
 <div class="container">
 
+  <div class="group-show-container">
 
+    <% if @group %>
 
-  <% if @group %>
+      <h2 class="events-h2"><%= @group.name %> Events</h2>
 
-    <h2 class="events-h2"><%= @group.name %> Events</h2>
+      <%= link_to "Back to #{@group.name}", group_path(@group), class: "groups-nav-link"%>
 
-    <%= link_to "Back to #{@group.name}", group_path(@group), class: "link"%>
+    <% else %>
 
-  <% else %>
+      <h1 class="events-h2">Events</h1>
 
-    <h1 class="events-h2">Events</h1>
-
-  <% end %>
-
-    <% @events.each do |event| %>
-    <div class="card-product">
-      <div class="card-product-infos">
-        <h6><%= event.name %></h6>
-        <p><i class="far fa-calendar"></i> <%= event.date.strftime("%d/%m/%y") %></p>
-        <p><%= event.description %></p>
-        <%= link_to "View event", event_path(event), class: "btn-flat-small" %>
-      </div>
-    </div>
     <% end %>
 
+
+      <% @events.each do |event| %>
+        <%= link_to event_path(event) do %>
+          <div class="card-product" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= cl_image_path event.photo.key, height: 200, width: 300, crop: :fill %>')" >
+            <div class="card-product-infos event-card">
+              <h6><%= event.name %></h6>
+              <p><i class="far fa-calendar"></i> <%= event.date.strftime("%d/%m/%y") %></p>
+              <p><%= event.description %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+
+  </div>
 </div>

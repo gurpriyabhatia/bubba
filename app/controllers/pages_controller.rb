@@ -16,4 +16,8 @@ class PagesController < ApplicationController
         @current_booking = EventBooking.find(@current_booking_id)
       end
     end
+
+    def advice
+      @users = User.all
+    end
 end

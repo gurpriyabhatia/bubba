@@ -64,7 +64,6 @@
   </head>
 
   <body>
-
     <% if params[:action] == "show" %>
       <%= render 'shared/navbar_show' %>
     <% else %>
@@ -72,10 +71,10 @@
     <% end %>
 
     <%= render 'shared/flashes' %>
-    <div class= "min-height">
+    <div class="min-height <%= 'bg-white' if action_name == 'show' && controller_name == 'nannies' %>">
      <%= yield %>
     </div>
-     <%= render 'shared/footer' %>
+    <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
 
     <%= javascript_pack_tag 'application' %>

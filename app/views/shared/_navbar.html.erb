@@ -5,38 +5,6 @@
   <form class="form-inline flex-fill">
     <input class="form-control mr-sm-1" type="text" placeholder="Search" aria-label="Search" id="search">
   </form>
-
-
-<!--<div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto navbar-design">
-
-        <li class="nav-item active">
-          <%#= link_to "Home", '#', class: "btn-ghost" %>
-        </li>
-        <li class="nav-item">
-          <%#= link_to "Your Bookings", "#", class: "btn-ghost" %>
-        </li>
-        <li class="nav-item">
-          <%#= link_to "Messages", "#", class: "btn-ghost" %>
-        </li>
-        <li class="nav-item">
-          <%#= link_to "Your Profile", "#", class: "btn-ghost" %>
-        </li>
-        <li class="nav-item">
-          <%#= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn-ghost" %>
-        </li>
-        <%  %>
-        <li class="nav-item">
-          <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
-          <%#= link_to "Sign-Up", new_user_registration_path, class: "nav-link" %>
-        </li>
-      <%#  %>
-    </ul>
-  </div>
-
-</div>
-
- -->
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn">&times;</a>
     <% if user_signed_in? %>
@@ -73,6 +41,7 @@
       <li class="nav-item">
         <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         <%= link_to "Sign-Up", new_user_registration_path, class: "nav-link" %>
+      </li>
     <% end %>
   </div>
 </div>

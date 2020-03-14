@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon" onclick="openNav()"></span>
+    <span class="navbar-toggler-icon"></span>
   </button>
 
 
@@ -35,7 +35,7 @@
 
  -->
   <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="javascript:void(0)" class="closebtn">&times;</a>
     <% if user_signed_in? %>
       <div class="side-nav-header p-3 d-flex align-items-center justify-content-start">
         <% if current_user.photo.attached?%>

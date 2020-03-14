@@ -64,7 +64,12 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
+
+    <% if params[:action] == "show" %>
+      <%= render 'shared/navbar_show' %>
+    <% else %>
+      <%= render 'shared/navbar' %>
+    <% end %>
 
     <%= render 'shared/flashes' %>
     <div class= "min-height">

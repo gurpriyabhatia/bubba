@@ -12,7 +12,15 @@ initMapboxNannies();
 initAutocomplete();
 
 flatpickr("#nanny_booking_date", {
-  "enableTime": true
+  "enableTime": true,
+  "disableMobile": true
 });
 
 
+function openNav() {
+  document.getElementById("mySidenav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get '/dashboard', to: "pages#dashboard", as: :dashboard
   get 'event_reviews/create'
+  get '/advice', to: "pages#advice"
   devise_for :users
   root to: 'pages#home'
   resources :groups do

@@ -17,10 +17,10 @@ flatpickr("#nanny_booking_date", {
 });
 
 
-function openNav() {
+document.querySelector(".navbar-toggler").addEventListener("click", () => {
   document.getElementById("mySidenav").style.width = "100%";
-}
+});
 
-function closeNav() {
+document.querySelector(".closebtn").addEventListener("click", () => {
   document.getElementById("mySidenav").style.width = "0";
-}
+});

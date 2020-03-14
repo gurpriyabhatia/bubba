@@ -1,0 +1,227 @@
+
+
+<style>
+.slack-container {
+  height: 100vh;
+}
+.person, .channel {
+  display: flex;
+  align-items: center;
+}
+
+.person span, .channel span {
+  opacity: .5;
+}
+.channel i {
+  font-size: 14px;
+  margin-right: 4px;
+}
+
+.channel.active span {
+  opacity: 1;
+}
+
+.online-badge {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #1FE5BD;
+  margin-top: 2px;
+  margin-right: 8px;
+}
+
+
+.offline-badge {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: white;
+  margin-top: 2px;
+  margin-right: 8px;
+  opacity: .5;
+}
+.chat-container {
+  flex-grow: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  border-bottom: 1px solid rgb(240,240,240);
+}
+
+.chat-header h1 {
+  font-size: 24px;
+  color: #8C1BA8;
+}
+
+.chat-header i {
+  font-size: 20px;
+}
+
+.chat-conversations {
+  flex-grow: 1;
+  padding: 16px 0;
+  overflow: scroll;
+}
+.message {
+  display: flex;
+  align-items: flex-start;
+}
+
+.message img {
+  width: 40px;
+  border-radius: 4px;
+  margin-right: 16px;
+}
+
+.message .message-content {
+  flex-grow: 1;
+}
+
+.message .message-content p:first-child {
+  margin-bottom: 0;
+  margin-top: 0;
+  color: #8C1BA8;
+}
+.organizations-sidebar {
+  background-color: #8C1BA8;
+  color: #8C1BA8;
+  padding: 16px;
+  text-align: center;
+}
+
+.organization {
+  opacity: .3;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.organization:hover {
+  opacity: 1;
+}
+
+.organization.active {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.conversations-sidebar {
+  background-color: #8C1BA8;
+  color: white;
+  padding: 16px;
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.conversations-sidebar h1 {
+  font-size: 24px;
+}
+
+.chat-section {
+  margin-top: 24px;
+}
+
+.chat-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-section-header h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.form-mobile {
+  transform: translateX(-100%);
+  position: fixed;
+  transition: all 0.3s cubic-bezier(.76,.02,.5,1.01);
+}
+.form-mobile.displayed {
+  transform: translateX(0);
+}
+
+</style>
+
+
+
+<div class="d-flex slack-container">
+  <div class="d-block d-sm-none h-100">
+    <div class="form-mobile h-100">
+      <%= render 'advice_form' %>
+    </div>
+  </div>
+  <div class="d-none d-sm-block h-100">
+    <%= render 'advice_form' %>
+  </div>
+  <div class="chat-container">
+    <div class="chat-header">
+      <h1><i class="fab fa-slack-hash"></i> school closures <i class="fas fa-toggle-off d-sm-none" id="toggle"></i></h1>
+    </div>
+    <div class="chat-conversations">
+      <div class="message">
+        <img src="https://res.cloudinary.com/dolzriuzv/image/upload/v1583441822/User-9_ajhycb.png" alt="">
+        <div class="message-content">
+          <p><strong>François</strong></p>
+          <p>Hey everyone, is it really likely the schools will close? </p>
+        </div>
+      </div>
+
+      <div class="message">
+        <img src="https://res.cloudinary.com/dolzriuzv/image/upload/v1583441822/User-1_v2wk46.png" alt="">
+        <div class="message-content">
+          <p><strong>Gurpryia</strong></p>
+          <p>not sure...! </p>
+        </div>
+      </div>
+
+      <div class="message">
+        <img src="https://res.cloudinary.com/dolzriuzv/image/upload/v1583441822/User-2_gcgdiy.png" alt="">
+        <div class="message-content">
+          <p><strong>Rachel</strong></p>
+          <p>I think literally no one knows at this point, but it's certainly a possibility that schools are preparing for..</p>
+        </div>
+      </div>
+
+      <div class="message">
+        <img src="https://res.cloudinary.com/dolzriuzv/image/upload/v1583441822/User-3_v9hvfb.png" alt="">
+        <div class="message-content">
+          <p><strong>Alexia</strong></p>
+          <p>Seeing as it's happened in loads of other EU countries (those that have higher and lower numbers of cases), I think it's highly likely. And soon! Not looking forward to the quarantine kid chaos, arghhhhhhh !!!!</p>
+        </div>
+      </div>
+
+
+    <div class="message">
+        <img src="https://res.cloudinary.com/dolzriuzv/image/upload/v1583441822/User-7_paahxr.png" alt="">
+        <div class="message-content">
+          <p><strong>Lucien</strong></p>
+          <p>I think they will try and keep going till Easter or as close as possible. If the numbers rise much further I can see more people pulling their kids out.</p>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="chat-input">
+      <form action="" >
+        <input type="text" class="form-control" placeholder="Type your message...">
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  const toggle = document.getElementById('toggle');
+  const form = document.querySelector('.form-mobile');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('fa-toggle-off');
+    toggle.classList.toggle('fa-toggle-on');
+    form.classList.toggle('displayed');
+  });
+
+  document.querySelector(".navbar").remove();
+</script>

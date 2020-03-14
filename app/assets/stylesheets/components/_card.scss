@@ -97,6 +97,75 @@
     padding: 8px;
   }
 
+  .card-nanny {
+    overflow: hidden;
+    height: auto;
+    // width: 300px;
+    background: white;
+    box-shadow: 0 0 8px rgba(0,0,0,0.10);
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    margin-right: 16px;
+    margin-left: 16px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+
+    .card-nanny-infos {
+      padding: 16px;
+      width: 80%;
+    }
+
+    img {
+      height: 100%;
+      width: 55px;
+      object-fit: cover;
+    }
+
+    h6 {
+      color: $bubba-new;
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    p {
+      color: black;
+      font-size: 12px;
+      line-height: 1.4;
+      opacity: .7;
+      margin-bottom: 0;
+      margin-top: 8px;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    a {
+      // text-decoration: none;
+    }
+
+    a :active {
+      // text-decoration: none;
+      color: red;
+    }
+
+    a :hover {
+      // text-decoration: none;
+     color: red;
+    }
+
+    // a :focus {
+    //   text-decoration: none;
+    // }
+
+    .avatar-large {
+      border-style: solid;
+      border-color: $bubba-new;
+    }
+  }
+
 
 .search-box-home{
   background-color: $bubba2;

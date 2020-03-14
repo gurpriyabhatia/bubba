@@ -1,7 +1,5 @@
-<div class="container">
-  <div class="group-show-container">
-
-
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1522543558187-768b6df7c25c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+  <div class="container">
     <% unless current_user.group.nil? || current_user.group.id != @group.id %>
       <%= render 'member_show.html.erb' %>
     <% else %>
@@ -29,6 +27,15 @@
         </tr>
       </table>
     </div>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="group-show-container">
+
+
+
 
 
     <h4 class="group-show-h4">Some of our members...</h4>
@@ -86,45 +93,46 @@
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
 
-              <div class="carousel-item active">
-                <div class="card-product">
-                  <div class="card-product-infos">
+              <%= link_to nanny_path(nannies[0]), class: "carousel-item active" do %>
+                  <div class="card-nanny">
                     <%= image_tag nannies[0].user.photo, class: "avatar-large"  %>
-                    <h6><%= nannies[0].name %></h6>
-                    <p><%= nannies[0].bio %></p>
+                    <div class="card-nanny-infos">
+                      <h6><%= nannies[0].name %></h6>
+                      <p><%= nannies[0].bio %></p>
+                    </div>
                   </div>
-                </div>
-              </div>
+              <% end %>
 
-              <div class="carousel-item">
-                <div class="card-product">
-                  <div class="card-product-infos">
+
+              <%= link_to nanny_path(nannies[1]), class: "carousel-item" do %>
+                  <div class="card-nanny">
                     <%= image_tag nannies[1].user.photo, class: "avatar-large"  %>
-                    <h6><%= nannies[1].name %></h6>
-                    <p><%= nannies[1].bio %></p>
+                    <div class="card-nanny-infos">
+                      <h6><%= nannies[1].name %></h6>
+                      <p><%= nannies[1].bio %></p>
+                    </div>
                   </div>
-                </div>
-              </div>
+              <% end %>
 
-              <div class="carousel-item">
-                <div class="card-product">
-                  <div class="card-product-infos">
+              <%= link_to nanny_path(nannies[2]), class: "carousel-item" do %>
+                  <div class="card-nanny">
                     <%= image_tag nannies[2].user.photo, class: "avatar-large"  %>
-                    <h6><%= nannies[2].name %></h6>
-                    <p><%= nannies[2].bio %></p>
+                    <div class="card-nanny-infos">
+                      <h6><%= nannies[2].name %></h6>
+                      <p><%= nannies[2].bio %></p>
+                    </div>
                   </div>
-                </div>
-              </div>
+              <% end %>
 
-              <div class="carousel-item">
-                <div class="card-product">
-                  <div class="card-product-infos">
+              <%= link_to nanny_path(nannies[3]), class: "carousel-item" do %>
+                  <div class="card-nanny">
                     <%= image_tag nannies[3].user.photo, class: "avatar-large"  %>
-                    <h6><%= nannies[3].name %></h6>
-                    <p><%= nannies[3].bio %></p>
+                    <div class="card-nanny-infos">
+                      <h6><%= nannies[3].name %></h6>
+                      <p><%= nannies[3].bio %></p>
+                    </div>
                   </div>
-                </div>
-              </div>
+              <% end %>
         </div>
 
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

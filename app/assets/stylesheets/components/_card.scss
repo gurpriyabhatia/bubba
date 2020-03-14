@@ -15,7 +15,10 @@
 
   .card-product .event-card{
     height: 200px;
+    width: 100%;
+    // margin: 0px !important;
     color: white;
+
     p {
       opacity: 1;
       font-size: 14px;
@@ -100,18 +103,18 @@
   .card-nanny {
     overflow: hidden;
     // height: auto;
-    // width: 300px;
-    padding: 15.203px;
+    width: 100%;
+    padding: 16px;
     background: white;
     box-shadow: 0 0 8px rgba(0,0,0,0.10);
     display: flex;
     align-items: center;
     border-radius: 6px;
-    border-style: solid;
-    border-width: .8px;
-    border-color: $bubba-new;
-    // margin-right: 16px;
-    // margin-left: 16px;
+    // border-style: solid;
+    // border-width: .8px;
+    // border-color: $bubba-new;
+    margin-right: 1px;
+    margin-left: 1px;
     margin-top: 4px;
     margin-bottom: 4px;
 

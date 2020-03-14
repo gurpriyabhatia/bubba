@@ -7,8 +7,8 @@
 }
 
 .group-show-h4 {
-  margin: 12px 8px 4px;
-  // padding: 4px;
+  margin: 32px 8px 4px;
+  font-size: 16px;
 }
 
 .groups-nav-link {
@@ -21,6 +21,12 @@
   td {
     text-align: left;
   }
+}
+
+.h4-and-btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 

@@ -1,6 +1,3 @@
-
-
-
       <%= simple_form_for [@nanny, NannyBooking.new] do |f| %>
         <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
         <%= f.input :date, label: "Start time", as: :string %>

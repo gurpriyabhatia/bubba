@@ -1,5 +1,5 @@
 .group-show-container {
-  margin: 0 16px;
+  // margin: 0 16px;
 }
 
 .group-show-container .card-product {
@@ -7,8 +7,8 @@
 }
 
 .group-show-h4 {
-  margin: 12px 8px 4px;
-  // padding: 4px;
+  margin: 32px 8px 4px;
+  font-size: 16px;
 }
 
 .groups-nav-link {
@@ -18,4 +18,15 @@
 
 .group-info p {
   margin: 0 8px 4px;
+  td {
+    text-align: left;
+  }
 }
+
+.h4-and-btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+

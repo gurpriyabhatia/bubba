@@ -144,10 +144,13 @@
   transform: translateX(0);
 }
 
+.home-advice{
+  color: #8C1BA8;
+}
+.home-advice-white{
+  color: white;
 
 </style>
-
-
 
 <div class="d-flex slack-container">
   <div class="d-block d-sm-none h-100">
@@ -159,6 +162,9 @@
     <%= render 'advice_form' %>
   </div>
   <div class="chat-container">
+    <%= link_to root_path, class: "home-advice" do %>
+      <i class="fas fa-home"></i>
+    <% end %>
     <div class="chat-header">
       <h1><i class="fab fa-slack-hash"></i> school closures <i class="fas fa-toggle-off d-sm-none" id="toggle"></i></h1>
     </div>

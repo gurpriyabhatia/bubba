@@ -10,8 +10,24 @@
 
 
     <div class="group-info">
-      <p><i class="fas fa-user-circle"></i> <%= @group.description %></p>
-      <p><i class="fas fa-map-marker-alt"></i> <%= @group.location %></p>
+      <table>
+        <tr>
+          <td>
+            <p><i class="fas fa-user-circle"></i></p>
+          </td>
+          <td>
+            <p><%= @group.description %></p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p><i class="fas fa-map-marker-alt"></i></p>
+          </td>
+          <td>
+            <p><%= @group.location %></p>
+          </td>
+        </tr>
+      </table>
     </div>
 
 

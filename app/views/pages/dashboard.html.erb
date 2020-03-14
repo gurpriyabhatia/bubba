@@ -38,13 +38,7 @@
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
     <% @event_bookings.each do |event_booking| %>
       <% if event_booking.event.date > Date.today %>
-          <div class="card-product">
-                <div class="card-product-infos col-6-sm-6">
-                  <p>On <%= event_booking.event.date.strftime("%d/%m/%y") %>, <%= event_booking.event.name %></p>
-                  <p><%= event_booking.event.address %></p>
-                  <%= link_to "Add a reminder" , event_bookings_path, class: "btn btn-flat-small" %>
-                </div>
-          </div>
+        <%= render 'event_bookings/index-dashboard' %>
       <% else %>
         <div class="card-product-past">
                 <div class="card-product-infos col-6-sm-6">

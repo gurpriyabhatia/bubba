@@ -1,6 +1,17 @@
+.event-index-container {
+  width: 100%;
+}
+
+.events-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 18px;
+}
+
 .events-h2 {
-  padding: 4px;
-  margin: 0 16px;
+  // padding: 4px;
+  margin: 8px 0 4px 0;
 }
 
 .events-nav-link {

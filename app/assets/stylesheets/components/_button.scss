@@ -91,5 +91,25 @@
   }
 }
 
+.event-index-button {
+  border-radius: 6px;
+  padding: 4px 10px;
+  margin-bottom: 4px;
+  color: white;
+  text-decoration: none;
+  height:  32px;
+  // width: 40px;
+  // margin-left: 54%;
+  // position: absolute;
+  // top: 25px;
+  // right: 8px;
+  background-color: $bubba-new;
+  &:hover {
+    color: white;
+    text-decoration: none;
+    filter: brightness(80%);
+  }
+}
+
 
 

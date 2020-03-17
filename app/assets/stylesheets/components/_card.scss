@@ -16,7 +16,7 @@
   .card-product .event-card{
     height: 200px;
     width: 100%;
-    // margin: 0px !important;
+    margin-bottom: 8px;
     color: white;
 
     p {
@@ -36,6 +36,14 @@
     height: 100%;
     width: 120px;
     object-fit: cover;
+  }
+
+  .group-show-container .card-product {
+    margin: 0;
+  }
+
+  .event-index-container .card-product {
+    margin: 0 0 12px;
   }
 
   // .card-product img {

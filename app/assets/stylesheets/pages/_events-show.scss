@@ -1,5 +1,9 @@
 .event-show-container {
-  margin: 0 16px;
+  // margin: 0 16px;
+  h5 {
+    font-size: 22px;
+    margin-top: 22px;
+  }
 }
 
 .events-show-nav-link {
@@ -12,4 +16,17 @@
   font-size: 12px;
   margin: 0;
   color: $bubba5;
+}
+
+.event-show-details {
+  margin-top: 8px;
+  width: 100%;
+}
+
+// .right-td {
+//   text-align: right;
+// }
+
+.left-td {
+  padding-right: 85px;
 }

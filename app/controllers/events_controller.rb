@@ -13,6 +13,9 @@ class EventsController < ApplicationController
 
   def show
     @event_booking = EventBooking.new
+    @event = Event.find(params[:id])
+    @group = @event.group
+    @users = @group.users
   end
 
   def new

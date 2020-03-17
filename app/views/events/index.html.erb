@@ -4,9 +4,15 @@
 
     <% if @group %>
 
-      <%= link_to "Back to #{@group.name}", group_path(@group), class: "event-index-button"%>
+      <div class="events-header-container">
 
-      <h2 class="events-h2"><%= @group.name %> Events</h2>
+        <h2 class="events-h2">Events</h2>
+
+        <%= link_to "Back to #{@group.name}", group_path(@group), class: "event-index-button"%>
+
+      </div>
+
+
 
     <% else %>
 

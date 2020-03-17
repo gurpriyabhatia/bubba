@@ -57,8 +57,6 @@
 
         <div class="carousel-inner">
 
-            <% @events = [@events.first] %>
-
               <% @events.each_with_index do |event, index| %>
                 <%= link_to event_path(event), class: "carousel-item #{'active' if index.zero? }" do %>
                     <div class="card-product event-card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= cl_image_path event.photo.key, height: 200, width: 350, crop: :fill %>')" >

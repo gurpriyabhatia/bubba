@@ -1,9 +1,11 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 100px 0 0 0;
+  padding: 140px 0 0 0;
   position: relative;
-  height: 200px;
+  height: 240px;
+  margin-top: -60px;
+  z-index: -1000;
 }
 
 .banner h1 {
@@ -13,7 +15,7 @@
   font-size: 32px;
   font-weight: bold;
   position: absolute;
-  top: 60px;
+  top: 80px;
 }
 
 .banner p {

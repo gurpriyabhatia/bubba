@@ -1,12 +1,11 @@
-<% if @event_bookings.first %>
-<div class="event-show-container">
-  <h1> All bookings </h1>
-   <%= link_to "Back to events", group_events_path(@event_bookings.first.event.group), class: "link" %>
+<div class = "container">
 
-
-<%= render 'event_bookings/index-dashboard' %>
-<% else %>
-
-<h4>You dont have any bookings at the moment 😕 ..Book an event <%= link_to " here!",  group_events_path(current_user.group.id) %> </h4>
-
- <% end %>
+  <% if @event_bookings.first %>
+    <div class="event-show-container">
+      <h1> All bookings </h1>
+      <%= link_to "Back to events", group_events_path(@event_bookings.first.event.group), class: "link" %>
+      <%= render 'event_bookings/index-dashboard' %>
+  <% else %>
+    <h4>You dont have any bookings at the moment 😕 ..Book an event <%= link_to " here!",  group_events_path(current_user.group.id) %> </h4>
+  <% end %>
+</div>

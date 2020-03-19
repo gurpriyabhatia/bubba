@@ -30,7 +30,7 @@
                 <%= cl_image_tag(nanny.user.photo.key, :width=>300, :height=>300, :crop=>"scale") %>
               <% end %>
 
-              <div class="card-product-infos">
+              <div class="card-nanny-index">
                 <h2><%= link_to nanny.name, nanny_path(nanny), class: "link"  %></h2>
                 <p> <strong> £<%= nanny.price_per_hour%> per hour </strong></p>
               </div>

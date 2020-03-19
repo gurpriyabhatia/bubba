@@ -1,25 +1,16 @@
 <div class = "nanny-booking-container">
-  <div class="row">
+<!--   <div class="row"> -->
 
-    <div class="col-sm-4">
-      <div class="shadow-sm p-3 mb-5 mt-5 bg-white rounded nanny-profile-card">
-        <div class="row">
-          <div class="nanny-avatar-container">
-          <%=  cl_image_tag("#{@nanny_booking.nanny.user.photo.key}", :width=>279, :height=>279, :crop => :thumb, :gravity => :face) if @nanny_booking.nanny.user.photo.attached? %>
+    <div class="d-flex align-items-center purple-background">
+      <div class="empty"></div>
+            <h6 class="m-0">You have booked <%= @nanny.name %></h6>
+            <%= cl_image_tag("#{@nanny.user.photo.key}", :width=>100, :height=>100, :crop => :thumb, :radius => :max,:gravity => :face) if @nanny.user.photo.attached? %>
           </div>
-        </div>
 
-        <class class="card p-3 mt-3 mb-3 border border-white">
-          <p class="text-center"><strong><%= @nanny_booking.nanny.name %></strong></p>
-          <div class="col text-center">
-            <p><strong><%= link_to "View Profile", nanny_path(@nanny_booking.nanny), :class => "btn btn-flat" %></strong></p>
-          </div>
-        </class>
 
-      </div>
-    </div>
 
-  </div>
+
+  <!-- </div> -->
 
   <div class="col-sm-8 mt-3">
 

@@ -1,5 +1,6 @@
-<div class = "container">
+<div class = "nanny-booking-container">
   <div class="row">
+
     <div class="col-sm-4">
       <div class="shadow-sm p-3 mb-5 mt-5 bg-white rounded nanny-profile-card">
         <div class="row">
@@ -7,44 +8,47 @@
           <%=  cl_image_tag("#{@nanny_booking.nanny.user.photo.key}", :width=>279, :height=>279, :crop => :thumb, :gravity => :face) if @nanny_booking.nanny.user.photo.attached? %>
           </div>
         </div>
+
         <class class="card p-3 mt-3 mb-3 border border-white">
           <p class="text-center"><strong><%= @nanny_booking.nanny.name %></strong></p>
-
           <div class="col text-center">
             <p><strong><%= link_to "View Profile", nanny_path(@nanny_booking.nanny), :class => "btn btn-flat" %></strong></p>
           </div>
-
         </class>
+
       </div>
     </div>
+
+  </div>
 
 <div class="col-sm-8 mt-3">
-  <h1>Your Booking Details</h1>
-    <div class="card-product">
-      <div class="card-product-infos">
-          <p><strong>Date:</strong> <%= @nanny_booking.date %></p>
-          <p><strong>Address:</strong> <%= @nanny_booking.address %></p>
-          <p><strong>Duration:</strong> <%= @nanny_booking.duration %> Hrs</p>
-          <p><strong>Number of children:</strong> <%= @nanny_booking.number_of_children %></p>
-          <p><strong>Special Instructions:</strong> <%= @nanny_booking.special_instructions %></p>
-          <p><strong>Total Price:</strong> XXXXXXXX</p>
-      </div>
-    </div>
+
+  <%= link_to 'Back to your bookings', nanny_nanny_bookings_path, class: "event-index-button" %>
+
+  <h3>Details</h3>
 
 
-
-
-    <div class="booking-actions">
-      <%= link_to 'Edit this booking', edit_nanny_nanny_booking_path(@nanny, @nanny_booking) %>
-
-      <%= link_to 'Delete this booking', nanny_nanny_booking_path(@nanny, @nanny_booking),
+  <div class="nanny-booking-details-card">
+      <p><i class="far fa-calendar" style="color:#484848">&nbsp;</i><%= @nanny_booking.date.strftime("%d-%m-%y") %></p>
+      <p><i class="fas fa-map-marker-alt" style="color:#484848">&nbsp;</i><%= @nanny_booking.address %></p>
+      <p><i class="far fa-clock" style="color:#484848">&nbsp;</i><%= @nanny_booking.duration %> hours</p>
+      <p><i class="fas fa-baby" style="color:#484848">&nbsp;</i><%= @nanny_booking.number_of_children %> hours</p>
+      <% if @nanny_booking.special_instructions %>
+        <p><i class="far fa-comment" style="color:#484848">&nbsp;</i><%= @nanny_booking.special_instructions %></p>
+      <% else %>
+        <p>No special instructions for this booking!</p>
+      <% end %>
+      <p><i class="fas fa-coins" style="color:#484848">&nbsp;</i>£<%= (@nanny_booking.duration * @nanny.price_per_hour) %></p>
+    <div class="nanny-booking-card-buttons">
+      <%= link_to 'Edit', edit_nanny_nanny_booking_path(@nanny, @nanny_booking), class: "nanny-booking-card-button" %>
+      <%= link_to 'Delete', nanny_nanny_booking_path(@nanny, @nanny_booking),
+                class: "nanny-booking-card-button",
                 method: :delete,
                 data: {confirm: "Are you sure?"} %>
-
-      <%= link_to 'Back to your bookings', nanny_nanny_bookings_path %>
     </div>
+  </div>
 
-  <!-- </div> -->
+  </div>
 
 
 </div>

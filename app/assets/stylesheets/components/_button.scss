@@ -118,6 +118,22 @@
   }
 }
 
+.nanny-booking-card-button {
+  border-radius: 6px;
+  padding: 4px 48px;
+  margin-bottom: 4px;
+  color: white;
+  text-decoration: none;
+  height:  32px;
+  background-color: $bubba-new;
+  &:hover {
+    color: white;
+    text-decoration: none;
+    filter: brightness(80%);
+  }
+
+}
+
 
 .event-index-button-v2 {
   border-radius: 6px;

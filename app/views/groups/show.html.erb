@@ -59,7 +59,7 @@
 
 
               <% @events.each_with_index do |event, index| %>
-                <%= link_to event_path(event), class: "carousel-item #{'active' if index.zero? }" do %>
+                <%= link_to event_path(event), class: "link-card carousel-item #{'active ' if index.zero? }" do %>
                     <div class="card-product event-card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= cl_image_path event.photo.key, height: 250, width: 350, crop: :fill %>')" >
                       <div class="card-product-infos event-card">
                         <h6><%= event.name %></h6>
@@ -95,7 +95,7 @@
     <% unless @group.nannies.empty? %>
       <% nannies = @nannies.first(4).to_a %>
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
+        <div class="carousel-inner nanny-carousel-inner">
 
               <%= link_to nanny_path(nannies[0]), class: "carousel-item active" do %>
                   <div class="card-nanny">
@@ -149,6 +149,5 @@
         </a>
       </div>
     <% end %>
-
   </div>
 </div>

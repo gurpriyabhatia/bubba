@@ -12,6 +12,14 @@
     margin-bottom: 4px;
   }
 
+  .carousel-inner {
+    border-radius: 6px;
+  }
+
+  .carousel-item .card-product {
+    border-radius: 0;
+  }
+
 
   .card-product .event-card{
     height: 200px;
@@ -114,17 +122,17 @@
     width: 100%;
     padding: 16px;
     background: white;
-    box-shadow: 0 0 8px rgba(0,0,0,0.10);
+    box-shadow: 0 0 4px rgba(0,0,0,0.10);
     display: flex;
     align-items: center;
     border-radius: 6px;
     // border-style: solid;
     // border-width: .8px;
     // border-color: $bubba-new;
-    margin-right: 1px;
-    margin-left: 1px;
-    margin-top: 4px;
-    margin-bottom: 4px;
+    // margin-right: 1px;
+    // margin-left: 1px;
+    // margin-top: 4px;
+    // margin-bottom: 4px;
 
     .card-nanny-infos {
       padding: 16px;
@@ -156,31 +164,25 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
-
-    a {
-      // text-decoration: none;
-    }
-
-    a :active {
-      // text-decoration: none;
-      color: red;
-    }
-
-    a :hover {
-      // text-decoration: none;
-     color: red;
-    }
-
-    // a :focus {
-    //   text-decoration: none;
-    // }
-
-
   }
+.carousel-item .card-nanny {
+  border-radius: 0;
+  box-shadow: none;
+}
 
+.nanny-carousel-inner {
+  box-shadow: 0 0 4px rgba(0,0,0,0.10);
+}
 
 .search-box-home{
   background-color: $bubba2;
   border-radius: 6px;
+}
+
+.link-card {
+  &:hover {
+    text-decoration: none;
+    filter: brightness(80%);
+  }
 }
 

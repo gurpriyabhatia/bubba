@@ -8,7 +8,9 @@
     <div class="d-flex flex-row justify-content-between my-flex-container">
       <p><i class="far fa-calendar"></i> <%= @event_booking.event.date.strftime("%d-%m-%y") %></p>
       <p><i class="far fa-clock"></i> <%= @event_booking.event.time.strftime("%I:%M%P") %></p>
+      <p><i class="fas fa-baby"></i> <%= @event_booking.spaces_booked %></p>
     </div>
+
   </div>
 </div>
 
@@ -18,9 +20,10 @@
        <div class="p-2 my-flex-item">
        </div>
        <div class="p-2 my-flex-item">
-          <%= link_to "All bookings", event_bookings_path, class: "link" %>
+          <%= link_to "All bookings", event_bookings_path, class: "button-flat-small-show" %>
        </div>
     </div>
+    <br>
   <h3><i class="far fa-check-circle" style="color:green;"></i>&nbsp; Booking Confirmed!</h3>
   <p><i class="fas fa-map-marker-alt"></i> <%= @event_booking.event.address %></p>
     <div class="content">
@@ -39,7 +42,7 @@
     </div>
   <h5>Details</h5>
     <div class="d-flex flex-row justify-content-between my-flex-container">
-      <p><i class="fas fa-baby"></i> <%= @event_booking.spaces_booked %></p>
+
       <!-- Button code -->
       <div title="Add to Calendar" class="addeventatc">
           Add to Calendar

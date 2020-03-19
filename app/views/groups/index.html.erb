@@ -21,7 +21,7 @@
 
       <div class="cards">
         <% @groups.each do |group| %>
-          <%= link_to group_path(group), class: "link-card card-product" do %>
+          <%= link_to group_path(group), class: "link-card group-index card-product" do %>
               <%= cl_image_tag group.group_picture.key %>
               <div class="card-product-infos">
 

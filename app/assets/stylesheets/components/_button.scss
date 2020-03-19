@@ -12,6 +12,11 @@
   border-radius: 6px;
   background: $bubba-new;
   transition: background 0.3s ease;
+   &:hover {
+    color: white;
+    text-decoration: none;
+    filter: brightness(80%);
+  }
 }
 
 @media (max-width: 768px) {
@@ -47,9 +52,10 @@
   line-height: 24px;
   // height: fit-content;
   background-color: $bubba-new;
-  &:hover {
-    // color: white;
+   &:hover {
+    color: white;
     text-decoration: none;
+    filter: brightness(80%);
   }
 }
 
@@ -86,8 +92,9 @@
   background-color: white;
   z-index: 800;
   &:hover {
-    // color: white;
+    color: $bubba-new;
     text-decoration: none;
+    filter: brightness(80%);
   }
 }
 

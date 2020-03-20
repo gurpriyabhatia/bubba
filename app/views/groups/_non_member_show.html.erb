@@ -1,5 +1,9 @@
-<h5>You're not a member of this group yet!</h5>
+<div class="non-member-banner">
 
-<%= link_to "Join now", group_path(@group), method: :put, class: "btn btn-flat" %>
+  <h1><%= @group.name %></h1>
 
-<h1>Discover our Group</h1>
+  <%= link_to "Join now", group_path(@group), method: :put, class: "button-flat-small-show" %>
+
+</div>
+
+

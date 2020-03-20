@@ -30,10 +30,8 @@
 
       <div class="cards">
         <% @nannies.each do |nanny| %>
-
           <%= link_to nanny_path(nanny), class: "link-card card-product" do %>
 
-            <div class="">
               <% if nanny.user.photo.attached? %>
                 <%= cl_image_tag(nanny.user.photo.key, :width=>300, :height=>300, :crop=>"scale") %>
               <% end %>
@@ -42,10 +40,8 @@
                 <h2><%= nanny.name %></h2>
                 <p> <strong> £<%= nanny.price_per_hour%> per hour </strong></p>
               </div>
-            </div>
 
           <% end %>
-
         <% end %>
       </div>
 </div>

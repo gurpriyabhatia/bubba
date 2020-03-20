@@ -1,5 +1,56 @@
-<h5>You're not a member of this group yet!</h5>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1522543558187-768b6df7c25c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+  <div class="container">
+    <%= link_to "Back to all groups", groups_path, class: "banner-button" %>
 
-<%= link_to "Join now", group_path(@group), method: :put, class: "btn btn-flat" %>
+    <div class="non-member-banner">
 
-<h1>Discover our Group</h1>
+      <h1><%= @group.name %></h1>
+
+      <%= link_to "Join now", group_path(@group), method: :put, class: "button-flat-small-show" %>
+
+    </div>
+
+
+    <div class="group-info">
+      <table>
+        <tr>
+          <td>
+            <p><i class="fas fa-user-circle"></i></p>
+          </td>
+          <td>
+            <p><%= @group.description %></p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p><i class="fas fa-map-marker-alt"></i></p>
+          </td>
+          <td>
+            <p><%= @group.location %></p>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="group-show-container non-member">
+
+    <p>You're not a member of this group yet. Click join now to get involved with <%= @group.name %>, or follow the links below to view events and nannies near you!</p>
+
+    <div class="non-member-buttons">
+
+      <%= link_to "Browse all events", events_path, class: "button-flat-small-show" %>
+
+      <%= link_to "Browse all nannies", nannies_path, class: "button-flat-small-show" %>
+
+    </div>
+
+
+  </div>
+</div>
+
+
+

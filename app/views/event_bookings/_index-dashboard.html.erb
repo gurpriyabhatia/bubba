@@ -8,28 +8,26 @@
           <div class="card-product-infos">
             <h6><%= link_to event_booking.event.name, event_booking_path(event_booking), class: "link" %></h6>
             <div class="d-flex flex-row justify-content-between my-flex-container">
-             <div class="p-2 my-flex-item">
-                <%= link_to 'Edit', edit_event_booking_path(event_booking), class: "btn btn-flat-small" %>
-             </div>
-             <div class="p-2 my-flex-item">
-                <%= link_to 'Cancel', event_booking_path(event_booking),
-                method: :delete,
-                data: {confirm: "Are you sure?"},
-                class: "btn btn-flat-small" %>
-             </div>
-            </div>
-            <p><i class="far fa-calendar"></i> <%= event_booking.event.date.strftime("%d/%m/%y") %></p>
-            <p> <%= event_booking.event.description %></p>
-            <p><i class="fas fa-baby"></i> <%= event_booking.spaces_booked %></p>
-
-            <p><i class="fas fa-map-marker-alt"></i> <%= event_booking.event.address %></p>
+               <div class="p-2 my-flex-item">
+                  <%= link_to 'Edit', edit_event_booking_path(event_booking), class: "btn btn-flat-small" %>
+               </div>
+               <div class="p-2 my-flex-item">
+                  <%= link_to 'Cancel', event_booking_path(event_booking),
+                  method: :delete,
+                  data: {confirm: "Are you sure?"},
+                  class: "btn btn-flat-small" %>
+               </div>
+              </div>
+                <p><i class="far fa-calendar"></i> <%= event_booking.event.date.strftime("%d/%m/%y") %></p>
+                <p> <%= event_booking.event.description %></p>
+                <p><i class="fas fa-baby"></i> <%= event_booking.spaces_booked %></p>
+                <p><i class="fas fa-map-marker-alt"></i> <%= event_booking.event.address %></p>
+              </div>
           </div>
-        </div>
       <% end %>
-    </div>
-  <% else %>
-    <h4>You dont have any bookings at the moment 😕 ..Book an event <%= link_to " here!",  group_events_path(current_user.group.id) %> </h4>
-  <% end %>
+    <% else %>
+      <h4>You dont have any bookings at the moment 😕 ..Book an event <%= link_to " here!",  group_events_path(current_user.group.id) %> </h4>
+    <% end %>
 </div>
 
 

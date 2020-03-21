@@ -6,7 +6,7 @@
       <% @event_bookings.each do |event_booking| %>
         <div class="card-product" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= cl_image_path event_booking.event.photo.key, height: 250, width: 350, crop: :fill %>')" >
           <div class="card-product-infos">
-            <h6><%= link_to event_booking.event.name, event_booking_path(event_booking), class: "link" %></h6>
+            <h6><%= link_to event_booking.event.name, event_booking_path(event_booking), class: "text-color" %></h6>
             <div class="d-flex flex-row justify-content-between my-flex-container">
                <div class="p-2 my-flex-item">
                   <%= link_to 'Edit', edit_event_booking_path(event_booking), class: "btn btn-flat-small" %>
@@ -18,10 +18,10 @@
                   class: "btn btn-flat-small" %>
                </div>
               </div>
-                <p><i class="far fa-calendar"></i> <%= event_booking.event.date.strftime("%d/%m/%y") %></p>
-                <p> <%= event_booking.event.description %></p>
-                <p><i class="fas fa-baby"></i> <%= event_booking.spaces_booked %></p>
-                <p><i class="fas fa-map-marker-alt"></i> <%= event_booking.event.address %></p>
+                <p class="text-color"><i class="far fa-calendar"></i> <%= event_booking.event.date.strftime("%d/%m/%y") %></p>
+                <p class="text-color"> <%= event_booking.event.description %></p>
+                <p class="text-color"><i class="fas fa-baby"></i> <%= event_booking.spaces_booked %></p>
+                <p class="text-color"><i class="fas fa-map-marker-alt"></i> <%= event_booking.event.address %></p>
               </div>
           </div>
       <% end %>

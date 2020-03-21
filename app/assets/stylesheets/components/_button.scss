@@ -148,4 +148,9 @@
   // top: 25px;
   // right: 8px;
   background-color: $bubba-new;
+  &:hover {
+    color: white;
+    text-decoration: none;
+    filter: brightness(80%);
+  }
 }

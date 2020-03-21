@@ -9,7 +9,7 @@ class PagesController < ApplicationController
       @groups = Group.all
       @events = Event.all
       @event_bookings = current_user.event_bookings
-      @nanny_bookings = NannyBooking.all.order("date DESC")
+      @nanny_bookings = current_user.nanny_bookings.order("date DESC")
 
       if params["event_booking"].present?
         @current_booking_id = params["event_booking"]

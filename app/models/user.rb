@@ -8,5 +8,6 @@ class User < ApplicationRecord
   has_many :events, through: :event_bookings
   has_one :nanny, dependent: :destroy
   belongs_to :group, optional: true
+  has_many :nanny_bookings, dependent: :destroy
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 end

@@ -3,7 +3,7 @@ class EventBookingsController < ApplicationController
   before_action :set_event, only: [:new, :create]
 
   def index
-    @event_bookings = EventBooking.includes(:event).joins(:event).order(:date)
+    @event_bookings = current_user.event_bookings.sort_by { |event_booking| event_booking.event.date }
   end
 
   def show

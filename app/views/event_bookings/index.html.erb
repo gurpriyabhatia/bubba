@@ -6,6 +6,6 @@
       <%= link_to "Back to events", group_events_path(@event_bookings.first.event.group), class: "button-flat-small-show" %>
       <%= render 'event_bookings/index-dashboard' %>
   <% else %>
-    <h4>You dont have any bookings at the moment 😕 ..Book an event <%= link_to " here!",  group_events_path(current_user.group.id) %> </h4>
+    <h4>You dont have any bookings at the moment 😕 ..Book an event <%= link_to " here!",  events_path %> </h4>
   <% end %>
 </div>
